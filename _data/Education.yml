@@ -1,0 +1,9 @@
+subject: Educación
+listing-order: 1
+icon: "/assets/img/graduation-cap.svg"
+contents:
+  - title: Universidad de Santiago de Chile 
+    description:
+      - Licenciatura en Ciencias de la Computación
+    date: Mar. 2013 - Sep. 2019
+  

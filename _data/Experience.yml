@@ -1,0 +1,48 @@
+subject: Experiencia
+listing-order: 4
+
+icon: "/assets/img/briefcase.svg"
+contents:
+  - title: "Medicien: Proyecto Portal Paciente"
+    role: Analista Programador
+    description:
+    - Encargado del diseño y desarrollo de la base de datos en Microsoft SQL Server
+     ocupando Procedimientos Almacenados, Triggers, Funciones, Consultas, entre otros
+     y procesos ETL en Pentaho. Uso de Oracle Horizon en gestión de datos entre
+     distintos motores de bases de datos.
+    date: Jun. - Ago.  2019
+  
+  - title: G-Talent
+    role: Analista Programador
+    description: 
+      - Encargado del diseño y desarrollo de reportes en MicroSoft SQL Server ocupando
+       Procedimientos Almacenados, Triggers, Funciones, Consultas y procesos ETL en
+       Microsoft SQL Server Integration Services (SSIS). Uso de Oracle en tablas de
+       auditoría, reportes y vistas.
+    date: Sep. - Nov. 2019
+  
+  - title: M y CH Inmobiliaria Encargado de obras y gestión inmobiliaria 
+    role:  Gestion y obras
+    description:
+      - Empresa familiar dedicada a la compra/venta y construcción de propiedades, donde
+        me de desempeñe de obrero de la construcción y encargado en la gestión inmobi-
+        liaria, en el cual mi tarea era la recaudación de los arriendos de los bienes raíces y
+        mantención de los servicios de cada propiedad. 
+       
+    date: Sep. 2020 - Ene. 2023
+
+  - title: IBM Kyndryl
+    role: Operador de Procesos y Monitoreo TI
+    description:
+      - Operador de consolas de monitoreo con las herramientas Nagios, Tivoli, Zabbix y
+        VZOR. Encargado en la detección de alertas tempranas, ejecución de escalamientos,
+        documentación de tickets y procesos, seguimiento de incidencias, control y registro
+        de eventos. Así también desempeñe labores de Operador para gestion de respaldos
+        bajo TSM (Tivoli Storage management), mesa de ayuda, administración de usuarios
+        en Active Directory, informes en la plataforma GRAFANA, administración y gestión
+        de sistemas AS 400, MainFrame IBM para el Cliente AFP Provida, responsable de la    
+        gestión de respaldos de cinta magnética para la empresa SURA en Networker 8.2.4 y
+        Networker 9.4, incluyendo programación, supervisión y verificación de integridad de
+        los respaldos y administración de cintas magnéticas para robots de cinta (Jukebox).  
+       
+    date: Ago. 2023 - Jul. 2023

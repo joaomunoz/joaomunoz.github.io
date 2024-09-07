@@ -1,0 +1,26 @@
+title: Joao Muñoz
+profile_img: https://miro.medium.com/v2/resize:fit:640/format:webp/1*6wS-kXlOCBsAJciygkJtDA.gif
+icon_img: /assets/img/icon.webp
+
+name: "Joao Muñoz"
+job: " Licenciado en ciencias de la Computación"
+
+phone_number: +56 9 93906662
+address: Santiago, Chile
+email: joao.munoz.c@gmail.com
+ 
+blog_url: https://joaomunoz.github.io/
+
+# If your repo name follows the format "<user-name>.github.io", then leave the below blank.
+# Otherwise, set its value as "/<repo-name>". ex) baseurl: /resume
+baseurl:  
+
+exclude:
+  - _posts/
+  - resources/
+  - vendor/
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag

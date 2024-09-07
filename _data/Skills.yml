@@ -1,0 +1,63 @@
+subject: Habilidades
+listing-order: 3
+
+icon: "/assets/img/screwdriver-wrench.svg"
+contents:
+  - title: Lenguajes de Programación
+    description: "
+      ![devicon](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg)
+      ![devicon](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg)
+      ![devicon](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg)
+      ![devicon](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg)
+      
+    "
+  - title: Frameworks
+    description: "
+      ![devicon_blanco](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain-wordmark.svg)     
+
+
+           
+          
+    "
+
+  - title: Herramientas de Monitoreo
+    description: "
+      ![devicon](https://www.varindia.com/storage/news/uploads/2018/02/601515f8cf122.jpg)
+      &emsp;
+      ![devicon](https://www.vzorsuite.com/wp-content/uploads/2022/12/img-web.png)
+      &emsp;
+      ![devicon](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3Hmxao3hJidJKBfbwGkRWUPbywbwFLoWlqg&s)
+       &emsp;
+      ![devicon](https://www.sysadminsdecuba.com/wp-content/uploads/2019/08/Nagios-Logo.jpg)
+
+     
+
+      
+    "
+
+  - title: Ofimatica
+    description: "
+      ![devicon_blanco](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/latex/latex-original.svg)
+      &emsp;
+      ![devicon_blanco](https://thetechrim.com/wp-content/uploads/2018/11/ofc_rgb_orng166_d.png)
+      
+    "
+
+  - title: Controlador de versiones
+    description: "
+      ![devicon_blanco](https://icongr.am/devicon/git-original.svg )
+      &emsp;
+      ![devicon_blanco](https://icongr.am/devicon/github-original.svg )
+      
+    "  
+   
+  - title: Bases de Datos
+    description: "
+      ![devicon_blanco](https://www.iconshock.com/image/Golden/Database/oracle/)
+      &emsp;
+      ![devicon_blanco](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg)
+      &emsp;
+      ![devicon_blanco](https://cdn.worldvectorlogo.com/logos/microsoft-sql-server-1.svg?fill=white)
+      
+    "   
+          
