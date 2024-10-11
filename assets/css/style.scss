@@ -27,6 +27,36 @@ html, body {
     padding:0;
 }
 
+
+//boton de idiomas
+  .flags{
+    position: absolute;
+    float: left;
+    width: 120px;
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+  }
+
+.flags__item {
+
+  width: 100%;
+  text-align: center;
+
+}
+.flags__img{
+    display: inline-block;
+    margin:8px;
+    cursor: pointer;
+     
+}
+
+
+//*****************************************
+
+
+
+
 body { 
     margin:0 auto;
     font-family: 'Poppins', sans-serif;

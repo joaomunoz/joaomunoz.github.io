@@ -2,7 +2,7 @@
 <html lang="es">
 {% assign meta = "" | split: "" %}
 {% for yml_file in site.data %}
-  {% assign meta = meta | push:yml_file[1] %}
+{% assign meta = meta | push:yml_file[1] %}
 {% endfor %}
 {% assign meta = meta | sort: 'listing-order' %}
 
@@ -10,107 +10,128 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ site.title }}</title>
+  <title>{{ site.data.profile.title }}</title>
   {% seo %}
 
-  <link rel="icon" type="image/png" href="{{ site.icon_img | prepend: site.baseurl }}">
-  <link rel="shortcut icon" type="image/png" href="{{ site.icon_img | prepend: site.baseurl }}">
+  <link rel="icon" type="image/png" href="{{ site.data.profile.icon_img | prepend: site.baseurl }}">
+  <link rel="shortcut icon" type="image/png" href="{{ site.data.profile.icon_img | prepend: site.baseurl }}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | prepend: site.baseurl }}">
   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 </head>
 
 <body>
+
   <div id="sidebar">
     <ul class="toc-box"></ul>
   </div>
+
   <div id="about">
+  
+    <
+
     <div class="profile-zone">
-      <img class="profile-img" src="{{ site.profile_img | prepend: site.baseurl }}" alt="My Photo">
+
+        <!-- boton de idiomas -->
+      <div id="flags" class="flags">
+
+        <div class="flags__item" data-language="es">
+          <img class="flags__img" src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="">
+        </div>
+  
+        <div class="flags__item" data-language="en">
+          <img class="flags__img" src="https://flagicons.lipis.dev/flags/4x3/us.svg" alt="">
+        </div>
+  
+      </div>
+
+      <img class="profile-img" src="{{ site.data.profile.profile_img | prepend: site.baseurl }}" alt="My Photo">
       <ul class="personal-info">
-        {% if site.phone_number %}
+        {% if site.data.profile.phone_number %}
         <li><a aria-label="My Phone">
-          <img src="{{ '/assets/img/phone.svg' | prepend: site.baseurl }}" alt="My Phone Number">
-          <div><span>{{ site.phone_number }}</span></div>
-        </a></li>
+            <img src="{{ '/assets/img/phone.svg' | prepend: site.baseurl }}" alt="My Phone Number">
+            <div><span>{{ site.data.profile.phone_number }}</span></div>
+          </a></li>
         {% endif %}
-        {% if site.address %}
-        <li><a aria-label="My Address" href="https://www.google.com/maps/search/{{ site.address }}">
-          <img src="{{ '/assets/img/location-dot.svg' | prepend: site.baseurl }}" alt="My Address">
-          <div><span>{{ site.address }}</span></div>
-        </a></li>
+        {% if site.data.profile.address %}
+        <li><a aria-label="My Address" href="https://www.google.com/maps/search/{{ site.data.profile.address }}">
+            <img src="{{ '/assets/img/location-dot.svg' | prepend: site.baseurl }}" alt="My Address">
+            <div><span>{{ site.data.profile.address }}</span></div>
+          </a></li>
         {% endif %}
-        {% if site.email %}
-          <li><a aria-label="My Email" href="mailto:{{ site.email }}">
+        {% if site.data.profile.email %}
+        <li><a aria-label="My Email" href="mailto:{{ site.email }}">
             <img src="{{ '/assets/img/envelope.svg' | prepend: site.baseurl }}" alt="My Email">
-            <div><span>{{ site.email }}</span></div>
+            <div><span>{{ site.data.profile.email }}</span></div>
           </a></li>
         {% endif %}
-         
-        {% if site.github_username %}
-          <li><a aria-label="My Github" href="https://github.com/{{ site.github_username }}">
-            <img src="{{ '/assets/img/github.svg' | prepend: site.baseurl }}" alt="My Github">
-            <div><span>@{{ site.github_username }}</span></div>
-          </a></li>
-        {% endif %}
- 
-        {% if site.blog_url %}
-          <li><a aria-label="My Blog" href="{{ site.blog_url }}">
+        {% if site.data.profile.blog_url %}
+        <li><a aria-label="My Blog" href="{{ site.data.profile.blog_url }}">
             <img src="{{ '/assets/img/house.svg' | prepend: site.baseurl }}" alt="My Blog">
-            <div><span>{{ site.blog_url }}</span></div>
+            <div><span>{{ site.data.profile.blog_url }}</span></div>
           </a></li>
         {% endif %}
       </ul>
     </div>
-    <div class="name-zone">
-      <h1>{{ site.name }}</h1>
-      <h2>{{ site.job }}</h2>
-      <h3 > {{ site.comment_profile }}</h3>
-    </div>
+     
+      <div class="name-zone">
+
+        <h1>{{ site.data.profile.name }}</h1>
+
+        <h2>{{ site.data.es_content.profile_job }}</h2>
+        <h3> {{ site.data.es_content.comment_profile }}</h3>
+
+
+      </div>
+
   </div>
+
+
   <div id="contents">
     <ul>
       {% for subject in meta %}
-        <li class="subject" id="{{ subject.subject }}">
-          <h2 class="subject-name">
-            <div>
-              <img class="subject-icon" src="{{ subject.icon | prepend: site.baseurl }}" alt="{{ subject.subject | prepend: site.baseurl }}">
+      <li class="subject" id="{{ subject.subject }}">
+        <h2 class="subject-name">
+          <div>
+            <img class="subject-icon" src="{{ subject.icon | prepend: site.baseurl }}"
+              alt="{{ subject.subject | prepend: site.baseurl }}">
+          </div>
+          {{ subject.subject }}
+        </h2>
+        <ul>
+          {% for member in subject.contents %}
+          <li class="item">
+            <div class="content-header">
+              {{ member.title | markdownify }}
+              {% if member.date %}
+              <span class="content-date">
+                <img src="{{ '/assets/img/calendar.webp' | prepend: site.baseurl}}" alt="date">
+                {{ member.date }}
+              </span>
+              {% endif %}
             </div>
-            {{ subject.subject }}
-          </h2>
-          <ul>
-              {% for member in subject.contents %}
-              <li class="item">
-                  <div class="content-header">
-                    {{ member.title | markdownify }}
-                    {% if member.date %}
-                      <span class="content-date">
-                        <img src="{{ '/assets/img/calendar.webp' | prepend: site.baseurl}}" alt="date">
-                        {{ member.date }}
-                      </span>
-                    {% endif %}
-                  </div>
-                  {% for item in member %}
-                    {% if item[0] != "title" and item[0] != "date" %}
-                      {% if item[1].first %}
-                        <ul>
-                          {% for subitem in item[1] %}
-                          <li class="subitem">
-                            {{ subitem | markdownify }}
-                          </li>
-                          {% endfor %}
-                        </ul>
-                      {% else %}
-                        {{ item[1] | markdownify }}
-                      {% endif %}
-                    {% endif %}
-                  {% endfor %}
+            {% for item in member %}
+            {% if item[0] != "title" and item[0] != "date" %}
+            {% if item[1].first %}
+            <ul>
+              {% for subitem in item[1] %}
+              <li class="subitem">
+                {{ subitem | markdownify }}
               </li>
               {% endfor %}
-          </ul>
-        </li>
+            </ul>
+            {% else %}
+            {{ item[1] | markdownify }}
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
       {% endfor %}
-      </ul>
+    </ul>
   </div>
+  
   <div id="footer">
     <span>
       Copyright © 2024 | <a href="https://github.com/byanko55">Theme By Yankos</a>
@@ -118,4 +139,5 @@
   </div>
 </body>
 <script src="{{ '/assets/js/main.js' | prepend: site.baseurl }}"></script>
+
 </html>

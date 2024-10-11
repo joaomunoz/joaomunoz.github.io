@@ -55,3 +55,16 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     }, 200);
 });
+
+
+const lang_exElement = document.getElementById("flags");
+
+const changeLanguage = async (language) => {
+    const data = await fetch('./data/${languages}_content'); 
+    const texts = await data.json();
+    console.log(texts);
+}
+
+lang_exElement.addEventListener("click",(e)=>{
+    changeLanguage (e.target.parentElement.dataset.language);
+});

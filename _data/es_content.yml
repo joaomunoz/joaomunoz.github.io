@@ -1,0 +1,150 @@
+profile_job: "Licenciado en Ciencias de la Computación"
+
+comment_profile: "Entusiasta en el mundo de la computación y la tecnología, gran trabajador
+        en equipo y buena disposición. 
+        En especialidad en el área de las bases de datos, 
+        operador de procesos y monitoreos TI.  
+        En busca de ambientes donde pueda combinar
+        mis habilidades en un entorno cercano al negocio y los clientes."
+
+#-----------------------------------------------------------------------------------------------------#  
+
+Educacion:
+  subject: Educación
+  listing-order: 1
+  icon: "/assets/img/graduation-cap.svg"
+  contents:
+    - title: Universidad de Santiago de Chile 
+      description:
+        - Licenciatura en Ciencias de la Computación
+      date: Mar. 2013 - Sep. 2019
+
+
+#-----------------------------------------------------------------------------------------------------#    
+
+Idiomas:
+  subject: Idiomas
+  listing-order: 2
+  icon: "/assets/img/globe.svg"
+  contents:
+    - title: "Español (*Nativo*): <span style='color: #46C646; margin: auto 8px; font-family: cursive;'>●●●●●</span>"
+    - title: "Ingles(*Avanzado*): <span style='color: cornflowerblue; margin: auto 8px; font-family: cursive;'>●●●●◐</span>"
+
+#-----------------------------------------------------------------------------------------------------#    
+
+Habilidades:
+  subject: Habilidades
+  listing-order: 3
+
+  icon: "/assets/img/screwdriver-wrench.svg"
+  contents:
+    - title: Lenguajes de Programación
+      description: "
+        ![devicon](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg)
+        ![devicon](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg)
+        ![devicon](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg)
+        ![devicon](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg)
+        
+      "
+    - title: Frameworks
+      description: "
+        ![devicon_blanco](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain-wordmark.svg)     
+
+
+            
+            
+      "
+
+    - title: Herramientas de Monitoreo
+      description: "
+        ![devicon](https://www.varindia.com/storage/news/uploads/2018/02/601515f8cf122.jpg)
+        &emsp;
+        ![devicon](https://www.vzorsuite.com/wp-content/uploads/2022/12/img-web.png)
+        &emsp;
+        ![devicon](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3Hmxao3hJidJKBfbwGkRWUPbywbwFLoWlqg&s)
+        &emsp;
+        ![devicon](https://www.sysadminsdecuba.com/wp-content/uploads/2019/08/Nagios-Logo.jpg)
+
+      
+
+        
+      "
+
+    - title: Ofimatica
+      description: "
+        ![devicon_blanco](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/latex/latex-original.svg)
+        &emsp;
+        ![devicon_blanco](https://thetechrim.com/wp-content/uploads/2018/11/ofc_rgb_orng166_d.png)
+        
+      "
+
+    - title: Controlador de versiones
+      description: "
+        ![devicon_blanco](https://icongr.am/devicon/git-original.svg )
+        &emsp;
+        ![devicon_blanco](https://icongr.am/devicon/github-original.svg )
+        
+      "  
+    
+    - title: Bases de Datos
+      description: "
+        ![devicon_blanco](https://www.iconshock.com/image/Golden/Database/oracle/)
+        &emsp;
+        ![devicon_blanco](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg)
+        &emsp;
+        ![devicon_blanco](https://cdn.worldvectorlogo.com/logos/microsoft-sql-server-1.svg?fill=white)
+        
+      "   
+          
+#-----------------------------------------------------------------------------------------------------#    
+
+
+Experiencia:
+  subject: Experiencia
+  listing-order: 4
+
+  icon: "/assets/img/briefcase.svg"
+  contents:
+    - title: "Medicien: Proyecto Portal Paciente"
+      role: Analista Programador
+      description:
+        - Encargado del diseño y desarrollo de la base de datos en Microsoft SQL Server
+          ocupando Procedimientos Almacenados, Triggers, Funciones, Consultas, entre otros
+          y procesos ETL en Pentaho. Uso de Oracle Horizon en gestión de datos entre
+          distintos motores de bases de datos.
+      date: Jun. - Ago.  2019
+    
+    - title: G-Talent
+      role: Analista Programador
+      description: 
+        - Encargado del diseño y desarrollo de reportes en MicroSoft SQL Server ocupando
+          Procedimientos Almacenados, Triggers, Funciones, Consultas y procesos ETL en
+          Microsoft SQL Server Integration Services (SSIS). Uso de Oracle en tablas de
+          auditoría, reportes y vistas.
+      date: Sep. - Nov. 2019
+    
+    - title: M y CH Inmobiliaria Encargado de obras y gestión inmobiliaria 
+      role:  Gestion y obras
+      description:
+          - Empresa familiar dedicada a la compra/venta y construcción de propiedades, donde
+            me de desempeñe de obrero de la construcción y encargado en la gestión inmobi-
+            liaria, en el cual mi tarea era la recaudación de los arriendos de los bienes raíces y
+            mantención de los servicios de cada propiedad. 
+        
+      date: Sep. 2020 - Ene. 2023
+
+    - title: IBM Kyndryl
+      role: Operador de Procesos y Monitoreo TI
+      description:
+        - Operador de consolas de monitoreo con las herramientas Nagios, Tivoli, Zabbix y
+          VZOR. Encargado en la detección de alertas tempranas, ejecución de escalamientos,
+          documentación de tickets y procesos, seguimiento de incidencias, control y registro
+          de eventos. Así también desempeñe labores de Operador para gestion de respaldos
+          bajo TSM (Tivoli Storage management), mesa de ayuda, administración de usuarios
+          en Active Directory, informes en la plataforma GRAFANA, administración y gestión
+          de sistemas AS 400, MainFrame IBM para el Cliente AFP Provida, responsable de la    
+          gestión de respaldos de cinta magnética para la empresa SURA en Networker 8.2.4 y
+          Networker 9.4, incluyendo programación, supervisión y verificación de integridad de
+          los respaldos y administración de cintas magnéticas para robots de cinta (Jukebox).  
+        
+      date: Ago. 2023 - Jul. 2024
