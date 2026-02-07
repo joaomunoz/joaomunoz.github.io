@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ===============================
      TOC (Tabla de contenidos)
-  =============================== dsd*/
+  =============================== */
 
   const tocBox = document.querySelector(".toc-box");
   const headers = document.querySelectorAll(".subject-name");
