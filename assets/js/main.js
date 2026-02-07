@@ -1,69 +1,68 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', function () {
 
   /* ===============================
-     TOC (Tabla de contenidos)
+     TOC (MISMA LÓGICA ORIGINAL)
   =============================== */
 
-  const tocBox = document.querySelector(".toc-box");
-  const headers = document.querySelectorAll(".subject-name");
+  const tocbox = document.querySelector('.toc-box');
+  const headers = document.querySelectorAll('.subject-name');
 
-  headers.forEach((h, index) => {
-    const id = `section-${index}`;
-    h.id = id;
+  headers.forEach((h) => {
+    const safeId = "toc-id-" + h.textContent.trim().replace(/\s+/g, "-");
+    h.dataset.tocId = safeId;
 
-    const li = document.createElement("li");
-    li.dataset.target = id;
+    const tocItem = document.createElement("li");
+    tocItem.id = safeId;
 
-    const a = document.createElement("a");
-    a.textContent = h.textContent;
-    a.href = `#${id}`;
+    const itemLink = document.createElement("a");
+    itemLink.textContent = h.textContent;
 
-    li.appendChild(a);
-    tocBox.appendChild(li);
+    tocItem.append(itemLink);
 
-    li.addEventListener("click", (e) => {
-      e.preventDefault();
-      document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    tocItem.addEventListener('click', () => {
+      h.scrollIntoView({ behavior: 'smooth' });
     });
+
+    tocbox.append(tocItem);
   });
 
   /* ===============================
-     Animaciones + TOC activo
+     APPEAR (MISMA LÓGICA VISUAL)
   =============================== */
 
-  const observerOptions = {
-    root: null,
-    rootMargin: "-40% 0px -40% 0px",
-    threshold: 0
-  };
+  const contents = document.querySelectorAll('.subject, .item');
 
-  const appearObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("appear");
+  const onScroll = () => {
+    const scrollPos = document.documentElement.scrollTop;
+    const wh = window.innerHeight;
+
+    let currHead;
+
+    headers.forEach(h => {
+      const headPos = h.getBoundingClientRect().top + window.scrollY - wh / 2;
+      if (scrollPos > headPos) currHead = h;
+    });
+
+    contents.forEach(c => {
+      const contentPos = c.getBoundingClientRect().top + window.scrollY - wh;
+      if (!c.classList.contains("appear") && scrollPos > contentPos) {
+        c.classList.add("appear");
       }
     });
-  }, { threshold: 0.15 });
 
-  document.querySelectorAll(".subject, .item").forEach(el => {
-    appearObserver.observe(el);
-  });
+    document.querySelectorAll('.toc-box li').forEach(li => li.classList.remove('active'));
 
-  const tocObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
+    if (currHead) {
+      const active = document.getElementById(currHead.dataset.tocId);
+      if (active) active.classList.add('active');
+    }
+  };
 
-      const id = entry.target.id;
-      document.querySelectorAll(".toc-box li").forEach(li => {
-        li.classList.toggle("active", li.dataset.target === id);
-      });
-    });
-  }, observerOptions);
-
-  headers.forEach(h => tocObserver.observe(h));
+  window.addEventListener("scroll", onScroll);
+  onScroll();
 
   /* ===============================
-     Idiomas
+     IDIOMAS (SEGURO)
   =============================== */
 
   const flags = document.getElementById("flags");
@@ -82,8 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setLanguage(item.dataset.language);
   });
 
-  // Idioma inicial
-  const savedLang = localStorage.getItem(LANG_KEY) || "es";
-  setLanguage(savedLang);
+  setLanguage(localStorage.getItem(LANG_KEY) || "es");
 
 });
