@@ -1,70 +1,89 @@
-document.addEventListener('DOMContentLoaded', function(){
-    const tocbox = document.querySelector('.toc-box');
-    var headers = document.querySelectorAll('.subject-name');
+document.addEventListener("DOMContentLoaded", () => {
 
-    headers.forEach((h) => {
-        let tocItem = document.createElement("li");
-        tocItem.id = "toc-id-" + h.textContent;
+  /* ===============================
+     TOC (Tabla de contenidos)
+  =============================== */
 
-        let itemLink = document.createElement("a");
-        itemLink.classList.add("content-link");
-        itemLink.textContent = h.textContent;
+  const tocBox = document.querySelector(".toc-box");
+  const headers = document.querySelectorAll(".subject-name");
 
-        tocItem.append(itemLink);
+  headers.forEach((h, index) => {
+    const id = `section-${index}`;
+    h.id = id;
 
-        tocItem.addEventListener('click', function(){
-            h.scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
+    const li = document.createElement("li");
+    li.dataset.target = id;
 
-        tocbox.append(tocItem);
+    const a = document.createElement("a");
+    a.textContent = h.textContent;
+    a.href = `#${id}`;
+
+    li.appendChild(a);
+    tocBox.appendChild(li);
+
+    li.addEventListener("click", (e) => {
+      e.preventDefault();
+      document.getElementById(id).scrollIntoView({ behavior: "smooth" });
     });
+  });
 
-    var contents = document.querySelectorAll('.subject, .item');
+  /* ===============================
+     Animaciones + TOC activo
+  =============================== */
 
-    setInterval(function(){
-        var scrollPos = document.documentElement.scrollTop;
-        var wh = window.innerHeight;
+  const observerOptions = {
+    root: null,
+    rootMargin: "-40% 0px -40% 0px",
+    threshold: 0
+  };
 
-        Array.from(tocbox.querySelectorAll('li')).forEach(function(tocItem){
-            tocItem.classList.remove('active');
-        });
+  const appearObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("appear");
+      }
+    });
+  }, { threshold: 0.15 });
 
-        var currHead;
+  document.querySelectorAll(".subject, .item").forEach(el => {
+    appearObserver.observe(el);
+  });
 
-        Array.from(headers).forEach(function(h){
-            let headPos = h.getBoundingClientRect().top + window.scrollY - wh/2;
+  const tocObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
 
-            if (scrollPos > headPos) currHead = h;
-        });
+      const id = entry.target.id;
+      document.querySelectorAll(".toc-box li").forEach(li => {
+        li.classList.toggle("active", li.dataset.target === id);
+      });
+    });
+  }, observerOptions);
 
-        Array.from(contents).forEach(function(c){
-            let contentPos = c.getBoundingClientRect().top + window.scrollY - wh;
+  headers.forEach(h => tocObserver.observe(h));
 
-            if (c.classList.contains("appear")) return;
+  /* ===============================
+     Idiomas
+  =============================== */
 
-            if (scrollPos < contentPos) return;
+  const flags = document.getElementById("flags");
+  const LANG_KEY = "site-language";
 
-            c.classList.add('appear');
-        });
+  const setLanguage = (lang) => {
+    document.querySelectorAll("[data-lang]").forEach(el => {
+      el.hidden = el.dataset.lang !== lang;
+    });
+    localStorage.setItem(LANG_KEY, lang);
+  };
 
-        if (currHead != undefined){
-            let tocLink = document.getElementById("toc-id-" + currHead.textContent);
-            tocLink.classList.add('active');
-        }
-    }, 200);
-});
+  flags.addEventListener("click", (e) => {
+    const item = e.target.closest(".flags__item");
+    if (!item) return;
+    setLanguage(item.dataset.language);
+  });
 
+  // Idioma inicial
+  const savedLang = localStorage.getItem(LANG_KEY) || "es";
+  setLanguage(savedLang);
 
-const lang_exElement = document.getElementById("flags");
-
-const changeLanguage = async (language) => {
-    const data = await fetch('./data/${languages}_content'); 
-    const texts = await data.json();
-    console.log(texts);
-}
-
-lang_exElement.addEventListener("click",(e)=>{
-    changeLanguage (e.target.parentElement.dataset.language);
 });
