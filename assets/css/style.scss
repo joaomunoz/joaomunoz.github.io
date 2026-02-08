@@ -1,303 +1,119 @@
----
----
 :root {
-  --color-background: #294e6b;
-  --theme1-light: #F6D8CB;
-  --theme1-medium: #D0A694;
-  --theme1-dim: #B07D67;
-  --theme1-dark: #8A5843;
-  --theme2-light: #B1B1C2;
-  --theme2-medium: #8888A4;
-  --theme2-dim: #66658C;
-  --theme2-dark: #484776;
-  --theme3-light: #FFF8E4;
-  --theme3-medium: #EBDFBB;
-  --theme3-dim: #C8B887;
-  --theme3-dark: #ffbf00;
-  --theme4-light: #AABEB6;
-  --theme4-medium: #101411;
-  --theme4-dim: #115a3b;
-  --theme4-dark: #f7ffff;
-  --font-dark: #f7ffff;
+  --bg-main: #294e6b;
+  --panel-bg: #101411;
+  --accent: #ffbf00;
+  --text-light: #f7ffff;
 }
 
-/* =========================
-   RESET / BASE
-========================= */
-
-html, body {
-  margin: 0;
-  padding: 0;
+* {
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0 auto;
+  margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: var(--color-background);
-
-  &:before { display: none; }
+  background: var(--bg-main);
+  color: var(--text-light);
 }
 
-ul, li {
-  list-style: none;
-  padding: 0;
-}
+/* ================= ABOUT ================= */
 
-a { text-decoration: none; }
-
-#sidebar { display: none; }
-
-#about, #contents, #footer { text-align: center; }
-
-/* =========================
-   FLAGS (IDIOMAS)
-========================= */
-
-.flags {
-  position: absolute;
-  width: 120px;
-  padding: 2em;
-  display: flex;
-  justify-content: space-between;
-}
-
-.flags__item {
-  width: 100%;
+#about {
   text-align: center;
 }
 
-.flags__img {
+/* PROFILE ZONE */
+
+.profile-zone {
+  position: relative;
+  background: var(--panel-bg);
+  padding: 5rem 1rem 3rem;
+}
+
+/* FLAGS */
+
+.flags {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: .75rem;
+}
+
+.flags__img,
+.flags img {
   width: 32px;
   height: 24px;
-  display: inline-block;
-  margin: 8px;
   cursor: pointer;
-  max-width: none;
+  border-radius: 4px;
 }
 
-/* =========================
-   ABOUT
-========================= */
+/* PROFILE IMAGE */
 
-#about {
-
-  .profile-zone {
-    position: relative;
-    background: var(--theme4-medium);
-    padding: 3rem 0;
-  }
-
-  .profile-img {
-    width: 192px;
-    aspect-ratio: 1;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    border: 4px solid var(--theme3-dark);
-    background: var(--theme4-medium);
-  }
-
-  .personal-info {
-    margin-top: 6rem;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(220px, 1fr));
-    gap: 1rem;
-    justify-items: center;
-  }
-
-  .personal-info li {
-    width: 100%;
-  }
-
-  .personal-info a {
-    display: flex;
-    align-items: center;
-    gap: .75rem;
-    color: white;
-    font-size: .9rem;
-  }
-
-  .personal-info img {
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
-    filter: brightness(0) invert(1);
-  }
-
-  .personal-info span {
-    white-space: nowrap;
-  }
-
-  .name-zone {
-    margin-top: 2rem;
-    text-align: center;
-
-    h1, h2, h3 {
-      color: white;
-      margin: .25rem 0;
-    }
-
-    h3 {
-      max-width: 60%;
-      margin: auto;
-    }
-  }
+.profile-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 4px solid var(--accent);
+  object-fit: cover;
+  background: var(--panel-bg);
+  margin: 0 auto 1.5rem;
+  display: block;
 }
 
+/* PERSONAL INFO */
 
-/* =========================
-   CONTENTS
-========================= */
-
-#contents {
-  width: 85%;
-  margin-left: 7.5%;
-  text-align: left;
-
-  ul { margin-bottom: 3rem; }
-
-  li {
-    margin-top: 2rem;
-    line-height: 100%;
-  }
-
-  /* ===== SUBJECT HEADER ===== */
-
-  .subject-name {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin: 3rem auto 0;
-    padding-bottom: 12px;
-    border-bottom: 1px solid;
-    color: var(--font-dark);
-
-    > div {
-      width: 32px;
-      height: 32px;
-      min-width: 32px;
-      min-height: 32px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-  }
-
-  .subject-icon {
-    width: 32px;
-    height: 32px;
-    max-width: 32px !important;
-    max-height: 32px !important;
-    object-fit: contain;
-    filter: invert(27%) sepia(2%) saturate(3297%) hue-rotate(8deg);
-  }
-
-  /* ===== ITEMS / ANIMATION ===== */
-
-  .subject, .item {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all .8s;
-    color: #fff;
-  }
-
-  .appear {
-    opacity: 1;
-    transform: none;
-  }
-
-  .content-header {
-    display: table;
-    width: 100%;
-    margin: 1rem auto;
-    position: relative;
-
-    p {
-      font-weight: 600;
-      font-size: 16px;
-      color: var(--font-dark);
-    }
-  }
-
-  .content-date {
-    font-size: 14px;
-    color: #fff;
-
-    img {
-      width: 20px;
-      height: 20px;
-      max-width: none;
-    }
-  }
-
-  /* ===== SAFE IMAGES ===== */
-
-  img:not(.subject-icon):not(.flags__img) {
-    max-width: 320px;
-    height: auto;
-  }
-
-  img[alt="devicon"],
-  img[alt="devicon_blanco"] {
-    width: 80px;
-    height: 60px;
-    max-width: none;
-  }
+.personal-info {
+  list-style: none;
+  padding: 0;
+  margin: 2rem auto 0;
+  max-width: 520px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
 }
 
-/* =========================
-   FOOTER
-========================= */
-
-#footer {
-  padding: 1rem;
-  background: var(--theme3-medium);
-  font-size: 14px;
-
-  a {
-    color: var(--theme1-dark);
-    font-weight: 600;
-  }
+.personal-info li {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  font-size: .9rem;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+.personal-info img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+
+/* NAME */
+
+.name-zone {
+  margin: 2rem auto;
+}
+
+.name-zone h1 {
+  font-size: 2rem;
+  margin: .5rem 0;
+}
+
+.name-zone h2 {
+  font-weight: 400;
+  margin: .25rem 0;
+}
+
+.name-zone h3 {
+  max-width: 600px;
+  margin: 1rem auto;
+  font-weight: 300;
+  opacity: .9;
+}
+
+/* RESPONSIVE */
 
 @media (min-width: 768px) {
-  #about .profile-img { width: 256px; }
-
-  #contents {
-    width: 78%;
-    margin-left: 17%;
-
-    img:not(.subject-icon):not(.flags__img) {
-      max-width: 640px;
-    }
+  .profile-img {
+    width: 220px;
+    height: 220px;
   }
 }
-
-@media (min-width: 1024px) {
-  #sidebar {
-    display: block;
-    position: fixed;
-    width: 128px;
-    top: 320px;
-    right: 0;
-  }
-
-  #contents {
-    width: 66%;
-    margin: auto;
-    max-width: 1024px;
-
-    img:not(.subject-icon):not(.flags__img) {
-      max-width: 100%;
-    }
-  }
-}
-
- 
