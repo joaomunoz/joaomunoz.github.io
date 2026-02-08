@@ -45,32 +45,47 @@
       </div>
 
       <img class="profile-img" src="{{ site.data.profile.profile_img | prepend: site.baseurl }}" alt="My Photo">
+      
       <ul class="personal-info">
         {% if site.data.profile.phone_number %}
-        <li><a aria-label="My Phone">
-            <img src="{{ '/assets/img/phone.svg' | prepend: site.baseurl }}" alt="My Phone Number">
-            <div><span>{{ site.data.profile.phone_number }}</span></div>
-          </a></li>
+        <li>
+          <a aria-label="My Phone">
+            <img src="{{ '/assets/img/phone.svg' | prepend: site.baseurl }}" alt="">
+            <span>{{ site.data.profile.phone_number }}</span>
+          </a>
+        </li>
         {% endif %}
+      
         {% if site.data.profile.address %}
-        <li><a aria-label="My Address" href="https://www.google.com/maps/search/{{ site.data.profile.address }}">
-            <img src="{{ '/assets/img/location-dot.svg' | prepend: site.baseurl }}" alt="My Address">
-            <div><span>{{ site.data.profile.address }}</span></div>
-          </a></li>
+        <li>
+          <a aria-label="My Address"
+             href="https://www.google.com/maps/search/{{ site.data.profile.address }}">
+            <img src="{{ '/assets/img/location-dot.svg' | prepend: site.baseurl }}" alt="">
+            <span>{{ site.data.profile.address }}</span>
+          </a>
+        </li>
         {% endif %}
+      
         {% if site.data.profile.email %}
-        <li><a aria-label="My Email" href="mailto:{{ site.email }}">
-            <img src="{{ '/assets/img/envelope.svg' | prepend: site.baseurl }}" alt="My Email">
-            <div><span>{{ site.data.profile.email }}</span></div>
-          </a></li>
+        <li>
+          <a aria-label="My Email"
+             href="mailto:{{ site.data.profile.email }}">
+            <img src="{{ '/assets/img/envelope.svg' | prepend: site.baseurl }}" alt="">
+            <span>{{ site.data.profile.email }}</span>
+          </a>
+        </li>
         {% endif %}
+      
         {% if site.data.profile.blog_url %}
-        <li><a aria-label="My Blog" href="{{ site.data.profile.blog_url }}">
-            <img src="{{ '/assets/img/house.svg' | prepend: site.baseurl }}" alt="My Blog">
-            <div><span>{{ site.data.profile.blog_url }}</span></div>
-          </a></li>
+        <li>
+          <a aria-label="My Blog" href="{{ site.data.profile.blog_url }}">
+            <img src="{{ '/assets/img/house.svg' | prepend: site.baseurl }}" alt="">
+            <span>{{ site.data.profile.blog_url }}</span>
+          </a>
+        </li>
         {% endif %}
-      </ul>
+  </ul>
+
     </div>
      
       <div class="name-zone">
