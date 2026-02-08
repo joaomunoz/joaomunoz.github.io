@@ -12,27 +12,28 @@
 
 <body>
 
+<div id="sidebar">
+  <ul class="toc-box"></ul>
+</div>
+
 <!-- ================= ABOUT ================= -->
 <section id="about">
 
   <div class="profile-zone">
 
-    <!-- FLAGS -->
     <div id="flags" class="flags">
       <div class="flags__item" data-language="es">
-        <img src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="Español">
+        <img src="https://flagicons.lipis.dev/flags/4x3/es.svg">
       </div>
       <div class="flags__item" data-language="en">
-        <img src="https://flagicons.lipis.dev/flags/4x3/us.svg" alt="English">
+        <img src="https://flagicons.lipis.dev/flags/4x3/us.svg">
       </div>
     </div>
 
-    <!-- PROFILE IMAGE -->
     <img class="profile-img"
          src="{{ site.data.profile.profile_img | prepend: site.baseurl }}"
          alt="Profile photo">
 
-    <!-- PERSONAL INFO -->
     <ul class="personal-info">
       {% if site.data.profile.phone_number %}
       <li>
@@ -64,7 +65,6 @@
     </ul>
   </div>
 
-  <!-- NAME -->
   <div class="name-zone">
     <h1>{{ site.data.profile.name }}</h1>
     <h2>{{ site.data.es_content.profile_job }}</h2>
@@ -73,6 +73,47 @@
 
 </section>
 
+<!-- ================= CONTENTS ================= -->
+<div id="contents">
+  <ul>
+    {% for subject in meta %}
+    <li class="subject" id="{{ subject.subject }}">
+      <h2 class="subject-name">
+        <div>
+          <img class="subject-icon"
+               src="{{ subject.icon | prepend: site.baseurl }}">
+        </div>
+        {{ subject.subject }}
+      </h2>
+
+      <ul>
+        {% for member in subject.contents %}
+        <li class="item">
+          <div class="content-header">
+            {{ member.title | markdownify }}
+            {% if member.date %}
+            <span class="content-date">
+              <img src="{{ '/assets/img/calendar.webp' | prepend: site.baseurl }}">
+              {{ member.date }}
+            </span>
+            {% endif %}
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer id="footer">
+  <span>
+    © 2024 | <a href="https://github.com/byanko55">Theme By Yankos</a>
+  </span>
+</footer>
+
 <script src="{{ '/assets/js/main.js' | prepend: site.baseurl }}"></script>
 </body>
+
 </html>
