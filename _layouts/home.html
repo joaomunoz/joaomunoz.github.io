@@ -3,32 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>{{ site.data.profile.title }}</title>
-  {% seo %}
 
-  <link rel="icon" href="{{ site.data.profile.icon_img | prepend: site.baseurl }}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | prepend: site.baseurl }}">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- ================= SIDEBAR ================= -->
-<aside id="sidebar">
-  <ul class="toc-box"></ul>
-</aside>
-
-<!-- ================= ABOUT ================= -->
-<section id="about">
+<header id="about">
 
   <!-- FLAGS -->
-  <div class="flags" id="flags">
+  <div id="flags" class="flags">
     <div class="flags__item" data-language="es">
-      <img src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="Español">
+      <img src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="ES">
     </div>
     <div class="flags__item" data-language="en">
-      <img src="https://flagicons.lipis.dev/flags/4x3/us.svg" alt="English">
+      <img src="https://flagicons.lipis.dev/flags/4x3/us.svg" alt="EN">
     </div>
   </div>
 
@@ -36,7 +27,7 @@
   <div class="profile-zone">
     <img class="profile-img"
          src="{{ site.data.profile.profile_img | prepend: site.baseurl }}"
-         alt="Profile photo">
+         alt="Profile">
 
     <ul class="personal-info">
       {% if site.data.profile.phone_number %}
@@ -52,54 +43,84 @@
         <span>{{ site.data.profile.email }}</span>
       </li>
       {% endif %}
+
+      {% if site.data.profile.address %}
+      <li>
+        <img src="{{ '/assets/img/location-dot.svg' | prepend: site.baseurl }}">
+        <span>{{ site.data.profile.address }}</span>
+      </li>
+      {% endif %}
     </ul>
   </div>
 
   <!-- NAME -->
-  <div class="name-zone">
+  <div class="name-zone" data-lang="es">
     <h1>{{ site.data.profile.name }}</h1>
-
-    <h2 data-lang="es">{{ site.data.es_content.profile_job }}</h2>
-    <h2 data-lang="en">{{ site.data.en_content.profile_job }}</h2>
-
-    <p data-lang="es">{{ site.data.es_content.comment_profile }}</p>
-    <p data-lang="en">{{ site.data.en_content.comment_profile }}</p>
+    <h2>{{ site.data.es_content.profile_job }}</h2>
+    <p>{{ site.data.es_content.comment_profile }}</p>
   </div>
 
-</section>
+  <div class="name-zone" data-lang="en" hidden>
+    <h1>{{ site.data.profile.name }}</h1>
+    <h2>{{ site.data.en_content.profile_job }}</h2>
+    <p>{{ site.data.en_content.comment_profile }}</p>
+  </div>
 
-<!-- ================= CONTENTS ================= -->
+</header>
+
 <main id="contents">
-  {% for subject in site.data %}
-  {% if subject[1].subject %}
-  <section class="subject">
 
-    <h2 class="subject-name">
-      <img src="{{ subject[1].icon | prepend: site.baseurl }}" class="subject-icon">
-      {{ subject[1].subject }}
-    </h2>
-
-    {% for item in subject[1].contents %}
-    <article class="item">
-      <header class="content-header">
-        {{ item.title | markdownify }}
-        {% if item.date %}
-        <span class="content-date">{{ item.date }}</span>
-        {% endif %}
-      </header>
-
-      {{ item.description | markdownify }}
-    </article>
-    {% endfor %}
-
-  </section>
+{% assign meta = "" | split: "" %}
+{% for yml in site.data %}
+  {% if yml[0] != "profile" and yml[0] != "en_content" %}
+    {% assign meta = meta | push: yml[1] %}
   {% endif %}
+{% endfor %}
+{% assign meta = meta | sort: "listing-order" %}
+
+{% for subject in meta %}
+<section class="subject">
+
+  <h2 class="subject-name">
+    <img src="{{ subject.icon | prepend: site.baseurl }}">
+    {{ subject.subject }}
+  </h2>
+
+  {% for item in subject.contents %}
+  <article class="item">
+
+    <h3>{{ item.title | markdownify }}</h3>
+
+    {% if item.role %}
+    <p class="role">{{ item.role }}</p>
+    {% endif %}
+
+    {% if item.date %}
+    <span class="date">{{ item.date }}</span>
+    {% endif %}
+
+    {% if item.description %}
+      {% if item.description.first %}
+      <ul class="description">
+        {% for d in item.description %}
+        <li>{{ d | markdownify }}</li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <div class="description">{{ item.description | markdownify }}</div>
+      {% endif %}
+    {% endif %}
+
+  </article>
   {% endfor %}
+
+</section>
+{% endfor %}
+
 </main>
 
-<!-- ================= FOOTER ================= -->
 <footer id="footer">
-  © 2024 | Theme By Yankos
+  © 2024 – {{ site.data.profile.name }}
 </footer>
 
 <script src="{{ '/assets/js/main.js' | prepend: site.baseurl }}"></script>
