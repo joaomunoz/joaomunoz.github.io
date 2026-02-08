@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 24px;
+}
+
+/* FLAGS */
+.flags {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* PROFILE */
+.profile-zone {
+  margin: 40px 0;
+  text-align: center;
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+
+  .profile-comment {
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.6;
+    opacity: 0.9;
+  }
+}
+
+/* SECTIONS */
+.info-section {
+  margin-top: 48px;
+
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.6rem;
+    margin-bottom: 24px;
+  }
+}
+
+.section-icon {
+  width: 28px;
+  height: 28px;
+  filter: invert(1);
+}
+
+/* CARDS */
+.card {
+  background: #020617;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  margin: 0 0 8px;
+}
+
+.role {
+  display: block;
+  font-size: 0.9rem;
+  color: #38bdf8;
+}
+
+.date {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* ICON IMAGES INSIDE DESCRIPTION */
+.description img {
+  max-height: 42px;
+  max-width: 42px;
+  object-fit: contain;
+  margin: 4px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+}
