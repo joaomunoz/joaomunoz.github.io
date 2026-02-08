@@ -9,14 +9,16 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem(STORAGE_KEY, lang);
   }
 
-  const savedLang = localStorage.getItem(STORAGE_KEY);
-  if (savedLang) {
-    setLanguage(savedLang);
-  }
+  // Idioma por defecto: español
+  const savedLang = localStorage.getItem(STORAGE_KEY) || "es";
+  setLanguage(savedLang);
 
-  flags.addEventListener("click", e => {
-    const item = e.target.closest(".flags__item");
-    if (!item) return;
-    setLanguage(item.dataset.language);
-  });
+  // Click en banderas (si existen)
+  if (flags) {
+    flags.addEventListener("click", e => {
+      const item = e.target.closest(".flags__item");
+      if (!item) return;
+      setLanguage(item.dataset.language);
+    });
+  }
 });
