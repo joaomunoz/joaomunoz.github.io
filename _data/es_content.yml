@@ -117,7 +117,7 @@ Habilidades:
 
 #-----------------------------------------------------------------------------------------------------#    
 
-experiencia:
+Experiencia:
   subject: Experiencia
   listing-order: 4
   class: experience

@@ -126,43 +126,41 @@ Experiencia:
   class: experience
   icon: "/assets/img/briefcase.svg"
   contents:
-    - title: "Medicien: Patient Portal Project"
-      role: Programmer Analyst
+    - title: Kyndryl
+      role: IT Monitoring and Process Operator
       description:
-        - In charge of the design and development of the database in Microsoft SQL Server
-          using Stored Procedures, Triggers, Functions, Queries, among others,
-          and ETL processes in Pentaho. Use of Oracle Horizon for data management between
-          different database engines.
-      date: Jun. - Aug. 2019
+        - Monitoring console operator (Nagios, Tivoli, Zabbix, VZOR) 
+          for international clients. Responsible for alert detection, 
+          incident management via Jira, user support, 
+          and access administration. Executed nightly batch processes 
+          and managed backups with EMC NetWorker and TSM for clients SURA and 
+          AFP Provida. Generated technical reports and operational dashboards 
+          in Power BI.
+      date: Aug. 2023 - Jul. 2024
+
+    - title: M y CH Inmobiliaria
+      role: Real Estate Management and Construction
+      description:
+        - Family-owned real estate and construction company. 
+          Worked as a construction worker and real estate manager, 
+          with direct responsibilities in rent collection and basic utilities 
+          maintenance for each property.
+      date: Sep. 2020 - Jan. 2023
 
     - title: G-Talent
       role: Programmer Analyst
       description:
-        - In charge of the design and development of reports in Microsoft SQL Server using
-          Stored Procedures, Triggers, Functions, Queries and ETL processes in
-          Microsoft SQL Server Integration Services (SSIS). Use of Oracle for audit tables,
-          reports and views.
+        - Developed custom reports using SQL Server, 
+          Stored Procedures, and ETL processes in SSIS. 
+          Utilized Oracle for internal audits and management reporting. 
+          Developed a specialized accounting report for VTR television service clients.
       date: Sep. - Nov. 2019
 
-    - title: M y CH Real Estate — Construction and Property Management
-      role: Operations & Construction Management
+    - title: "Medicien: Patient Portal Project"
+      role: Programmer Analyst
       description:
-        - Family business dedicated to the buying/selling and construction of properties,
-          where I worked as a construction worker and was in charge of real estate management,
-          with responsibilities including collecting rent from properties and
-          maintaining services for each property.
-      date: Sep. 2020 - Jan. 2023
-
-    - title: IBM Kyndryl
-      role: IT Process and Monitoring Operator
-      description:
-        - Monitoring console operator using Nagios, Tivoli, Zabbix and VZOR tools.
-          Responsible for early alert detection, escalation execution,
-          ticket and process documentation, incident follow-up, and event control and logging.
-          Also performed Operator duties for backup management under TSM (Tivoli Storage Management),
-          help desk support, user administration in Active Directory, reporting on the GRAFANA platform,
-          administration and management of AS/400 and IBM MainFrame systems for client AFP Provida,
-          responsible for magnetic tape backup management for SURA using Networker 8.2.4 and
-          Networker 9.4, including scheduling, supervision and integrity verification of backups,
-          and magnetic tape administration for tape robots (Jukebox).
-      date: Aug. 2023 - Jul. 2024
+        - Designed and developed the database for the Patient Portal 
+          project in SQL Server, automating medical appointment 
+          records with ETL via Pentaho. Managed interoperability 
+          between Oracle Horizon and SQL Server engines through token-secured APIs.
+      date: Jun. - Aug. 2019
