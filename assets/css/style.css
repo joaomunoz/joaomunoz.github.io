@@ -365,8 +365,16 @@ footer {
    ═══════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
 
-  .personal-info {
-    gap: 1.5rem;
+.personal-info {
+    display: grid;
+    /* Las columnas solo ocupan lo que el contenido necesita */
+    grid-template-columns: auto auto; 
+    /* Controla aquí qué tan separados quieres los dos bloques */
+    column-gap: 1.5rem; 
+    row-gap: 0.8rem;
+    /* Centra todo el bloque de 2x2 en la pantalla */
+    justify-content: center; 
+    width: 100%;
   }
 
   /* Base: items en columna */
