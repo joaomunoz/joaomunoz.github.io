@@ -1,149 +1,447 @@
+/*
+ * style.css — Estilos del CV multiidioma
+ * ─────────────────────────────────────────────────────────────────────────────
+ * ESTRUCTURA:
+ *  0. Variables CSS (design tokens)
+ *  1. Reset / base
+ *  2. Header y contenedor
+ *  3. Selector de idioma (flags)
+ *  4. Zona de perfil: foto + contacto
+ *  5. Zona de nombre y rol
+ *  6. Main: base de secciones y artículos
+ *  7. Secciones por clase:
+ *     7a. .education
+ *     7b. .languages
+ *     7c. .skills
+ *     7d. .experience
+ *  8. Footer
+ *  9. Utilidades (iconos, devicons)
+ * 10. Responsive (≤ 768 px)
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
+
+/* ═══════════════════════════════════════════════════════════════
+   0. VARIABLES
+   ═══════════════════════════════════════════════════════════════ */
 :root {
-  --bg: #294e6b;
-  --panel: #101411;
-  --accent: #ffbf00;
-  --text: #ffffff;
+  --bg:         #264a63;
+  --accent:     #f4c430;
+  --text:       #ffffff;
+  --radius:     8px;
+  --transition: .3s ease;
 }
 
-* {
+
+/* ═══════════════════════════════════════════════════════════════
+   1. RESET / BASE
+   ═══════════════════════════════════════════════════════════════ */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
 body {
+  margin: 0;
   font-family: 'Poppins', sans-serif;
   background: var(--bg);
   color: var(--text);
+  line-height: 1.6;
 }
 
-/* FLAGS */
-.flags {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  display: flex;
-  gap: 12px;
-}
 
-.flags img {
-  width: 28px;
-  height: 20px;
-  cursor: pointer;
-}
-
-/* ABOUT */
-#about {
-  padding: 4rem 1rem;
+/* ═══════════════════════════════════════════════════════════════
+   2. HEADER Y CONTENEDOR
+   ═══════════════════════════════════════════════════════════════ */
+header {
+  padding: 2rem 1rem;
   text-align: center;
 }
 
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   3. SELECTOR DE IDIOMA (FLAGS)
+   ═══════════════════════════════════════════════════════════════ */
+.flags {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: .5rem;
+}
+
+.flags__item {
+  display: inline-block;
+  text-decoration: none;
+  opacity: .55;
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.flags__item img {
+  width: 32px;
+  display: block;
+}
+
+.flags__item:hover {
+  opacity: .85;
+  transform: scale(1.1);
+}
+
+.flags__item--active {
+  opacity: 1;
+  border-bottom: 2px solid var(--accent);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   4. ZONA DE PERFIL: FOTO + CONTACTO
+   ═══════════════════════════════════════════════════════════════ */
 .profile-zone {
-  position: relative;
-  margin-bottom: 3rem;
+  margin: 2rem auto;
 }
 
 .profile-img {
-  width: 160px;
-  height: 160px;
+  width: 140px;
   border-radius: 50%;
   border: 4px solid var(--accent);
-  object-fit: cover;
 }
 
 .personal-info {
-  margin-top: 1.5rem;
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.personal-info li {
-  display: flex;
   align-items: center;
-  gap: .5rem;
+  gap: 3rem;
+  padding: 0;
+  margin-top: 1.5rem;
+  list-style: none;
 }
 
-.personal-info img {
-  width: 20px;
-  height: 20px;
+.info-item {
+  text-align: center;
+  cursor: pointer;
+  position: relative;
 }
 
-/* NAME */
-.name-zone {
-  max-width: 720px;
-  margin: auto;
+.info-icon img {
+  width: 28px;
+  transition: transform var(--transition);
 }
 
+.info-item:hover .info-icon img {
+  transform: scale(1.15);
+}
+
+.info-data {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height .4s ease, opacity .4s ease;
+  font-size: .85rem;
+  margin-top: .5rem;
+  white-space: nowrap;
+}
+
+.info-item.active .info-data {
+  max-height: 50px;
+  opacity: 1;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   5. ZONA DE NOMBRE Y ROL
+   ═══════════════════════════════════════════════════════════════ */
 .name-zone h1 {
-  margin: 0;
+  margin: .5rem 0;
 }
 
 .name-zone h2 {
+  font-weight: 400;
   color: var(--accent);
+  margin: .25rem 0;
 }
 
-/* CONTENT */
+
+/* ═══════════════════════════════════════════════════════════════
+   6. MAIN: BASE DE SECCIONES Y ARTÍCULOS
+   Estilos comunes a todas las secciones.
+   Los estilos específicos por tipo van en la sección 7.
+   ═══════════════════════════════════════════════════════════════ */
 #contents {
-  max-width: 1100px;
-  margin: auto;
-  padding: 3rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
 }
 
 .subject {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
+/* Título de sección con ícono y línea inferior dorada */
 .subject-name {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: .75rem;
   border-bottom: 1px solid var(--accent);
   padding-bottom: .5rem;
 }
 
+/* Íconos de sección siempre blancos */
 .subject-name img {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  filter: brightness(0) invert(1);
 }
 
+/* Base de cada artículo/item */
 .item {
-  margin-top: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.item h3 {
+  margin: 0;
+  width: 100%;
+}
+
+.item .description {
+  width: 100%;
+}
+
+.item .description p {
+  margin: 0;
+  white-space: pre-wrap;
 }
 
 .role {
   font-style: italic;
-  opacity: .85;
+  opacity: .9;
+  margin: 0;
 }
 
 .date {
-  font-size: .9rem;
-  opacity: .75;
+  font-size: .85rem;
+  opacity: .8;
 }
 
-/* DESCRIPTIONS */
-.description img,
-img[alt="devicon"],
-img[alt="devicon_blanco"] {
-  width: 40px !important;
-  height: 40px !important;
-  object-fit: contain;
-  margin: 4px;
+
+/* ═══════════════════════════════════════════════════════════════
+   7. SECCIONES POR CLASE
+   Cada bloque controla el layout de una sección específica.
+   La clase viene del campo `class:` del YAML.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── 7a. EDUCATION ───────────────────────────────────────────── */
+
+.education .item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "title title"
+    "desc  date";
+  gap: 0 1.5rem;
+  align-items: start;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+.education .item h3 {
+  grid-area: title;
 }
 
-/* FOOTER */
-#footer {
+.education .item .date {
+  grid-area: date;
+  white-space: nowrap;
+  align-self: center;
+}
+
+.education .item .description {
+  grid-area: desc;
+  min-width: 0;
+  width: auto;
+}
+
+/* ── 7b. LANGUAGES ─────────────────────────────────────────────
+   Solo muestra títulos con los indicadores de nivel.
+   Sin bullets ni descripción adicional.
+─────────────────────────────────────────────────────────────── */
+.languages .item h3 {
+  font-weight: 400;   /* Mismo peso que el texto normal, no tan prominente */
+  font-size: 1rem;
+}
+
+
+/* ── 7c. SKILLS ────────────────────────────────────────────────
+   Cada item muestra el título a la izquierda y los
+   devicons a la derecha en la misma fila (desktop).
+   En mobile se apilan verticalmente.
+─────────────────────────────────────────────────────────────── */
+.skills .item {
+  align-items: center;
+  flex-wrap: nowrap;   /* Evita que los iconos bajen a la siguiente línea */
+}
+
+.skills .item h3 {
+  width: auto;         /* Anula el width: 100% base */
+  flex-shrink: 0;      /* El título no se comprime */
+}
+
+.skills .item .description {
+  width: auto;         /* Anula el width: 100% base */
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+
+.skills .item .description p {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 10px;
+  white-space: normal; 
+}
+
+
+/* ── 7d. EXPERIENCE ────────────────────────────────────────────
+   Layout completo: título, rol, descripción larga y fecha.
+   Usa el layout base (.item flex) sin modificaciones,
+   ya que la vista actual es correcta.
+   Este bloque existe para futuras personalizaciones.
+─────────────────────────────────────────────────────────────── */
+.experience .item {
+  /* Sin cambios respecto al base por ahora */
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   8. FOOTER
+   ═══════════════════════════════════════════════════════════════ */
+footer {
   text-align: center;
-  padding: 2rem;
-  background: #00000033;
+  padding: 1rem;
+  opacity: .8;
+  font-size: .9rem;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   9. UTILIDADES
+   ═══════════════════════════════════════════════════════════════ */
+.icon {
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+}
+
+.icon.white {
+  filter: brightness(0) invert(1);
+}
+
+/* Devicons: tamaño estándar */
+#contents img[alt^="devicon"] {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin: 0.5px;
+}
+
+/* Devicons con fondo blanco */
+#contents img[alt="devicon_blanco"] {
+  background: #fff;
+  padding: 2px;
+  border-radius: var(--radius);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+  10. RESPONSIVE ≤ 768 px
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  .personal-info {
+    gap: 1.5rem;
+  }
+
+  /* Base: items en columna */
+  .item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /*Educacion*/
+  
+
+  /* Skills: vuelve a apilar título arriba, iconos abajo */
+  .skills .item {
+    flex-wrap: wrap;
+  }
+
+  .skills .item h3,
+  .skills .item .description {
+    width: 100%;
+  }
+
+  .skills .item .description p {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   11. TOOLTIPS DE CONTACTO
+   Texto que aparece debajo del ícono al hacer hover.
+   El contenido viene de data-tooltip en el HTML (generado por Liquid).
+
+   Estados:
+     Normal  → solo ícono
+     Hover   → ícono + tooltip en dorado (data-tooltip)
+     Active  → ícono + info-data en blanco, tooltip oculto
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Tooltip base — oculto por defecto */
+.info-item::after {
+  content: attr(data-tooltip);
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height .3s ease, opacity .3s ease;
+  font-size: .8rem;
+  color: var(--accent);
+  margin-top: .35rem;
+  white-space: nowrap;
+}
+
+/* Hover sin estar activo: muestra tooltip */
+.info-item:not(.active):hover::after {
+  max-height: 30px;
+  opacity: 1;
+}
+
+/* Activo: tooltip oculto, info-data visible (ya manejado por clase .active) */
+.info-item.active::after {
+  max-height: 0;
+  opacity: 0;
+}
+
+/* Botón de descarga — el <a> interno maneja el cursor */
+.info-item--download {
+  cursor: default;
+}
+
+.info-download {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
 }

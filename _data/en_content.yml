@@ -1,44 +1,45 @@
-profile_job: "Licenciado en Ciencias de la Computación"
+profile_job: "Bachelor of Computer Science"
 
-comment_profile: "Entusiasta en el mundo de la computación y la tecnología, gran trabajador
-        en equipo y buena disposición. 
-        En especialidad en el área de las bases de datos, 
-        operador de procesos y monitoreos TI.  
-        En busca de ambientes donde pueda combinar
-        mis habilidades en un entorno cercano al negocio y los clientes."
+comment_profile: "Enthusiastic about the world of computing and technology, a great team
+        player with a positive attitude.
+        Specialized in the area of databases,
+        IT process operations and monitoring.
+        Looking for environments where I can combine
+        my skills in a setting close to the business and its clients."
 
 #-----------------------------------------------------------------------------------------------------#  
 
 Educacion:
-  subject: Educación
+  subject: Education
   listing-order: 1
   class: education
   icon: "/assets/img/graduation-cap.svg"
   contents:
     - title: Universidad de Santiago de Chile
       description:
-      - Licenciatura en Ciencias de la Computación
+        - Bachelor of Computer Science
       date: Mar. 2013 - Sep. 2019
+
 #-----------------------------------------------------------------------------------------------------#    
 
 Idiomas:
-  subject: Idiomas
+  subject: Languages
   listing-order: 2
   class: languages
   icon: "/assets/img/globe.svg"
   contents:
-    - title: "Español (Nativo): <span style='color: #46C646; margin: auto 8px; font-family: cursive;'>●●●●●</span>"
-    - title: "Ingles(Avanzado): <span style='color: cornflowerblue; margin: auto 8px; font-family: cursive;'>●●●●◐</span>"
+    - title: "Spanish (Native): <span style='color: #46C646; margin: auto 8px; font-family: cursive;'>●●●●●</span>"
+    - title: "English (Advanced): <span style='color: cornflowerblue; margin: auto 8px; font-family: cursive;'>●●●●◐</span>"
 
 #-----------------------------------------------------------------------------------------------------#    
 
 Habilidades:
-  subject: Habilidades
+  subject: Skills
   listing-order: 3
   class: skills
   icon: "/assets/img/screwdriver-wrench.svg"
   contents:
-    - title: Lenguajes de Programación
+    - title: Programming Languages
       description: "
         ![devicon](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg)
         ![devicon](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg)
@@ -49,18 +50,20 @@ Habilidades:
       description: "
         ![devicon_blanco](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain-wordmark.svg)
       "
-
     - title: Web & UI/UX
       description: "
-        ![devicon](https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_960_720.png)
+              ![devicon](https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_960_720.png)
 
-        ![devicon](https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_1280.png)
+              ![devicon](https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_1280.png)
 
-        ![devicon](https://cdn.pixabay.com/photo/2015/04/23/17/41/javascript-736400_1280.png)
-      "
+              ![devicon](https://cdn.pixabay.com/photo/2015/04/23/17/41/javascript-736400_1280.png)
+        "
 
 
-    - title: Herramientas de Monitoreo
+
+
+
+    - title: Monitoring Tools
       description: "
         ![devicon](https://www.varindia.com/storage/news/uploads/2018/02/601515f8cf122.jpg)
         
@@ -70,7 +73,7 @@ Habilidades:
         
         ![devicon](https://www.sysadminsdecuba.com/wp-content/uploads/2019/08/Nagios-Logo.jpg)
       "
-    - title: Ofimatica
+    - title: Office Suite
       description: "
         ![devicon_blanco](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/latex/latex-original.svg)
         
@@ -86,19 +89,19 @@ Habilidades:
         
         ![devicon_blanco](https://images.icon-icons.com/2699/PNG/512/libreoffice_logo_icon_171259.png)
       "
-    - title: Controlador de versiones
+    - title: Version Control
       description: "
         ![devicon_blanco](https://icongr.am/devicon/git-original.svg)
         
         ![devicon_blanco](https://icongr.am/devicon/github-original.svg)
       "
-    - title: Sistemas Operativos
+    - title: Operating Systems
       description: "
         ![devicon_blanco](https://images.icon-icons.com/2235/PNG/512/windows_os_logo_icon_134674.png)
         
         ![devicon_blanco](https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/960px-Tux.svg.png)
       "
-    - title: BI y Procesos ETL
+    - title: BI & ETL Processes
       description: "
         ![devicon_blanco](https://images.seeklogo.com/logo-png/31/1/microsoft-power-bi-logo-png_seeklogo-316809.png)
         
@@ -106,7 +109,7 @@ Habilidades:
         
         ![devicon_blanco](https://www.selectdistinct.co.uk/wp-content/uploads/2024/01/ssis-logo-2-jpg-1200x1200.webp)
       "
-    - title: Bases de Datos
+    - title: Databases
       description: "
         ![devicon_blanco](https://www.iconshock.com/image/Golden/Database/oracle/)
         
@@ -118,49 +121,48 @@ Habilidades:
 #-----------------------------------------------------------------------------------------------------#    
 
 Experiencia:
-  subject: Experiencia
+  subject: Experience
   listing-order: 4
   class: experience
   icon: "/assets/img/briefcase.svg"
   contents:
-    - title: "Medicien: Proyecto Portal Paciente"
-      role: Analista Programador
+    - title: "Medicien: Patient Portal Project"
+      role: Programmer Analyst
       description:
-        - Encargado del diseño y desarrollo de la base de datos en Microsoft SQL Server
-          ocupando Procedimientos Almacenados, Triggers, Funciones, Consultas, entre otros
-          y procesos ETL en Pentaho. Uso de Oracle Horizon en gestión de datos entre
-          distintos motores de bases de datos.
-      date: Jun. - Ago. 2019
+        - In charge of the design and development of the database in Microsoft SQL Server
+          using Stored Procedures, Triggers, Functions, Queries, among others,
+          and ETL processes in Pentaho. Use of Oracle Horizon for data management between
+          different database engines.
+      date: Jun. - Aug. 2019
 
     - title: G-Talent
-      role: Analista Programador
+      role: Programmer Analyst
       description:
-        - Encargado del diseño y desarrollo de reportes en MicroSoft SQL Server ocupando
-          Procedimientos Almacenados, Triggers, Funciones, Consultas y procesos ETL en
-          Microsoft SQL Server Integration Services (SSIS). Uso de Oracle en tablas de
-          auditoría, reportes y vistas.
+        - In charge of the design and development of reports in Microsoft SQL Server using
+          Stored Procedures, Triggers, Functions, Queries and ETL processes in
+          Microsoft SQL Server Integration Services (SSIS). Use of Oracle for audit tables,
+          reports and views.
       date: Sep. - Nov. 2019
 
-    - title: M y CH Inmobiliaria Encargado de obras y gestión inmobiliaria
-      role: Gestion y obras
+    - title: M y CH Real Estate — Construction and Property Management
+      role: Operations & Construction Management
       description:
-        - Empresa familiar dedicada a la compra/venta y construcción de propiedades, donde
-          me de desempeñe de obrero de la construcción y encargado en la gestión inmobiliaria,
-          en el cual mi tarea era la recaudación de los arriendos de los bienes raíces y
-          mantención de los servicios de cada propiedad.
-      date: Sep. 2020 - Ene. 2023
+        - Family business dedicated to the buying/selling and construction of properties,
+          where I worked as a construction worker and was in charge of real estate management,
+          with responsibilities including collecting rent from properties and
+          maintaining services for each property.
+      date: Sep. 2020 - Jan. 2023
 
     - title: IBM Kyndryl
-      role: Operador de Procesos y Monitoreo TI
+      role: IT Process and Monitoring Operator
       description:
-        - Operador de consolas de monitoreo con las herramientas Nagios, Tivoli, Zabbix y
-          VZOR. Encargado en la detección de alertas tempranas, ejecución de escalamientos,
-          documentación de tickets y procesos, seguimiento de incidencias, control y registro
-          de eventos. Así también desempeñe labores de Operador para gestion de respaldos
-          bajo TSM (Tivoli Storage management), mesa de ayuda, administración de usuarios
-          en Active Directory, informes en la plataforma GRAFANA, administración y gestión
-          de sistemas AS 400, MainFrame IBM para el Cliente AFP Provida, responsable de la
-          gestión de respaldos de cinta magnética para la empresa SURA en Networker 8.2.4 y
-          Networker 9.4, incluyendo programación, supervisión y verificación de integridad de
-          los respaldos y administración de cintas magnéticas para robots de cinta (Jukebox).
-      date: Ago. 2023 - Jul. 2024
+        - Monitoring console operator using Nagios, Tivoli, Zabbix and VZOR tools.
+          Responsible for early alert detection, escalation execution,
+          ticket and process documentation, incident follow-up, and event control and logging.
+          Also performed Operator duties for backup management under TSM (Tivoli Storage Management),
+          help desk support, user administration in Active Directory, reporting on the GRAFANA platform,
+          administration and management of AS/400 and IBM MainFrame systems for client AFP Provida,
+          responsible for magnetic tape backup management for SURA using Networker 8.2.4 and
+          Networker 9.4, including scheduling, supervision and integrity verification of backups,
+          and magnetic tape administration for tape robots (Jukebox).
+      date: Aug. 2023 - Jul. 2024

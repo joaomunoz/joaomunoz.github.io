@@ -1,128 +1,227 @@
+---
+# _layouts/home.html
+# Front-matter vacío obligatorio para que Jekyll procese Liquid en este archivo.
+---
+{% comment %}
+  Selecciona el YAML correcto según el idioma de la página que usa este layout.
+  page.lang viene del front-matter de es/index.html o en/index.html.
+  También asigna el PDF y la etiqueta de descarga según el idioma activo.
+{% endcomment %}
+{% if page.lang == "en" %}
+{% assign content = site.data.en_content %}
+{% assign cv_pdf = "/docs/JMunoz_CV_en.pdf" %}
+{% assign cv_label = "Download CV" %}
+{% else %}
+{% assign content = site.data.es_content %}
+{% assign cv_pdf = "/docs/JMunoz_CV_es.pdf" %}
+{% assign cv_label = "Descargar CV" %}
+{% endif %}
 <!DOCTYPE html>
-<html lang="es">
+<html lang="{{ page.lang }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ site.data.profile.title }}</title>
-
-  <link rel="stylesheet" href="/assets/css/style.css?v=3">
-  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600" rel="stylesheet">
 </head>
 
 <body>
 
+<!-- ═══════════════════════════════════════════════════════════════
+     HEADER  #about
+     Contiene: selector de idioma, foto + contacto, nombre + rol
+     ═══════════════════════════════════════════════════════════════ -->
 <header id="about">
+  <div class="container">
 
-  <!-- FLAGS -->
-  <div id="flags" class="flags">
-    <div class="flags__item" data-language="es">
-      <img src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="ES">
+    <!-- ── SELECTOR DE IDIOMA ──────────────────────────────────────
+         Cada bandera es un <a> que apunta a la URL raíz del idioma.
+         La clase `flags__item--active` la añade main.js según
+         `page.lang` inyectado en el atributo data-lang del script.
+    ─────────────────────────────────────────────────────────────── -->
+    <nav id="flags" class="flags" aria-label="Language selector">
+
+      <a class="flags__item" href="/es/" data-language="es"
+         aria-label="Versión en español">
+        <img src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="ES">
+      </a>
+
+      <a class="flags__item" href="/en/" data-language="en"
+         aria-label="English version">
+        <img src="https://flagicons.lipis.dev/flags/4x3/us.svg" alt="EN">
+      </a>
+
+    </nav>
+
+    <!-- ── FOTO DE PERFIL + DATOS DE CONTACTO ─────────────────────
+         Los datos de contacto están ocultos por defecto (max-height: 0)
+         y se revelan con un click (clase `.active` añadida por main.js).
+         El botón de descarga PDF es un <a download> directo — sin
+         revelar link intermedio, ya que es una acción clara.
+         El PDF cambia según el idioma activo (cv_pdf asignado arriba).
+    ─────────────────────────────────────────────────────────────── -->
+    <div class="profile-zone">
+
+      <img class="profile-img"
+           src="{{ site.data.profile.profile_img }}"
+           alt="Foto de perfil de {{ site.data.profile.name }}">
+
+      <ul class="personal-info" aria-label="Contact information">
+
+        <!-- Teléfono
+             data-tooltip muestra el label al hover según idioma.
+             Al hacer click (clase .active via JS) se revela el .info-data.
+        -->
+        <li class="info-item" role="button" tabindex="0"
+            aria-label="Show phone number"
+            data-tooltip="{% if page.lang == 'en' %}Contact{% else %}Contacto{% endif %}">
+          <div class="info-icon">
+            <img src="/assets/img/phone.svg" class="icon white" alt="">
+          </div>
+          <div class="info-data">{{ site.data.profile.phone_number }}</div>
+        </li>
+
+        <!-- Email -->
+        <li class="info-item" role="button" tabindex="0"
+            aria-label="Show email"
+            data-tooltip="Email">
+          <div class="info-icon">
+            <img src="/assets/img/envelope.svg" class="icon white" alt="">
+          </div>
+          <div class="info-data">{{ site.data.profile.email }}</div>
+        </li>
+
+        <!-- Dirección -->
+        <li class="info-item" role="button" tabindex="0"
+            aria-label="Show location"
+            data-tooltip="{% if page.lang == 'en' %}Location{% else %}Ubicación{% endif %}">
+          <div class="info-icon">
+            <img src="/assets/img/location-dot.svg" class="icon white" alt="">
+          </div>
+          <div class="info-data">{{ site.data.profile.address }}</div>
+        </li>
+
+        <!-- Descarga CV PDF
+             cv_pdf y cv_label asignados al inicio según page.lang:
+               ES → /docs/JMunoz_CV_es.pdf  "Descargar CV"
+               EN → /docs/JMunoz_CV_en.pdf  "Download CV"
+             data-tooltip usa cv_label para mostrar el texto al hover.
+             Al ser <a download> descarga directo sin necesitar click extra.
+        -->
+        <li class="info-item info-item--download"
+            data-tooltip="{{ cv_label }}">
+          <a href="{{ cv_pdf }}" download
+             class="info-download" aria-label="{{ cv_label }}">
+            <div class="info-icon">
+              <img src="/resources/svgs/solid/download.svg" class="icon white" alt="">
+            </div>
+          </a>
+        </li>
+
+      </ul>
     </div>
-    <div class="flags__item" data-language="en">
-      <img src="https://flagicons.lipis.dev/flags/4x3/us.svg" alt="EN">
+
+    {% comment %}
+      Nombre, rol y comentario — cambian por idioma.
+      `content` fue asignado arriba con assign según page.lang.
+    {% endcomment %}
+    <div class="name-zone">
+      <h1>{{ site.data.profile.name }}</h1>
+      <h2>{{ content.profile_job }}</h2>
+      <p>{{ content.comment_profile }}</p>
     </div>
+
   </div>
-
-  <!-- PROFILE -->
-  <div class="profile-zone">
-    <img class="profile-img"
-         src="{{ site.data.profile.profile_img | prepend: site.baseurl }}"
-         alt="Profile">
-
-    <ul class="personal-info">
-      {% if site.data.profile.phone_number %}
-      <li>
-        <img src="{{ '/assets/img/phone.svg' | prepend: site.baseurl }}">
-        <span>{{ site.data.profile.phone_number }}</span>
-      </li>
-      {% endif %}
-
-      {% if site.data.profile.email %}
-      <li>
-        <img src="{{ '/assets/img/envelope.svg' | prepend: site.baseurl }}">
-        <span>{{ site.data.profile.email }}</span>
-      </li>
-      {% endif %}
-
-      {% if site.data.profile.address %}
-      <li>
-        <img src="{{ '/assets/img/location-dot.svg' | prepend: site.baseurl }}">
-        <span>{{ site.data.profile.address }}</span>
-      </li>
-      {% endif %}
-    </ul>
-  </div>
-
-  <!-- NAME -->
-  <div class="name-zone" data-lang="es">
-    <h1>{{ site.data.profile.name }}</h1>
-    <h2>{{ site.data.es_content.profile_job }}</h2>
-    <p>{{ site.data.es_content.comment_profile }}</p>
-  </div>
-
-  <div class="name-zone" data-lang="en" hidden>
-    <h1>{{ site.data.profile.name }}</h1>
-    <h2>{{ site.data.en_content.profile_job }}</h2>
-    <p>{{ site.data.en_content.comment_profile }}</p>
-  </div>
-
 </header>
+
+
+{% comment %}
+  MAIN — itera sobre el YAML con estructura de claves directas.
+  Pasos:
+    1. Recolecta secciones que tengan `subject` con push.
+    2. Ordena por `listing-order`.
+    3. Renderiza cada sección con su `class` del YAML aplicada
+       al <section> para control CSS por tipo de sección.
+{% endcomment %}
+
+{% assign sections_sorted = "" | split: "" %}
+{% for pair in content %}
+{% assign section = pair[1] %}
+{% if section.subject %}
+{% assign sections_sorted = sections_sorted | push: section %}
+{% endif %}
+{% endfor %}
+{% assign sections_sorted = sections_sorted | sort: "listing-order" %}
 
 <main id="contents">
 
-{% assign meta = "" | split: "" %}
-{% for yml in site.data %}
-  {% if yml[0] != "profile" and yml[0] != "en_content" %}
-    {% assign meta = meta | push: yml[1] %}
-  {% endif %}
-{% endfor %}
-{% assign meta = meta | sort: "listing-order" %}
+  {% for section in sections_sorted %}
+  {% comment %}
+    `section.class` viene del YAML: education | languages | skills | experience
+    Genera por ejemplo: <section class="subject skills">
+  {% endcomment %}
+  <section class="subject {{ section.class }}">
 
-{% for subject in meta %}
-<section class="subject">
-
-  <h2 class="subject-name">
-    <img src="{{ subject.icon | prepend: site.baseurl }}">
-    {{ subject.subject }}
-  </h2>
-
-  {% for item in subject.contents %}
-  <article class="item">
-
-    <h3>{{ item.title | markdownify }}</h3>
-
-    {% if item.role %}
-    <p class="role">{{ item.role }}</p>
-    {% endif %}
-
-    {% if item.date %}
-    <span class="date">{{ item.date }}</span>
-    {% endif %}
-
-    {% if item.description %}
-      {% if item.description.first %}
-      <ul class="description">
-        {% for d in item.description %}
-        <li>{{ d | markdownify }}</li>
-        {% endfor %}
-      </ul>
-      {% else %}
-      <div class="description">{{ item.description | markdownify }}</div>
+    <h2 class="subject-name">
+      {% if section.icon %}
+        <img src="{{ section.icon }}" class="icon" alt="">
       {% endif %}
-    {% endif %}
+      {{ section.subject }}
+    </h2>
 
-  </article>
+    {% for item in section.contents %}
+    <article class="item">
+
+      <h3>{{ item.title }}</h3>
+
+      {% if item.role %}
+        <p class="role">{{ item.role }}</p>
+      {% endif %}
+
+      {% if item.date %}
+        <span class="date">{{ item.date }}</span>
+      {% endif %}
+
+      {% comment %}
+        description array  → <ul> con <li> por cada elemento
+        description string → <div> único
+        Detectado con .first: solo arrays responden a ese método.
+      {% endcomment %}
+      {% if item.description %}
+        {% if item.description.first %}
+          <ul class="description">
+            {% for d in item.description %}
+              <li>{{ d | markdownify }}</li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <div class="description">{{ item.description | markdownify }}</div>
+        {% endif %}
+      {% endif %}
+
+    </article>
+    {% endfor %}
+
+  </section>
   {% endfor %}
-
-</section>
-{% endfor %}
 
 </main>
 
+
+<!-- ═══════════════════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════════════════ -->
 <footer id="footer">
   © 2024 – {{ site.data.profile.name }}
 </footer>
 
-<script src="{{ '/assets/js/main.js?v=3' | prepend: site.baseurl }}"></script>
+<!--
+  El script se carga al final del body para no bloquear el render.
+  `data-lang` le comunica a main.js cuál es el idioma activo
+  SIN necesitar variables globales de JS.
+-->
+<script src="/assets/js/main.js" data-lang="{{ page.lang }}"></script>
+
 </body>
 </html>

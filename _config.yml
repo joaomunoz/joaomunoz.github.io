@@ -1,12 +1,11 @@
 
 baseurl: ""
-url: "https://joaomunoz.github.io"
+url:  ""
 
  
 
 exclude:
   - _posts/
-  - resources/
   - vendor/
 
 plugins:
