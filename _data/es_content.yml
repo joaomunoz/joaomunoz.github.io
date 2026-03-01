@@ -117,50 +117,32 @@ Habilidades:
 
 #-----------------------------------------------------------------------------------------------------#    
 
-Experiencia:
+experiencia:
   subject: Experiencia
   listing-order: 4
   class: experience
   icon: "/assets/img/briefcase.svg"
   contents:
-    - title: "Medicien: Proyecto Portal Paciente"
-      role: Analista Programador
+    - title: Kyndryl (IBM)
+      role: Operador de Procesos y Monitoreo TI
       description:
-        - Encargado del diseño y desarrollo de la base de datos en Microsoft SQL Server
-          ocupando Procedimientos Almacenados, Triggers, Funciones, Consultas, entre otros
-          y procesos ETL en Pentaho. Uso de Oracle Horizon en gestión de datos entre
-          distintos motores de bases de datos.
-      date: Jun. - Ago. 2019
+        - Operador de consolas de monitoreo (Nagios, Tivoli, Zabbix, VZOR) para clientes internacionales. Responsable de detección de alertas, gestión de incidentes vía Jira, soporte a usuarios y administración de accesos. Ejecuté procesos batch nocturnos y gestioné respaldos con EMC NetWorker y TSM para clientes SURA y AFP Provida. Elaboré informes técnicos y reportes operativos en Power BI.
+      date: Ago. 2023 - Jul. 2024
+
+    - title: M y CH Inmobiliaria
+      role: Gestión y Obras
+      description:
+        - Empresa familiar dedicada a la compra/venta y construcción de propiedades. Me desempeñé como obrero de la construcción y encargado de gestión inmobiliaria, con responsabilidades directas en la recaudación de arriendos y la mantención de servicios básicos de cada propiedad.
+      date: Sep. 2020 - Ene. 2023
 
     - title: G-Talent
       role: Analista Programador
       description:
-        - Encargado del diseño y desarrollo de reportes en MicroSoft SQL Server ocupando
-          Procedimientos Almacenados, Triggers, Funciones, Consultas y procesos ETL en
-          Microsoft SQL Server Integration Services (SSIS). Uso de Oracle en tablas de
-          auditoría, reportes y vistas.
+        - Desarrollé reportes personalizados con SQL Server usando Procedimientos Almacenados y procesos ETL en SSIS. Utilicé Oracle para auditorías internas y reportes de gestión. Desarrollé un reporte de contabilidad especializado para clientes de servicios de televisión en VTR.
       date: Sep. - Nov. 2019
 
-    - title: M y CH Inmobiliaria Encargado de obras y gestión inmobiliaria
-      role: Gestion y obras
+    - title: "Medicien: Proyecto Portal Paciente"
+      role: Analista Programador
       description:
-        - Empresa familiar dedicada a la compra/venta y construcción de propiedades, donde
-          me de desempeñe de obrero de la construcción y encargado en la gestión inmobiliaria,
-          en el cual mi tarea era la recaudación de los arriendos de los bienes raíces y
-          mantención de los servicios de cada propiedad.
-      date: Sep. 2020 - Ene. 2023
-
-    - title: IBM Kyndryl
-      role: Operador de Procesos y Monitoreo TI
-      description:
-        - Operador de consolas de monitoreo con las herramientas Nagios, Tivoli, Zabbix y
-          VZOR. Encargado en la detección de alertas tempranas, ejecución de escalamientos,
-          documentación de tickets y procesos, seguimiento de incidencias, control y registro
-          de eventos. Así también desempeñe labores de Operador para gestion de respaldos
-          bajo TSM (Tivoli Storage management), mesa de ayuda, administración de usuarios
-          en Active Directory, informes en la plataforma GRAFANA, administración y gestión
-          de sistemas AS 400, MainFrame IBM para el Cliente AFP Provida, responsable de la
-          gestión de respaldos de cinta magnética para la empresa SURA en Networker 8.2.4 y
-          Networker 9.4, incluyendo programación, supervisión y verificación de integridad de
-          los respaldos y administración de cintas magnéticas para robots de cinta (Jukebox).
-      date: Ago. 2023 - Jul. 2024
+        - Diseñé y desarrollé la base de datos del proyecto Portal Paciente en SQL Server, registrando citas médicas con automatización ETL en Pentaho. Administré la interoperabilidad entre motores Oracle Horizon y SQL Server mediante API con tokens de seguridad.
+      date: Jun. - Ago. 2019
