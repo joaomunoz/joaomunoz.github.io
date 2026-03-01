@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
      ya que el elemento es un <li> con role="button".
   ─────────────────────────────────────────────────────────────────────── */
 
-  const infoItems = document.querySelectorAll(".info-item");
+const infoItems = document.querySelectorAll(".info-item:not(.info-item--download)");
 
   infoItems.forEach(item => {
 
