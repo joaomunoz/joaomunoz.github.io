@@ -123,26 +123,39 @@ experiencia:
   class: experience
   icon: "/assets/img/briefcase.svg"
   contents:
-    - title: Kyndryl (IBM)
+    - title: Kyndryl
       role: Operador de Procesos y Monitoreo TI
       description:
-        - Operador de consolas de monitoreo (Nagios, Tivoli, Zabbix, VZOR) para clientes internacionales. Responsable de detección de alertas, gestión de incidentes vía Jira, soporte a usuarios y administración de accesos. Ejecuté procesos batch nocturnos y gestioné respaldos con EMC NetWorker y TSM para clientes SURA y AFP Provida. Elaboré informes técnicos y reportes operativos en Power BI.
+        - Operador de consolas de monitoreo (Nagios, Tivoli, Zabbix, VZOR) para clientes internacionales. 
+        Responsable de detección de alertas, gestión de incidentes vía Jira, 
+        soporte a usuarios y administración de accesos. 
+        Ejecuté procesos batch nocturnos y gestioné respaldos con EMC NetWorker y 
+        TSM para clientes SURA y AFP Provida. Elaboré informes técnicos y 
+        reportes operativos en Power BI.
       date: Ago. 2023 - Jul. 2024
 
     - title: M y CH Inmobiliaria
       role: Gestión y Obras
       description:
-        - Empresa familiar dedicada a la compra/venta y construcción de propiedades. Me desempeñé como obrero de la construcción y encargado de gestión inmobiliaria, con responsabilidades directas en la recaudación de arriendos y la mantención de servicios básicos de cada propiedad.
+        - Empresa familiar dedicada a la compra/venta y construcción de propiedades. 
+          Me desempeñé como obrero de la construcción y encargado de gestión inmobiliaria, 
+          con responsabilidades directas en la recaudación de arriendos y 
+          la mantención de servicios básicos de cada propiedad.
       date: Sep. 2020 - Ene. 2023
 
     - title: G-Talent
       role: Analista Programador
       description:
-        - Desarrollé reportes personalizados con SQL Server usando Procedimientos Almacenados y procesos ETL en SSIS. Utilicé Oracle para auditorías internas y reportes de gestión. Desarrollé un reporte de contabilidad especializado para clientes de servicios de televisión en VTR.
+        - Desarrollé reportes personalizados con SQL Server usando 
+          Procedimientos Almacenados y procesos ETL en SSIS. Utilicé Oracle para auditorías internas y reportes de gestión. 
+          Desarrollé un reporte de contabilidad especializado 
+          para clientes de servicios de televisión en VTR.
       date: Sep. - Nov. 2019
 
     - title: "Medicien: Proyecto Portal Paciente"
       role: Analista Programador
       description:
-        - Diseñé y desarrollé la base de datos del proyecto Portal Paciente en SQL Server, registrando citas médicas con automatización ETL en Pentaho. Administré la interoperabilidad entre motores Oracle Horizon y SQL Server mediante API con tokens de seguridad.
+        - Diseñé y desarrollé la base de datos del proyecto Portal Paciente en SQL Server, registrando citas médicas con automatización ETL en Pentaho. 
+          Administré la interoperabilidad entre motores Oracle Horizon y SQL Server mediante 
+          API con tokens de seguridad.
       date: Jun. - Ago. 2019
