@@ -430,7 +430,7 @@ footer {
 }
 
 /* Hover sin estar activo: muestra tooltip */
-.info-item:not(.active):hover::after {
+.info-item:not(.active)::after {
   max-height: 30px;
   opacity: 1;
 }
