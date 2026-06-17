@@ -541,8 +541,9 @@ footer {
 }
 
 #contents img[alt="devicon_blanco"] {
-  background: rgba(255, 255, 255, 0.08);
-  padding: 4px;
+  background: #fff;
+  padding: 2px;
+  border-radius: var(--radius);
 }
 
 
