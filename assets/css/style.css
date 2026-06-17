@@ -265,7 +265,7 @@ header::before {
 
 .name-zone p {
   font-size: .88rem;
-  color: var(--text-muted);
+  color: var(--accent);
   max-width: 700px;
   line-height: 1.75;
 }
