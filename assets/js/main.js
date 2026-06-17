@@ -128,22 +128,52 @@ const infoItems = document.querySelectorAll(".info-item:not(.info-item--download
   infoItems.forEach(item => {
 
     /**
-     * Alterna la visibilidad del ítem clicado y cierra los demás.
+     * Alterna la visibilidad del ítem clicado, cierra los demás,
+     * y copia el contenido al portapapeles al abrir.
      */
     function toggleItem() {
       const isAlreadyOpen = item.classList.contains("active");
 
       // Cerramos TODOS los ítems primero (accordion: solo uno abierto a la vez).
       infoItems.forEach(el => {
-        el.classList.remove("active");
+        el.classList.remove("active", "copied");
         el.setAttribute("aria-expanded", "false");
       });
 
-      // Si el ítem estaba cerrado, lo abrimos; si estaba abierto, ya quedó cerrado.
+      // Si el ítem estaba cerrado, lo abrimos y copiamos al portapapeles.
       if (!isAlreadyOpen) {
         item.classList.add("active");
         item.setAttribute("aria-expanded", "true");
+
+        const infoData = item.querySelector(".info-data");
+        const text = infoData?.textContent?.trim();
+
+        if (text) {
+          const doCopy = () => {
+            item.classList.add("copied");
+            setTimeout(() => item.classList.remove("copied"), 1800);
+          };
+
+          if (navigator.clipboard?.writeText) {
+            navigator.clipboard.writeText(text).then(doCopy).catch(() => fallbackCopy(text, doCopy));
+          } else {
+            fallbackCopy(text, doCopy);
+          }
+        }
       }
+    }
+
+    /**
+     * Fallback para navegadores sin Clipboard API.
+     */
+    function fallbackCopy(text, onSuccess) {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.cssText = "position:fixed;opacity:0;pointer-events:none";
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); onSuccess(); } catch (_) {}
+      document.body.removeChild(ta);
     }
 
     // Click con el ratón o tap en móvil.
