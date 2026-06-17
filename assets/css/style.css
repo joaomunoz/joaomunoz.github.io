@@ -1,150 +1,229 @@
 /*
- * style.css — Estilos del CV multiidioma
- * ─────────────────────────────────────────────────────────────────────────────
+ * style.css — Joao Muñoz Portfolio
+ * Aesthetic: Operational Data | Dark Industrial Precision
+ *
  * ESTRUCTURA:
- *  0. Variables CSS (design tokens)
- *  1. Reset / base
- *  2. Header y contenedor
- *  3. Selector de idioma (flags)
- *  4. Zona de perfil: foto + contacto
- *  5. Zona de nombre y rol
- *  6. Main: base de secciones y artículos
- *  7. Secciones por clase:
- *     7a. .education
- *     7b. .languages
- *     7c. .skills
- *     7d. .experience
+ *  0. Variables CSS
+ *  1. Reset / base + background
+ *  2. Header
+ *  3. Flags (selector de idioma)
+ *  4. Profile zone
+ *  5. Name zone
+ *  6. Main / secciones base
+ *  7. Secciones específicas (education, languages, skills, experience)
  *  8. Footer
  *  9. Utilidades (iconos, devicons)
- * 10. Responsive (≤ 768 px)
- * ─────────────────────────────────────────────────────────────────────────────
+ * 10. Tooltips
+ * 11. Responsive ≤ 768px
  */
 
 
-/* ═══════════════════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════
    0. VARIABLES
-   ═══════════════════════════════════════════════════════════════ */
+   ═══════════════════════════════════════════════════════ */
 :root {
-  --bg:         #264a63;
-  --accent:     #f4c430;
-  --text:       #ffffff;
-  --radius:     8px;
-  --transition: .3s ease;
+  --bg:          #080c10;
+  --surface:     #0f1923;
+  --surface-2:   #162030;
+  --accent:      #e8b84b;
+  --accent-2:    #4aadd6;
+  --text:        #e2e8f0;
+  --text-muted:  #64788c;
+  --border:      rgba(232, 184, 75, 0.12);
+  --border-subtle: rgba(255, 255, 255, 0.04);
+  --radius:      6px;
+  --transition:  .25s ease;
+  --glow:        0 0 24px rgba(232, 184, 75, 0.12);
+  --glow-blue:   0 0 20px rgba(74, 173, 214, 0.12);
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════
    1. RESET / BASE
-   ═══════════════════════════════════════════════════════════════ */
-*,
-*::before,
-*::after {
+   ═══════════════════════════════════════════════════════ */
+*, *::before, *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Outfit', sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.65;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Subtle grid overlay — toda la página */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(74, 173, 214, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(74, 173, 214, 0.025) 1px, transparent 1px);
+  background-size: 44px 44px;
+  pointer-events: none;
+  z-index: 0;
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
-   2. HEADER Y CONTENEDOR
-   ═══════════════════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════
+   2. HEADER
+   ═══════════════════════════════════════════════════════ */
 header {
-  padding: 2rem 1rem;
-  text-align: center;
+  position: relative;
+  padding: 2.5rem 1.5rem 2rem;
+  background: linear-gradient(160deg, #0c1520 0%, var(--bg) 100%);
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Línea dorada inferior */
+header::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--accent) 40%, var(--accent-2) 70%, transparent 100%);
+  opacity: .5;
+}
+
+/* Detalle decorativo esquina superior derecha */
+header::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 184, 75, 0.06) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 0 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
-   3. SELECTOR DE IDIOMA (FLAGS)
-   ═══════════════════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════
+   3. FLAGS — selector de idioma
+   ═══════════════════════════════════════════════════════ */
 .flags {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: .5rem;
+  justify-content: flex-end;
+  gap: .75rem;
+  margin-bottom: 2rem;
 }
 
 .flags__item {
   display: inline-block;
   text-decoration: none;
-  opacity: .55;
-  transition: opacity var(--transition), transform var(--transition);
+  opacity: .35;
+  transition: opacity var(--transition), transform var(--transition), filter var(--transition), outline-color var(--transition);
+  filter: grayscale(1);
+  border-radius: 3px;
 }
 
 .flags__item img {
-  width: 32px;
+  width: 26px;
   display: block;
+  border-radius: 3px;
 }
 
 .flags__item:hover {
-  opacity: .85;
-  transform: scale(1.1);
+  opacity: .75;
+  transform: translateY(-2px);
+  filter: grayscale(.2);
 }
 
 .flags__item--active {
   opacity: 1;
-  border-bottom: 2px solid var(--accent);
+  filter: grayscale(0);
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
-   4. ZONA DE PERFIL: FOTO + CONTACTO
-   ═══════════════════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════
+   4. PROFILE ZONE
+   ═══════════════════════════════════════════════════════ */
 .profile-zone {
-  margin: 2rem auto;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  margin-bottom: 1.75rem;
 }
 
 .profile-img {
-  width: 140px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  border: 4px solid var(--accent);
+  border: 2px solid var(--accent);
+  box-shadow:
+    0 0 0 5px rgba(232, 184, 75, 0.07),
+    var(--glow);
+  flex-shrink: 0;
+  object-fit: cover;
 }
 
 .personal-info {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
-  padding: 0;
-  margin-top: 1.5rem;
+  gap: 1rem;
   list-style: none;
+  flex-wrap: wrap;
 }
 
 .info-item {
-  text-align: center;
   cursor: pointer;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .35rem;
+  padding: .55rem .75rem;
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  min-width: 58px;
+}
+
+.info-item:hover {
+  border-color: var(--border);
+  box-shadow: var(--glow);
+  transform: translateY(-2px);
 }
 
 .info-icon img {
-  width: 28px;
+  width: 20px;
+  height: 20px;
   transition: transform var(--transition);
 }
 
 .info-item:hover .info-icon img {
-  transform: scale(1.15);
+  transform: scale(1.1);
 }
 
 .info-data {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: max-height .4s ease, opacity .4s ease;
-  font-size: .85rem;
-  margin-top: .5rem;
+  transition: max-height .4s ease, opacity .35s ease;
+  font-size: .72rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--accent);
   white-space: nowrap;
+  text-align: center;
+}
+
+.info-item.active {
+  border-color: var(--accent);
+  box-shadow: var(--glow);
 }
 
 .info-item.active .info-data {
@@ -153,298 +232,339 @@ header {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
-   5. ZONA DE NOMBRE Y ROL
-   ═══════════════════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════
+   5. NAME ZONE
+   ═══════════════════════════════════════════════════════ */
 .name-zone h1 {
-  margin: .5rem 0;
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.75rem, 4vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  color: var(--text);
 }
 
 .name-zone h2 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(.8rem, 1.8vw, .95rem);
   font-weight: 400;
   color: var(--accent);
-  margin: .25rem 0;
+  margin: .5rem 0 .8rem;
+  letter-spacing: .06em;
+}
+
+.name-zone p {
+  font-size: .88rem;
+  color: var(--text-muted);
+  max-width: 700px;
+  line-height: 1.75;
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
-   6. MAIN: BASE DE SECCIONES Y ARTÍCULOS
-   Estilos comunes a todas las secciones.
-   Los estilos específicos por tipo van en la sección 7.
-   ═══════════════════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════
+   6. MAIN — base de secciones
+   ═══════════════════════════════════════════════════════ */
 #contents {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 3rem 1.5rem 4rem;
+  position: relative;
+  z-index: 1;
 }
 
+/* Animación de entrada escalonada */
 .subject {
-  margin-bottom: 3rem;
+  margin-bottom: 2.75rem;
+  animation: fadeUp .5s ease both;
 }
 
-/* Título de sección con ícono y línea inferior dorada */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.subject:nth-child(1) { animation-delay: .05s; }
+.subject:nth-child(2) { animation-delay: .12s; }
+.subject:nth-child(3) { animation-delay: .19s; }
+.subject:nth-child(4) { animation-delay: .26s; }
+.subject:nth-child(5) { animation-delay: .33s; }
+
+/* Título de sección */
 .subject-name {
   display: flex;
   align-items: center;
   gap: .75rem;
-  border-bottom: 1px solid var(--accent);
-  padding-bottom: .5rem;
+  padding-bottom: .65rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+  font-family: 'Syne', sans-serif;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
 }
 
-/* Íconos de sección siempre blancos */
+/* Barra dorada izquierda en título */
+.subject-name::before {
+  content: '';
+  display: block;
+  width: 3px;
+  height: 1.1rem;
+  background: var(--accent);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* Icono SVG del YAML — pequeño, desaturado */
 .subject-name img {
-  width: 28px;
-  filter: brightness(0) invert(1);
+  width: 16px;
+  filter: brightness(0) invert(.45);
 }
 
-/* Base de cada artículo/item */
+/* Base de cada artículo */
 .item {
   display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-bottom: 1.25rem;
+  flex-direction: column;
+  gap: .3rem;
+  margin-bottom: 1rem;
+  padding: .9rem 1.1rem .9rem 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  position: relative;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  overflow: hidden;
+}
+
+/* Borde izquierdo animado */
+.item::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: transparent;
+  transition: background var(--transition);
+}
+
+.item:hover {
+  border-color: rgba(232, 184, 75, 0.2);
+  box-shadow: var(--glow);
+}
+
+.item:hover::before {
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
 }
 
 .item h3 {
-  margin: 0;
+  font-family: 'Syne', sans-serif;
+  font-size: .97rem;
+  font-weight: 700;
+  color: var(--text);
   width: 100%;
 }
 
-.item .description {
+.role {
+  font-size: .8rem;
+  color: var(--accent-2);
+  font-style: normal;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: .03em;
+}
+
+.date {
+  font-size: .75rem;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: .04em;
+}
+
+.description {
+  margin-top: .2rem;
+  font-size: .85rem;
+  color: var(--text-muted);
+  line-height: 1.7;
   width: 100%;
 }
 
-.item .description p {
+.description p {
   margin: 0;
   white-space: pre-wrap;
 }
 
-.role {
-  font-style: italic;
-  opacity: .9;
+/* Lista de bullets desde YAML array */
+.description ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+
+.description li {
+  display: flex;
+  gap: .5rem;
+  align-items: baseline;
+}
+
+.description li::before {
+  content: '▸';
+  color: var(--accent);
+  font-size: .7rem;
+  flex-shrink: 0;
+  line-height: 1.75;
+}
+
+/* markdownify envuelve en <p> dentro de <li> */
+.description li p {
   margin: 0;
 }
 
-.date {
-  font-size: .85rem;
-  opacity: .8;
-}
 
+/* ═══════════════════════════════════════════════════════
+   7. SECCIONES ESPECÍFICAS
+   ═══════════════════════════════════════════════════════ */
 
-/* ═══════════════════════════════════════════════════════════════
-   7. SECCIONES POR CLASE
-   Cada bloque controla el layout de una sección específica.
-   La clase viene del campo `class:` del YAML.
-   ═══════════════════════════════════════════════════════════════ */
-
-/* ── 7a. EDUCATION ───────────────────────────────────────────── */
-
+/* ── EDUCATION ──────────────────────────────────────── */
 .education .item {
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-areas:
-    "title title"
-    "desc  date";
-  gap: 0 1.5rem;
+    "title date"
+    "desc  desc";
+  gap: .2rem 1.5rem;
   align-items: start;
 }
 
-.education .item h3 {
-  grid-area: title;
-}
+.education .item h3      { grid-area: title; }
+.education .item .date   { grid-area: date; align-self: center; }
+.education .item .description { grid-area: desc; width: 100%; }
 
-.education .item .date {
-  grid-area: date;
-  white-space: nowrap;
-  align-self: center;
-}
 
-.education .item .description {
-  grid-area: desc;
-  min-width: 0;
-  width: auto;
-}
-
-/* ── 7b. LANGUAGES ─────────────────────────────────────────────
-   Solo muestra títulos con los indicadores de nivel.
-   Sin bullets ni descripción adicional.
-─────────────────────────────────────────────────────────────── */
+/* ── LANGUAGES ──────────────────────────────────────── */
 .languages .item h3 {
-  font-weight: 400;   /* Mismo peso que el texto normal, no tan prominente */
-  font-size: 1rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: .92rem;
+  font-weight: 500;
+  color: var(--text);
 }
 
 
-/* ── 7c. SKILLS ────────────────────────────────────────────────
-   Cada item muestra el título a la izquierda y los
-   devicons a la derecha en la misma fila (desktop).
-   En mobile se apilan verticalmente.
-─────────────────────────────────────────────────────────────── */
+/* ── SKILLS ─────────────────────────────────────────── */
 .skills .item {
+  flex-direction: row;
   align-items: center;
-  flex-wrap: nowrap;   /* Evita que los iconos bajen a la siguiente línea */
+  flex-wrap: nowrap;
+  gap: 1rem;
 }
 
 .skills .item h3 {
-  width: auto;         /* Anula el width: 100% base */
-  flex-shrink: 0;      /* El título no se comprime */
+  width: auto;
+  flex-shrink: 0;
+  font-family: 'Outfit', sans-serif;
+  font-size: .85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  min-width: 130px;
 }
 
 .skills .item .description {
-  width: auto;         /* Anula el width: 100% base */
+  width: auto;
   flex: 1;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
+  margin-top: 0;
 }
 
 .skills .item .description p {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
-  white-space: normal; 
+  gap: 8px;
+  white-space: normal;
 }
 
 
-/* ── 7d. EXPERIENCE ────────────────────────────────────────────
-   Layout completo: título, rol, descripción larga y fecha.
-   Usa el layout base (.item flex) sin modificaciones,
-   ya que la vista actual es correcta.
-   Este bloque existe para futuras personalizaciones.
-─────────────────────────────────────────────────────────────── */
-.experience .item {
-  /* Sin cambios respecto al base por ahora */
-}
+/* ── EXPERIENCE ─────────────────────────────────────── */
+/* Sin cambios adicionales respecto al base */
 
 
-/* ═══════════════════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════
    8. FOOTER
-   ═══════════════════════════════════════════════════════════════ */
+   ═══════════════════════════════════════════════════════ */
 footer {
   text-align: center;
-  padding: 1rem;
-  opacity: .8;
-  font-size: .9rem;
+  padding: 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+  font-size: .75rem;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: .06em;
+  position: relative;
+  z-index: 1;
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════
    9. UTILIDADES
-   ═══════════════════════════════════════════════════════════════ */
-.icon {
-  width: 25px;
-  height: 25px;
-  flex-shrink: 0;
-}
+   ═══════════════════════════════════════════════════════ */
+.icon { width: 22px; height: 22px; flex-shrink: 0; }
+.icon.white { filter: brightness(0) invert(.75); }
 
-.icon.white {
-  filter: brightness(0) invert(1);
-}
-
-/* Devicons: tamaño estándar */
+/* Devicons */
 #contents img[alt^="devicon"] {
-  width: 50px;
-  height: 50px;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
-  margin: 0.5px;
+  border-radius: 5px;
+  padding: 3px;
+  background: var(--surface-2);
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
-/* Devicons con fondo blanco */
+#contents img[alt^="devicon"]:hover {
+  transform: scale(1.12) translateY(-2px);
+  box-shadow: 0 4px 14px rgba(232, 184, 75, 0.25);
+}
+
 #contents img[alt="devicon_blanco"] {
-  background: #fff;
-  padding: 2px;
-  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 4px;
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
-  10. RESPONSIVE ≤ 768 px
-   ═══════════════════════════════════════════════════════════════ */
-@media (max-width: 768px) {
-
-.personal-info {
-    display: grid;
-    /* Las columnas solo ocupan lo que el contenido necesita */
-    grid-template-columns: auto auto; 
-    /* Controla aquí qué tan separados quieres los dos bloques */
-    column-gap: 1.5rem; 
-    row-gap: 0.8rem;
-    /* Centra todo el bloque de 2x2 en la pantalla */
-    justify-content: center; 
-    width: 100%;
-  }
-
-  /* Base: items en columna */
-  .item {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  /*Educacion*/
-  
-
-  /* Skills: vuelve a apilar título arriba, iconos abajo */
-  .skills .item {
-    flex-wrap: wrap;
-  }
-
-  .skills .item h3,
-  .skills .item .description {
-    width: 100%;
-  }
-
-  .skills .item .description p {
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  
-
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   11. TOOLTIPS DE CONTACTO
-   Texto que aparece debajo del ícono al hacer hover.
-   El contenido viene de data-tooltip en el HTML (generado por Liquid).
-
-   Estados:
-     Normal  → solo ícono
-     Hover   → ícono + tooltip en dorado (data-tooltip)
-     Active  → ícono + info-data en blanco, tooltip oculto
-   ═══════════════════════════════════════════════════════════════ */
-
-/* Tooltip base — oculto por defecto */
+/* ═══════════════════════════════════════════════════════
+  10. TOOLTIPS DE CONTACTO
+   ═══════════════════════════════════════════════════════ */
 .info-item::after {
   content: attr(data-tooltip);
   display: block;
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: max-height .3s ease, opacity .3s ease;
-  font-size: .8rem;
+  transition: max-height .25s ease, opacity .25s ease;
+  font-size: .68rem;
   color: var(--accent);
-  margin-top: .35rem;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: .04em;
   white-space: nowrap;
+  text-align: center;
 }
 
-/* Hover sin estar activo: muestra tooltip */
-.info-item:not(.active)::after {
+.info-item:not(.active):hover::after {
   max-height: 30px;
   opacity: 1;
 }
 
-/* Activo: tooltip oculto, info-data visible (ya manejado por clase .active) */
 .info-item.active::after {
   max-height: 0;
   opacity: 0;
 }
 
-/* Botón de descarga — el <a> interno maneja el cursor */
-.info-item--download {
-  cursor: default;
-}
+.info-item--download { cursor: default; }
 
 .info-download {
   display: flex;
@@ -452,4 +572,48 @@ footer {
   align-items: center;
   text-decoration: none;
   color: inherit;
+}
+
+
+/* ═══════════════════════════════════════════════════════
+  11. RESPONSIVE ≤ 768px
+   ═══════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  header { padding: 2rem 1rem 1.75rem; }
+
+  .flags { justify-content: center; margin-bottom: 1.5rem; }
+
+  .profile-zone {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .name-zone h1 { text-align: center; }
+  .name-zone h2 { text-align: center; }
+  .name-zone p  { text-align: center; margin: 0 auto; }
+
+  .personal-info {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 1rem;
+    row-gap: .75rem;
+    justify-content: center;
+  }
+
+  #contents { padding: 2rem 1rem 3rem; }
+
+  .item { flex-direction: column; align-items: flex-start; }
+
+  .education .item {
+    grid-template-areas: "title title" "date date" "desc desc";
+  }
+
+  .skills .item { flex-wrap: wrap; }
+  .skills .item h3,
+  .skills .item .description { width: 100%; }
+  .skills .item .description p { flex-wrap: wrap; gap: 8px; }
+
 }
