@@ -226,6 +226,16 @@ header::before {
   box-shadow: var(--glow);
 }
 
+.info-item.copied {
+  border-color: #4ade80;
+  box-shadow: 0 0 20px rgba(74, 222, 128, 0.2);
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.info-item.copied .info-data {
+  color: #4ade80;
+}
+
 .info-item.active .info-data {
   max-height: 50px;
   opacity: 1;
