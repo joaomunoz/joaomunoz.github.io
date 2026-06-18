@@ -123,8 +123,8 @@ Experiencia:
   class: experience
   icon: "/assets/img/briefcase.svg"
   contents:
-    - title: Kyndryl
-      role: Operador de Procesos y Monitoreo TI
+    - title: Kyndryl / IBM
+      role: Operador de Procesos y Command Center
       description:
         - Operador de consolas de monitoreo (Nagios, Tivoli, Zabbix, VZOR) para clientes internacionales. 
           Responsable de detección de alertas, gestión de incidentes vía Jira, 

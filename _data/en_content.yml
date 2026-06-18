@@ -126,8 +126,8 @@ Experiencia:
   class: experience
   icon: "/assets/img/briefcase.svg"
   contents:
-    - title: Kyndryl
-      role: IT Monitoring and Process Operator
+    - title: Kyndryl / IBM
+      role: IT Process and Command Center Operator
       description:
         - Monitoring console operator (Nagios, Tivoli, Zabbix, VZOR) 
           for international clients. Responsible for alert detection, 

@@ -376,7 +376,7 @@ header::before {
 
 .role {
   font-size: .8rem;
-  color: var(--accent-2);
+  color: var(--text);
   font-style: normal;
   font-family: 'JetBrains Mono', monospace;
   letter-spacing: .03em;
