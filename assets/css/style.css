@@ -384,7 +384,7 @@ header::before {
 
 .date {
   font-size: .75rem;
-  color: var(--text-muted);
+  color: var(--text);
   font-family: 'JetBrains Mono', monospace;
   letter-spacing: .04em;
 }
@@ -475,7 +475,7 @@ header::before {
   font-family: 'Outfit', sans-serif;
   font-size: .85rem;
   font-weight: 500;
-  color: var(--text-muted);
+  color: var(--text);
   min-width: 130px;
 }
 
