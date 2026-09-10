@@ -109,13 +109,31 @@ Habilidades:
     - title: Bases de Datos
       description: "
         ![devicon_blanco](https://www.iconshock.com/image/Golden/Database/oracle/)
-        
+
         ![devicon_blanco](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg)
-        
+
         ![devicon_blanco](https://cdn.worldvectorlogo.com/logos/microsoft-sql-server-1.svg?fill=white)
       "
+    - title: Gestión de Incidentes
+      description: "
+        ![devicon_blanco](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg)
+      "
+    - title: Backend / APIs
+      description: "
+        ![devicon_blanco](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg)
 
-#-----------------------------------------------------------------------------------------------------#    
+        ![devicon_blanco](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlalchemy/sqlalchemy-original.svg)
+
+        ![devicon_blanco](https://cdn.simpleicons.org/pydantic)
+      "
+    - title: Scraping / Anti-bot
+      description: "curl_cffi (TLS fingerprint impersonation), APIs BFF/GraphQL y scraping HTTP sin navegador headless"
+    - title: Agentes de IA / MCP
+      description: "Orquestación multi-agente vía MCP (Model Context Protocol) y OpenCode"
+    - title: Redes
+      description: "Instalación de redes locales (LAN), VPN y TCP/IP básico"
+
+#-----------------------------------------------------------------------------------------------------#
 
 Experiencia:
   subject: Experiencia
@@ -126,12 +144,12 @@ Experiencia:
     - title: Kyndryl / IBM
       role: Operador de Procesos y Command Center
       description:
-        - Operador de consolas de monitoreo (Nagios, Tivoli, Zabbix, VZOR) para clientes internacionales. 
-          Responsable de detección de alertas, gestión de incidentes vía Jira, 
-          soporte a usuarios y administración de accesos. 
-          Ejecuté procesos batch nocturnos y gestioné respaldos con EMC NetWorker y 
-          TSM para clientes SURA y AFP Provida. Elaboré informes técnicos y 
-          reportes operativos en Power BI.
+        - Monitoreé y supervisé redes, plataformas y servicios con Nagios, Tivoli, Zabbix y VZOR para múltiples clientes simultáneos en banca (Itaú, Security, Santander), AFP (Hábitat, SURA), cajas de compensación (Los Héroes) e industria (AZA).
+        - Mantuve reportes de incidentes segmentados por unidad operativa (BBDD, UNIX, WINTEL, WAS, Networking y SAP) con seguimiento en Jira, gestionando escalamientos internos y externos según criticidad del servicio.
+        - Participé en el desarrollo del dashboard del Command Center en Power BI, integrado en Microsoft Teams con SharePoint como fuente de datos mediante documentos Excel, para medición de eficacia operativa y reporte de escalamientos por cliente.
+        - Creé flujo en Power Automate que extraía sub-reportes desde correos Outlook y los unificaba automáticamente en un único reporte consolidado por horarios de salida.
+        - Ejecuté procesos nocturnos/batch y administré respaldos con EMC NetWorker y TSM en infraestructuras críticas.
+        - Administré accesos y perfiles de usuario, ejecuté mantenimiento de plataformas y aseguré la continuidad de servicios críticos en entorno 24/7.
       date: Ago. 2023 - Jul. 2024
 
     - title: M y CH Inmobiliaria
@@ -146,16 +164,15 @@ Experiencia:
     - title: G-Talent
       role: Analista Programador
       description:
-        - Desarrollé reportes personalizados con SQL Server usando 
-          Procedimientos Almacenados y procesos ETL en SSIS. Utilicé Oracle para auditorías internas y reportes de gestión. 
-          Desarrollé un reporte de contabilidad especializado 
-          para clientes de servicios de televisión en VTR.
+        - Desarrollé reportes de gestión empresarial con SQL Server mediante Procedimientos Almacenados, estructurando consultas para extracción y transformación de datos operativos.
+        - Generé reportes de auditoría interna y control de gestión usando Oracle, entregando información consolidada para toma de decisiones.
+        - Desarrollé pipeline ETL completo en SSIS con SQL Server para el reporte de contabilidad de clientes de VTR, automatizando la extracción, transformación y carga de datos de facturación.
       date: Sep. - Nov. 2019
 
     - title: "Medicien: Proyecto Portal Paciente"
       role: Analista Programador
       description:
-        - Diseñé y desarrollé la base de datos del proyecto Portal Paciente en SQL Server, registrando citas médicas con automatización ETL en Pentaho. 
-          Administré la interoperabilidad entre motores Oracle Horizon y SQL Server mediante 
-          API con tokens de seguridad.
+        - Diseñé y desarrollé la base de datos PortalPaciente en SQL Server para registro de citas médicas, gestión de agenda de dentistas y control del servicio de odontología.
+        - Implementé automatización ETL en Pentaho con integración vía API y tokens de seguridad para extracción de datos desde el servicio de odontología hacia la base de datos.
+        - Administré interoperabilidad de datos entre motores Oracle Horizon y SQL Server.
       date: Jun. - Ago. 2019

@@ -112,13 +112,31 @@ Habilidades:
     - title: Databases
       description: "
         ![devicon_blanco](https://www.iconshock.com/image/Golden/Database/oracle/)
-        
+
         ![devicon_blanco](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg)
-        
+
         ![devicon_blanco](https://cdn.worldvectorlogo.com/logos/microsoft-sql-server-1.svg?fill=white)
       "
+    - title: Incident Management
+      description: "
+        ![devicon_blanco](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg)
+      "
+    - title: Backend / APIs
+      description: "
+        ![devicon_blanco](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg)
 
-#-----------------------------------------------------------------------------------------------------#    
+        ![devicon_blanco](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlalchemy/sqlalchemy-original.svg)
+
+        ![devicon_blanco](https://cdn.simpleicons.org/pydantic)
+      "
+    - title: Scraping / Anti-bot
+      description: "curl_cffi (TLS fingerprint impersonation), BFF/GraphQL APIs and headless-browser-free HTTP scraping"
+    - title: AI Agents / MCP
+      description: "Multi-agent orchestration via MCP (Model Context Protocol) and OpenCode"
+    - title: Networking
+      description: "Local area network (LAN) installation, VPN and basic TCP/IP"
+
+#-----------------------------------------------------------------------------------------------------#
 
 Experiencia:
   subject: Experience
@@ -129,13 +147,12 @@ Experiencia:
     - title: Kyndryl / IBM
       role: IT Process and Command Center Operator
       description:
-        - Monitoring console operator (Nagios, Tivoli, Zabbix, VZOR) 
-          for international clients. Responsible for alert detection, 
-          incident management via Jira, user support, 
-          and access administration. Executed nightly batch processes 
-          and managed backups with EMC NetWorker and TSM for clients SURA and 
-          AFP Provida. Generated technical reports and operational dashboards 
-          in Power BI.
+        - Monitored networks, platforms and services with Nagios, Tivoli, Zabbix and VZOR for multiple simultaneous clients in banking (Itaú, Security, Santander), pension funds (Hábitat, SURA), compensation funds (Los Héroes) and industry (AZA).
+        - Maintained incident reports segmented by operational unit (BBDD, UNIX, WINTEL, WAS, Networking and SAP) with Jira tracking, managing internal and external escalations based on service criticality.
+        - Participated in the development of the Command Center dashboard in Power BI, integrated into Microsoft Teams with SharePoint as data source via Excel documents, for operational efficiency measurement and client escalation reporting.
+        - Built a Power Automate flow that extracted sub-reports from Outlook emails and automatically consolidated them into a single report based on output schedules.
+        - Executed nightly/batch processes and managed backups with EMC NetWorker and TSM in critical infrastructures.
+        - Managed user access and profiles, performed platform maintenance and ensured continuity of critical services in a 24/7 environment.
       date: Aug. 2023 - Jul. 2024
 
     - title: M y CH Inmobiliaria
@@ -150,17 +167,15 @@ Experiencia:
     - title: G-Talent
       role: Programmer Analyst
       description:
-        - Developed custom reports using SQL Server, 
-          Stored Procedures, and ETL processes in SSIS. 
-          Utilized Oracle for internal audits and management reporting. 
-          Developed a specialized accounting report for VTR television service clients.
+        - Developed business management reports with SQL Server using Stored Procedures, structuring queries for extraction and transformation of operational data.
+        - Generated internal audit and management control reports using Oracle, delivering consolidated information for decision-making.
+        - Developed a complete ETL pipeline in SSIS with SQL Server for the billing report of VTR customers, automating the extraction, transformation and loading of billing data.
       date: Sep. - Nov. 2019
 
     - title: "Medicien: Patient Portal Project"
       role: Programmer Analyst
       description:
-        - Designed and developed the database for the Patient Portal 
-          project in SQL Server, automating medical appointment 
-          records with ETL via Pentaho. Managed interoperability 
-          between Oracle Horizon and SQL Server engines through token-secured APIs.
+        - Designed and developed the PortalPaciente database in SQL Server for medical appointment registration, dentist schedule management and dental service control.
+        - Implemented ETL automation in Pentaho with API integration and security tokens for data extraction from the dental service to the database.
+        - Managed data interoperability between Oracle Horizon and SQL Server engines.
       date: Jun. - Aug. 2019
