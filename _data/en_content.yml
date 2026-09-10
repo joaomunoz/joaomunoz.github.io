@@ -144,7 +144,7 @@ Experiencia:
   class: experience
   icon: "/assets/img/briefcase.svg"
   contents:
-    - title: Kyndryl / IBM
+    - title: IBM
       role: IT Process and Command Center Operator
       description:
         - Monitored networks, platforms and services with Nagios, Tivoli, Zabbix and VZOR for multiple simultaneous clients in banking (Itaú, Security, Santander), pension funds (Hábitat, SURA), compensation funds (Los Héroes) and industry (AZA).
