@@ -41,22 +41,22 @@ Habilidades:
   contents:
     - title: Programming Languages
       description: "
-        ![devicon](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg)
-        ![devicon](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg)
-        ![devicon](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg)
-        ![devicon](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg)
+        <span class='devicon-box' data-tooltip='C'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg' alt='C'></span>
+        <span class='devicon-box' data-tooltip='C++'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg' alt='C++'></span>
+        <span class='devicon-box' data-tooltip='Python'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg' alt='Python'></span>
+        <span class='devicon-box' data-tooltip='PHP'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg' alt='PHP'></span>
       "
     - title: Frameworks
       description: "
-        ![devicon_blanco](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain-wordmark.svg)
+        <span class='devicon-box white' data-tooltip='Django'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain-wordmark.svg' alt='Django'></span>
       "
     - title: Web & UI/UX
       description: "
-              ![devicon](https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_960_720.png)
+              <span class='devicon-box' data-tooltip='HTML5'><img src='https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_960_720.png' alt='HTML5'></span>
 
-              ![devicon](https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_1280.png)
+              <span class='devicon-box' data-tooltip='CSS3'><img src='https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_1280.png' alt='CSS3'></span>
 
-              ![devicon](https://cdn.pixabay.com/photo/2015/04/23/17/41/javascript-736400_1280.png)
+              <span class='devicon-box' data-tooltip='JavaScript'><img src='https://cdn.pixabay.com/photo/2015/04/23/17/41/javascript-736400_1280.png' alt='JavaScript'></span>
         "
 
 
@@ -65,69 +65,69 @@ Habilidades:
 
     - title: Monitoring Tools
       description: "
-        ![devicon](https://www.varindia.com/storage/news/uploads/2018/02/601515f8cf122.jpg)
+        <span class='devicon-box' data-tooltip='Tivoli'><img src='https://www.varindia.com/storage/news/uploads/2018/02/601515f8cf122.jpg' alt='Tivoli'></span>
         
-        ![devicon_blanco](https://store-images.s-microsoft.com/image/apps.20416.c1e0f2ee-6a48-494c-8b96-f38d7243b0e4.7cacb8f9-4658-4cb5-b761-bf02496afdc0.d1407e59-b258-4389-a3be-cef2a5034019)
+        <span class='devicon-box white' data-tooltip='VZOR'><img src='https://store-images.s-microsoft.com/image/apps.20416.c1e0f2ee-6a48-494c-8b96-f38d7243b0e4.7cacb8f9-4658-4cb5-b761-bf02496afdc0.d1407e59-b258-4389-a3be-cef2a5034019' alt='VZOR'></span>
         
-        ![devicon](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3Hmxao3hJidJKBfbwGkRWUPbywbwFLoWlqg&s)
+        <span class='devicon-box' data-tooltip='Zabbix'><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3Hmxao3hJidJKBfbwGkRWUPbywbwFLoWlqg&s' alt='Zabbix'></span>
         
-        ![devicon_blanco](https://upload.wikimedia.org/wikipedia/commons/1/16/Nagios_logo.svg)
+        <span class='devicon-box white' data-tooltip='Nagios'><img src='https://upload.wikimedia.org/wikipedia/commons/1/16/Nagios_logo.svg' alt='Nagios'></span>
       "
     - title: Office Suite
       description: "
-        ![devicon_blanco](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/latex/latex-original.svg)
+        <span class='devicon-box white' data-tooltip='LaTeX'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/latex/latex-original.svg' alt='LaTeX'></span>
         
-        ![devicon_blanco](https://mailmeteor.com/logos/assets/PNG/Microsoft_Office_Excel_Logo_256px.png)
+        <span class='devicon-box white' data-tooltip='Excel'><img src='https://mailmeteor.com/logos/assets/PNG/Microsoft_Office_Excel_Logo_256px.png' alt='Excel'></span>
         
-        ![devicon_blanco](https://mailmeteor.com/logos/assets/PNG/Microsoft_Office_Word_Logo_256px.png)
+        <span class='devicon-box white' data-tooltip='Word'><img src='https://mailmeteor.com/logos/assets/PNG/Microsoft_Office_Word_Logo_256px.png' alt='Word'></span>
         
-        ![devicon_blanco](https://www.paitgroup.com/hs-fs/hubfs/Power-Automate-22.png?width=465&height=149&name=Power-Automate-22.png)
+        <span class='devicon-box white' data-tooltip='Power Automate'><img src='https://www.paitgroup.com/hs-fs/hubfs/Power-Automate-22.png?width=465&height=149&name=Power-Automate-22.png' alt='Power Automate'></span>
         
-        ![devicon_blanco](https://upload.wikimedia.org/wikipedia/commons/2/25/Microsoft_Office_PowerPoint_%282019%E2%80%932025%29.svg)
+        <span class='devicon-box white' data-tooltip='PowerPoint'><img src='https://upload.wikimedia.org/wikipedia/commons/2/25/Microsoft_Office_PowerPoint_%282019%E2%80%932025%29.svg' alt='PowerPoint'></span>
         
-        ![devicon_blanco](https://mailmeteor.com/logos/assets/PNG/Microsoft_Office_Teams_Logo_256px.png)
+        <span class='devicon-box white' data-tooltip='Teams'><img src='https://mailmeteor.com/logos/assets/PNG/Microsoft_Office_Teams_Logo_256px.png' alt='Teams'></span>
         
-        ![devicon_blanco](https://cdn.simpleicons.org/libreoffice)
+        <span class='devicon-box white' data-tooltip='LibreOffice'><img src='https://cdn.simpleicons.org/libreoffice' alt='LibreOffice'></span>
       "
     - title: Version Control
       description: "
-        ![devicon_blanco](https://icongr.am/devicon/git-original.svg)
+        <span class='devicon-box white' data-tooltip='Git'><img src='https://icongr.am/devicon/git-original.svg' alt='Git'></span>
         
-        ![devicon_blanco](https://icongr.am/devicon/github-original.svg)
+        <span class='devicon-box white' data-tooltip='GitHub'><img src='https://icongr.am/devicon/github-original.svg' alt='GitHub'></span>
       "
     - title: Operating Systems
       description: "
-        ![devicon_blanco](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows11/windows11-original.svg)
+        <span class='devicon-box white' data-tooltip='Windows'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows11/windows11-original.svg' alt='Windows'></span>
 
-        ![devicon_blanco](https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/960px-Tux.svg.png)
+        <span class='devicon-box white' data-tooltip='Linux'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/960px-Tux.svg.png' alt='Linux'></span>
       "
     - title: BI & ETL Processes
       description: "
-        ![devicon_blanco](https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg)
+        <span class='devicon-box white' data-tooltip='Power BI'><img src='https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg' alt='Power BI'></span>
         
-        ![devicon_blanco](https://iconape.com/wp-content/files/sc/352055/png/pentaho-logo.png)
+        <span class='devicon-box white' data-tooltip='Pentaho'><img src='https://iconape.com/wp-content/files/sc/352055/png/pentaho-logo.png' alt='Pentaho'></span>
         
-        ![devicon_blanco](https://www.selectdistinct.co.uk/wp-content/uploads/2024/01/ssis-logo-2-jpg-1200x1200.webp)
+        <span class='devicon-box white' data-tooltip='SSIS'><img src='https://www.selectdistinct.co.uk/wp-content/uploads/2024/01/ssis-logo-2-jpg-1200x1200.webp' alt='SSIS'></span>
       "
     - title: Databases
       description: "
-        ![devicon_blanco](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg)
+        <span class='devicon-box white' data-tooltip='Oracle'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg' alt='Oracle'></span>
 
-        ![devicon_blanco](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg)
+        <span class='devicon-box white' data-tooltip='MySQL'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg' alt='MySQL'></span>
 
-        ![devicon_blanco](https://cdn.worldvectorlogo.com/logos/microsoft-sql-server-1.svg?fill=white)
+        <span class='devicon-box white' data-tooltip='SQL Server'><img src='https://cdn.worldvectorlogo.com/logos/microsoft-sql-server-1.svg?fill=white' alt='SQL Server'></span>
       "
     - title: Incident Management
       description: "
-        ![devicon_blanco](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg)
+        <span class='devicon-box white' data-tooltip='Jira'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg' alt='Jira'></span>
       "
     - title: Backend / APIs
       description: "
-        ![devicon_blanco](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg)
+        <span class='devicon-box white' data-tooltip='FastAPI'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg' alt='FastAPI'></span>
 
-        ![devicon_blanco](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlalchemy/sqlalchemy-original.svg)
+        <span class='devicon-box white' data-tooltip='SQLAlchemy'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlalchemy/sqlalchemy-original.svg' alt='SQLAlchemy'></span>
 
-        ![devicon_blanco](https://cdn.simpleicons.org/pydantic)
+        <span class='devicon-box white' data-tooltip='Pydantic'><img src='https://cdn.simpleicons.org/pydantic' alt='Pydantic'></span>
       "
     - title: Scraping / Anti-bot
       description: "curl_cffi (TLS fingerprint impersonation), BFF/GraphQL APIs and headless-browser-free HTTP scraping"
