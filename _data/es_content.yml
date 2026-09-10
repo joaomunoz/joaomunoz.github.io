@@ -141,7 +141,7 @@ Experiencia:
   class: experience
   icon: "/assets/img/briefcase.svg"
   contents:
-    - title: Kyndryl / IBM
+    - title: IBM
       role: Operador de Procesos y Command Center
       description:
         - Monitoreé y supervisé redes, plataformas y servicios con Nagios, Tivoli, Zabbix y VZOR para múltiples clientes simultáneos en banca (Itaú, Security, Santander), AFP (Hábitat, SURA), cajas de compensación (Los Héroes) e industria (AZA).
