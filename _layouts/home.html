@@ -9,11 +9,11 @@
 {% endcomment %}
 {% if page.lang == "en" %}
 {% assign content = site.data.en_content %}
-{% assign cv_pdf = "/docs/JMunoz_CV_en.pdf" %}
+{% assign cv_pdf = "/docs/JoaoMunoz_CV_EN.pdf" %}
 {% assign cv_label = "Download CV" %}
 {% else %}
 {% assign content = site.data.es_content %}
-{% assign cv_pdf = "/docs/JMunoz_CV_es.pdf" %}
+{% assign cv_pdf = "/docs/JoaoMunoz_CV_ES.pdf" %}
 {% assign cv_label = "Descargar CV" %}
 {% endif %}
 <!DOCTYPE html>
@@ -106,8 +106,8 @@
 
         <!-- Descarga CV PDF
              cv_pdf y cv_label asignados al inicio según page.lang:
-               ES → /docs/JMunoz_CV_es.pdf  "Descargar CV"
-               EN → /docs/JMunoz_CV_en.pdf  "Download CV"
+               ES → /docs/JoaoMunoz_CV_ES.pdf  "Descargar CV"
+               EN → /docs/JoaoMunoz_CV_EN.pdf  "Download CV"
              data-tooltip usa cv_label para mostrar el texto al hover.
              Al ser <a download> descarga directo sin necesitar click extra.
         -->
