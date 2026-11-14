@@ -491,6 +491,28 @@ header::before {
 .education .item .date   { grid-area: date; align-self: center; }
 .education .item .description { grid-area: desc; width: 100%; }
 
+/* ── CERTIFICATIONS ─────────────────────────────────────
+   Misma disposición que Educación (nombre y fecha en una línea), pero dentro de .item-body,
+   porque la ficha lleva la insignia a la izquierda. La insignia es un PNG con transparencia:
+   sin borde ni esquinas, que en una figura redonda se verían como una caja. */
+.certifications .item-body {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "title date"
+    "desc  desc";
+  gap: .2rem 1.5rem;
+  align-items: start;
+}
+.certifications .item-body h3           { grid-area: title; }
+.certifications .item-body .date        { grid-area: date; align-self: center; }
+.certifications .item-body .description { grid-area: desc; }
+.certifications .item-thumb {
+  flex-basis: 64px;
+  border: none;
+  border-radius: 0;
+}
+
 
 /* ── LANGUAGES ──────────────────────────────────────── */
 .languages .item h3 {
@@ -709,6 +731,10 @@ footer {
   .item { flex-direction: column; align-items: flex-start; }
 
   .education .item {
+    grid-template-areas: "title title" "date date" "desc desc";
+  }
+
+  .certifications .item-body {
     grid-template-areas: "title title" "date date" "desc desc";
   }
 

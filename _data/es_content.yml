@@ -19,6 +19,8 @@ Portafolio:
       role: "Proyecto personal · Python, pandas, GeoPandas, HTML, CSS y JavaScript"
       date: Oct. - Nov. 2026
       image: "/assets/img/mapa-laboral-chile.webp"
+      image_width: 240
+      image_height: 1024
       image_alt: "Mapa de Chile coloreado según la actividad económica que distingue a cada región"
       image_link: "https://joaomunoz.github.io/mapa-laboral-chile/"
       description:
@@ -42,9 +44,28 @@ Educacion:
       date: Mar. 2013 - Sep. 2019
 #-----------------------------------------------------------------------------------------------------#    
 
+Certificaciones:
+  subject: Certificaciones
+  listing-order: 2
+  class: certifications
+  icon: "/resources/svgs/solid/certificate.svg"
+  contents:
+    - title: Google Data Analytics Professional Certificate
+      date: Oct. 2026
+      image: "/assets/img/google-data-analytics.webp"
+      image_width: 160
+      image_height: 160
+      image_alt: "Insignia del Google Data Analytics Professional Certificate"
+      image_link: "https://www.credly.com/badges/3deb66fa-89bb-4bdc-b191-b49c67fa8cb9/public_url"
+      description:
+        - "Google, en Coursera: 9 cursos"
+        - "[Ver certificado](https://www.coursera.org/account/accomplishments/specialization/Q5H4LH9WMBWU) · [Ver insignia](https://www.credly.com/badges/3deb66fa-89bb-4bdc-b191-b49c67fa8cb9/public_url)"
+
+#-----------------------------------------------------------------------------------------------------#
+
 Idiomas:
   subject: Idiomas
-  listing-order: 2
+  listing-order: 3
   class: languages
   icon: "/assets/img/globe.svg"
   contents:
@@ -55,7 +76,7 @@ Idiomas:
 
 Habilidades:
   subject: Habilidades
-  listing-order: 3
+  listing-order: 4
   class: skills
   icon: "/assets/img/screwdriver-wrench.svg"
   contents:
@@ -158,7 +179,7 @@ Habilidades:
 
 Experiencia:
   subject: Experiencia
-  listing-order: 4
+  listing-order: 5
   class: experience
   icon: "/assets/img/briefcase.svg"
   contents:
