@@ -9,6 +9,27 @@ comment_profile: "Entusiasta en el mundo de la computación y la tecnología, gr
 
 #-----------------------------------------------------------------------------------------------------#  
 
+Portafolio:
+  subject: Portafolio
+  listing-order: 0
+  class: portfolio
+  icon: "/resources/svgs/solid/map.svg"
+  contents:
+    - title: Mapa Laboral de Chile
+      role: "Proyecto personal · Python, pandas, GeoPandas, HTML, CSS y JavaScript"
+      date: Oct. - Nov. 2026
+      image: "/assets/img/mapa-laboral-chile.webp"
+      image_alt: "Mapa de Chile coloreado según la actividad económica que distingue a cada región"
+      image_link: "https://joaomunoz.github.io/mapa-laboral-chile/"
+      description:
+        - "Construí un mapa interactivo de la situación laboral y educacional de Chile por región y actividad económica, con el Censo 2024, la Encuesta Nacional de Empleo (INE), la CASEN 2024 y datos del Mineduc (SIES y MiFuturo)."
+        - "El proyecto nació para calcular la probabilidad de empleo de cada carrera por región. Al medir los datos vi que no era posible (de 3.040 combinaciones de carrera y región, solo 62 eran fiables), así que cambié la pregunta en vez de inventar la cifra."
+        - "Uno de sus hallazgos: el 24,2% de los adultos mayores de Aysén trabaja, la tasa más alta del país (17,5% en Chile)."
+        - "Validé el procesamiento contra los boletines oficiales del INE, con una desviación máxima de 0,08%; 106 controles detienen la generación si un dato deja de respaldar lo que muestra la página."
+        - "**[Ver el mapa](https://joaomunoz.github.io/mapa-laboral-chile/) · [Ver el código](https://github.com/joaomunoz/mapa-laboral-chile)**"
+
+#-----------------------------------------------------------------------------------------------------#
+
 Educacion:
   subject: Educación
   listing-order: 1

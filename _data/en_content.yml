@@ -9,6 +9,27 @@ comment_profile: "Enthusiastic about the world of computing and technology, a gr
 
 #-----------------------------------------------------------------------------------------------------#  
 
+Portafolio:
+  subject: Portfolio
+  listing-order: 0
+  class: portfolio
+  icon: "/resources/svgs/solid/map.svg"
+  contents:
+    - title: Chile Labor Map
+      role: "Personal project · Python, pandas, GeoPandas, HTML, CSS and JavaScript"
+      date: Oct. - Nov. 2026
+      image: "/assets/img/mapa-laboral-chile.webp"
+      image_alt: "Map of Chile colored by the economic activity that sets each region apart"
+      image_link: "https://joaomunoz.github.io/mapa-laboral-chile/"
+      description:
+        - "Built an interactive map of Chile's labor and education landscape by region and economic activity, using the 2024 Census, the National Employment Survey (INE), the 2024 CASEN survey and Ministry of Education data (SIES and MiFuturo)."
+        - "The project started as an attempt to estimate each degree's employment probability by region. Measuring the data showed it was not possible (only 62 of 3,040 degree-by-region combinations were reliable), so I changed the question instead of inventing the number."
+        - "One finding: 24.2% of older adults in Aysén work, the highest rate in the country (17.5% nationwide)."
+        - "Validated the processing against INE's official bulletins, with a maximum deviation of 0.08%; 106 checks stop the build if any figure no longer supports what the page shows."
+        - "**[View the map](https://joaomunoz.github.io/mapa-laboral-chile/) · [View the code](https://github.com/joaomunoz/mapa-laboral-chile)** (the map is in Spanish)"
+
+#-----------------------------------------------------------------------------------------------------#
+
 Educacion:
   subject: Education
   listing-order: 1

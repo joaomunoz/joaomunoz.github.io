@@ -173,7 +173,18 @@
     </h2>
 
     {% for item in section.contents %}
-    <article class="item">
+    {% comment %}
+      item.image es opcional (hoy solo en Portafolio): la miniatura va a la izquierda y enlaza a image_link.
+      Las fichas sin imagen generan el mismo HTML que antes, porque el envoltorio .item-body solo se abre con imagen.
+    {% endcomment %}
+    <article class="item{% if item.image %} item--thumb{% endif %}">
+
+      {% if item.image %}
+      <a class="item-thumb" href="{{ item.image_link }}" target="_blank" rel="noopener">
+        <img src="{{ item.image }}" alt="{{ item.image_alt }}" width="240" height="1024" loading="lazy">
+      </a>
+      <div class="item-body">
+      {% endif %}
 
       <h3>{{ item.title }}</h3>
 
@@ -200,6 +211,10 @@
         {% else %}
           <div class="description">{{ item.description | markdownify }}</div>
         {% endif %}
+      {% endif %}
+
+      {% if item.image %}
+      </div>
       {% endif %}
 
     </article>

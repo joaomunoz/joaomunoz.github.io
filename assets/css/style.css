@@ -431,6 +431,46 @@ header::before {
   margin: 0;
 }
 
+/* Enlaces en las descripciones: sin esto quedan en el azul por defecto, ilegible sobre el fondo oscuro */
+.description a {
+  color: var(--accent-2);
+  text-underline-offset: 2px;
+}
+.description a:hover,
+.description a:focus-visible { color: var(--accent); }
+
+/* ── FICHA CON MINIATURA (item.image) ────────────────────
+   La miniatura es angosta porque Chile es largo: en una columna de 76 px se reconoce el país, no le
+   quita ancho al texto y su alto calza con el de la ficha. En celular baja a 64 px y sigue al lado,
+   para no ocupar una pantalla entera arriba. */
+.item.item--thumb {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.1rem;
+}
+.item-thumb {
+  flex: 0 0 76px;
+  line-height: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: border-color var(--transition);
+}
+.item-thumb:hover,
+.item-thumb:focus-visible { border-color: var(--accent); }
+.item-thumb img { width: 100%; height: auto; display: block; }
+.item-body {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  flex: 1;
+  min-width: 0;
+}
+@media (max-width: 768px) {
+  .item.item--thumb { flex-direction: row; gap: .8rem; }
+  .item-thumb { flex-basis: 64px; }
+}
+
 
 /* ═══════════════════════════════════════════════════════
    7. SECCIONES ESPECÍFICAS
