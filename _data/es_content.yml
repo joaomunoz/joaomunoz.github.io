@@ -146,7 +146,7 @@ Habilidades:
         
         <span class='devicon-box white' data-tooltip='Pentaho'><img src='https://iconape.com/wp-content/files/sc/352055/png/pentaho-logo.png' alt='Pentaho'></span>
         
-        <span class='devicon-box white' data-tooltip='SSIS'><img src='https://www.selectdistinct.co.uk/wp-content/uploads/2024/01/ssis-logo-2-jpg-1200x1200.webp' alt='SSIS'></span>
+        <span class='devicon-box white' data-tooltip='SSIS'><img src='/assets/img/ssis.webp' alt='SSIS'></span>
       "
     - title: Bases de Datos
       description: "
