@@ -104,7 +104,7 @@ Habilidades:
 
     - title: Herramientas de Monitoreo
       description: "
-        <span class='devicon-box' data-tooltip='Tivoli'><img src='https://www.varindia.com/storage/news/uploads/2018/02/601515f8cf122.jpg' alt='Tivoli'></span>
+        <span class='devicon-box white' data-tooltip='Tivoli'><img src='https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/ibm.svg' alt='Tivoli'></span>
         
         <span class='devicon-box white' data-tooltip='VZOR'><img src='https://store-images.s-microsoft.com/image/apps.20416.c1e0f2ee-6a48-494c-8b96-f38d7243b0e4.7cacb8f9-4658-4cb5-b761-bf02496afdc0.d1407e59-b258-4389-a3be-cef2a5034019' alt='VZOR'></span>
         
@@ -130,9 +130,9 @@ Habilidades:
       "
     - title: Controlador de versiones
       description: "
-        <span class='devicon-box white' data-tooltip='Git'><img src='https://icongr.am/devicon/git-original.svg' alt='Git'></span>
+        <span class='devicon-box white' data-tooltip='Git'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg' alt='Git'></span>
         
-        <span class='devicon-box white' data-tooltip='GitHub'><img src='https://icongr.am/devicon/github-original.svg' alt='GitHub'></span>
+        <span class='devicon-box white' data-tooltip='GitHub'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg' alt='GitHub'></span>
       "
     - title: Sistemas Operativos
       description: "

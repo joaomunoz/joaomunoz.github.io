@@ -366,10 +366,12 @@ header::before {
   background: linear-gradient(180deg, var(--accent), var(--accent-2));
 }
 
+/* Outfit y no Syne: la "g" de Syne tiene la cola tan corta que a este tamaño parece cortada
+   ("Google", "Santiago"). Syne queda para el nombre y los títulos de sección. */
 .item h3 {
-  font-family: 'Syne', sans-serif;
-  font-size: .97rem;
-  font-weight: 700;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
   color: var(--text);
   width: 100%;
 }
