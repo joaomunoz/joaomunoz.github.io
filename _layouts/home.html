@@ -10,7 +10,8 @@
 {% if page.lang == "en" %}
 {% assign content = site.data.en_content %}
 {% assign cv_pdf = "/docs/JoaoMunoz_CV_EN.pdf" %}
-{% assign cv_label = "Download CV (Data Analyst PDF)" %}
+{% assign cv_label = "View CV" %}
+{% assign t_new_tab = "opens the PDF in a new tab" %}
 {% assign t_contact = "Contact" %}
 {% assign t_problem = "Problem" %}
 {% assign t_approach = "Approach" %}
@@ -18,7 +19,8 @@
 {% else %}
 {% assign content = site.data.es_content %}
 {% assign cv_pdf = "/docs/JoaoMunoz_CV_ES.pdf" %}
-{% assign cv_label = "Descargar CV (Data Analyst PDF)" %}
+{% assign cv_label = "Ver CV" %}
+{% assign t_new_tab = "abre el PDF en una pestaña nueva" %}
 {% assign t_contact = "Contacto" %}
 {% assign t_problem = "Problema" %}
 {% assign t_approach = "Criterio" %}
@@ -97,8 +99,9 @@
         </span>
       </li>
       <li class="contact-bar__cta">
-        <a class="btn btn--primary" href="{{ cv_pdf }}" download>
-          <img src="/resources/svgs/solid/download.svg" class="icon" alt="">
+        {% comment %}Se abre en el visor del navegador en vez de descargarse: se puede leer sin guardar nada.{% endcomment %}
+        <a class="btn btn--primary" href="{{ cv_pdf }}" target="_blank" rel="noopener" aria-label="{{ cv_label }} ({{ t_new_tab }})">
+          <img src="/resources/svgs/solid/file-pdf.svg" class="icon" alt="">
           {{ cv_label }}
         </a>
       </li>
