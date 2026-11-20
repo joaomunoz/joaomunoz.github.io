@@ -10,4 +10,4 @@ blog_url: https://joaomunoz.github.io/
 github_url: https://github.com/joaomunoz
 github_label: github.com/joaomunoz
 # false oculta el teléfono de la barra de contacto (deja solo correo, GitHub y ubicación).
-show_phone: true
+show_phone: false
