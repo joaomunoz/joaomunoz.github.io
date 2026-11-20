@@ -1,9 +1,10 @@
 profile_job: "Analista de Datos & BI | Licenciado en Ciencias de la Computación"
 
 comment_profile: "Licenciado en Ciencias de la Computación (USACH) con experiencia en bases de datos,
-        procesos ETL y operaciones TI 24/7 para clientes de banca y AFP. Hoy me enfoco en el análisis
-        de datos y BI: cruzo fuentes con SQL y Python, valido cada cifra con controles automáticos
-        de calidad y la convierto en reportes y visualizaciones que respondan preguntas de negocio."
+        procesos ETL (SSIS, Pentaho) y reporting con SQL Server, Oracle, PostgreSQL y Power BI, además
+        de operaciones TI 24/7 para clientes de banca y AFP. Hoy me enfoco en el análisis de datos y BI:
+        cruzo fuentes con SQL y Python, valido cada cifra con controles automáticos de calidad y la
+        convierto en reportes y visualizaciones que respondan preguntas de negocio."
 
 #-----------------------------------------------------------------------------------------------------#
 # Orden pensado para un reclutador de Datos/BI: proyectos (prueba de trabajo) → stack principal →
@@ -148,12 +149,13 @@ Experiencia:
 
     - title: IBM
       role: Operador de Procesos y Command Center
+      context: "Command Center multicliente: banca y servicios financieros (Banco Santander, Grupo Security, Itaú, Banco Ripley, SURA), previsión (AFP Hábitat, Previred), cajas de compensación (Los Héroes) e industria (AZA)."
       date: Ago. 2023 - Jul. 2024
       description:
         - "Participé en el desarrollo del dashboard del Command Center en Power BI, integrado en Microsoft Teams con SharePoint y documentos Excel como fuente de datos, que reunió en un solo lugar la medición de eficacia operativa y el reporte de escalamientos por cliente."
         - "Creé un flujo en Power Automate que extraía los sub-reportes desde correos de Outlook y los unificaba automáticamente en un único reporte consolidado por horario de salida, en lugar de armarlo a mano."
         - "Mantuve reportes de incidentes segmentados por unidad operativa (BBDD, UNIX, WINTEL, WAS, Networking y SAP) con seguimiento en Jira, gestionando escalamientos internos y externos según la criticidad del servicio."
-        - "Monitoreé redes, plataformas y servicios con Nagios, Tivoli, Zabbix y VZOR para múltiples clientes simultáneos en banca (Itaú, Security, Santander), AFP (Hábitat, SURA), cajas de compensación (Los Héroes) e industria (AZA)."
+        - "Monitoreé redes, plataformas y servicios de varios clientes en simultáneo con Nagios, Tivoli, Zabbix y VZOR."
         - "Ejecuté procesos nocturnos y batch, y administré respaldos con EMC NetWorker y TSM en infraestructuras críticas."
         - "Administré accesos y perfiles de usuario, ejecuté mantenimiento de plataformas y aseguré la continuidad de servicios críticos en operación 24/7."
 

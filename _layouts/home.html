@@ -153,6 +153,9 @@
       </p>
       {% endif %}
 
+      {% comment %}context: una línea que encuadra la ficha antes de los puntos (hoy, los clientes de IBM).{% endcomment %}
+      {% if item.context %}<p class="context">{{ item.context }}</p>{% endif %}
+
       {% if item.problem %}
       <dl class="case">
         <dt>{{ t_problem }}</dt>

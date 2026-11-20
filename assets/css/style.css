@@ -290,6 +290,9 @@ a.contact-link:hover { border-color: var(--border); box-shadow: var(--glow); col
   letter-spacing: .03em;
 }
 .role { color: var(--accent-2); }
+
+/* Línea de contexto bajo el cargo: se lee antes que los puntos, sin competir con ellos. */
+.context { font-size: .88rem; font-style: italic; color: var(--text-muted); line-height: 1.6; }
 .date { color: var(--text-muted); white-space: nowrap; }
 
 .description { margin-top: .25rem; font-size: .9rem; line-height: 1.7; width: 100%; list-style: none; }
