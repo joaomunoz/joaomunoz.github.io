@@ -3,25 +3,33 @@
 # Front-matter vacío obligatorio para que Jekyll procese Liquid en este archivo.
 ---
 {% comment %}
-  Selecciona el YAML correcto según el idioma de la página que usa este layout.
-  page.lang viene del front-matter de es/index.html o en/index.html.
-  También asigna el PDF y la etiqueta de descarga según el idioma activo.
+  Selecciona el YAML y los textos fijos según el idioma (page.lang viene de es/index.html o en/index.html).
+  Los textos de interfaz viven aquí y no en el YAML porque son iguales para todas las secciones.
 {% endcomment %}
+{% assign profile = site.data.profile %}
 {% if page.lang == "en" %}
 {% assign content = site.data.en_content %}
 {% assign cv_pdf = "/docs/JoaoMunoz_CV_EN.pdf" %}
-{% assign cv_label = "Download CV" %}
+{% assign cv_label = "Download CV (PDF)" %}
+{% assign t_contact = "Contact" %}
+{% assign t_problem = "Problem" %}
+{% assign t_approach = "Approach" %}
+{% assign t_stack = "Stack" %}
 {% else %}
 {% assign content = site.data.es_content %}
 {% assign cv_pdf = "/docs/JoaoMunoz_CV_ES.pdf" %}
-{% assign cv_label = "Descargar CV" %}
+{% assign cv_label = "Descargar CV (Data Analyst PDF)" %}
+{% assign t_contact = "Contacto" %}
+{% assign t_problem = "Problema" %}
+{% assign t_approach = "Criterio" %}
+{% assign t_stack = "Stack" %}
 {% endif %}
 <!DOCTYPE html>
 <html lang="{{ page.lang }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ site.data.profile.title }}</title>
+  <title>{{ profile.title }}</title>
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,122 +39,78 @@
 <body>
 
 <!-- ═══════════════════════════════════════════════════════════════
-     HEADER  #about
-     Contiene: selector de idioma, foto + contacto, nombre + rol
+     HEADER  #about — idioma, identidad, resumen y contacto visible.
+     Todo lo que un reclutador necesita para decidir queda sobre el pliegue.
      ═══════════════════════════════════════════════════════════════ -->
 <header id="about">
   <div class="container">
 
-    <!-- ── SELECTOR DE IDIOMA ──────────────────────────────────────
-         Cada bandera es un <a> que apunta a la URL raíz del idioma.
-         La clase `flags__item--active` la añade main.js según
-         `page.lang` inyectado en el atributo data-lang del script.
-    ─────────────────────────────────────────────────────────────── -->
+    <!-- La clase `flags__item--active` la añade main.js según data-lang. -->
     <nav id="flags" class="flags" aria-label="Language selector">
-
-      <a class="flags__item" href="/es/" data-language="es"
-         aria-label="Versión en español">
+      <a class="flags__item" href="/es/" data-language="es" aria-label="Versión en español">
         <img src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="ES">
       </a>
-
-      <a class="flags__item" href="/en/" data-language="en"
-         aria-label="English version">
+      <a class="flags__item" href="/en/" data-language="en" aria-label="English version">
         <img src="https://flagicons.lipis.dev/flags/4x3/us.svg" alt="EN">
       </a>
-
     </nav>
 
-    <!-- ── FOTO DE PERFIL + DATOS DE CONTACTO ─────────────────────
-         Los datos de contacto están ocultos por defecto (max-height: 0)
-         y se revelan con un click (clase `.active` añadida por main.js).
-         El botón de descarga PDF es un <a download> directo — sin
-         revelar link intermedio, ya que es una acción clara.
-         El PDF cambia según el idioma activo (cv_pdf asignado arriba).
-    ─────────────────────────────────────────────────────────────── -->
-    <div class="profile-zone">
-
-      <img class="profile-img"
-           src="{{ site.data.profile.profile_img }}"
-           alt="Foto de perfil de {{ site.data.profile.name }}">
-
-      <ul class="personal-info" aria-label="Contact information">
-
-        <!-- Teléfono
-             data-tooltip muestra el label al hover según idioma.
-             Al hacer click (clase .active via JS) se revela el .info-data.
-        -->
-        <li class="info-item" role="button" tabindex="0"
-            aria-label="Show phone number"
-            data-tooltip="{% if page.lang == 'en' %}Contact{% else %}Contacto{% endif %}">
-          <div class="info-icon">
-            <img src="/assets/img/phone.svg" class="icon white" alt="">
-          </div>
-          <div class="info-data">{{ site.data.profile.phone_number }}</div>
-        </li>
-
-        <!-- Email -->
-        <li class="info-item" role="button" tabindex="0"
-            aria-label="Show email"
-            data-tooltip="Email">
-          <div class="info-icon">
-            <img src="/assets/img/envelope.svg" class="icon white" alt="">
-          </div>
-          <div class="info-data">{{ site.data.profile.email }}</div>
-        </li>
-
-        <!-- Dirección -->
-        <li class="info-item" role="button" tabindex="0"
-            aria-label="Show location"
-            data-tooltip="{% if page.lang == 'en' %}Location{% else %}Ubicación{% endif %}">
-          <div class="info-icon">
-            <img src="/assets/img/location-dot.svg" class="icon white" alt="">
-          </div>
-          <div class="info-data">{{ site.data.profile.address }}</div>
-        </li>
-
-        <!-- Descarga CV PDF
-             cv_pdf y cv_label asignados al inicio según page.lang:
-               ES → /docs/JoaoMunoz_CV_ES.pdf  "Descargar CV"
-               EN → /docs/JoaoMunoz_CV_EN.pdf  "Download CV"
-             data-tooltip usa cv_label para mostrar el texto al hover.
-             Al ser <a download> descarga directo sin necesitar click extra.
-        -->
-        <li class="info-item info-item--download"
-            data-tooltip="{{ cv_label }}">
-          <a href="{{ cv_pdf }}" download
-             class="info-download" aria-label="{{ cv_label }}">
-            <div class="info-icon">
-              <img src="/resources/svgs/solid/download.svg" class="icon white" alt="">
-            </div>
-          </a>
-        </li>
-
-      </ul>
+    <div class="hero">
+      <img class="profile-img" src="{{ profile.profile_img }}" alt="Foto de perfil de {{ profile.name }}">
+      <div class="name-zone">
+        <h1>{{ profile.name }}</h1>
+        <p class="headline">{{ content.profile_job }}</p>
+      </div>
     </div>
+
+    <p class="summary">{{ content.comment_profile }}</p>
 
     {% comment %}
-      Nombre, rol y comentario — cambian por idioma.
-      `content` fue asignado arriba con assign según page.lang.
+      Contacto con texto visible: antes los datos se revelaban con un clic, lo que escondía justo
+      lo que el reclutador busca. El teléfono se apaga con profile.show_phone: false.
     {% endcomment %}
-    <div class="name-zone">
-      <h1>{{ site.data.profile.name }}</h1>
-      <h2>{{ content.profile_job }}</h2>
-      <p>{{ content.comment_profile }}</p>
-    </div>
+    <ul class="contact-bar" aria-label="{{ t_contact }}">
+      <li>
+        <a class="contact-link" href="mailto:{{ profile.email }}">
+          <img src="/assets/img/envelope.svg" class="icon white" alt="">
+          {{ profile.email }}
+        </a>
+      </li>
+      <li>
+        <a class="contact-link" href="{{ profile.github_url }}" target="_blank" rel="noopener">
+          <img src="/assets/img/github.svg" class="icon white" alt="">
+          {{ profile.github_label }}
+        </a>
+      </li>
+      {% if profile.show_phone %}
+      <li>
+        <a class="contact-link" href="tel:{{ profile.phone_number | remove: ' ' }}">
+          <img src="/assets/img/phone.svg" class="icon white" alt="">
+          {{ profile.phone_number }}
+        </a>
+      </li>
+      {% endif %}
+      <li>
+        <span class="contact-link contact-link--static">
+          <img src="/assets/img/location-dot.svg" class="icon white" alt="">
+          {{ profile.address }}
+        </span>
+      </li>
+      <li class="contact-bar__cta">
+        <a class="btn btn--primary" href="{{ cv_pdf }}" download>
+          <img src="/resources/svgs/solid/download.svg" class="icon" alt="">
+          {{ cv_label }}
+        </a>
+      </li>
+    </ul>
 
   </div>
 </header>
 
 
 {% comment %}
-  MAIN — itera sobre el YAML con estructura de claves directas.
-  Pasos:
-    1. Recolecta secciones que tengan `subject` con push.
-    2. Ordena por `listing-order`.
-    3. Renderiza cada sección con su `class` del YAML aplicada
-       al <section> para control CSS por tipo de sección.
+  MAIN — recolecta las secciones con `subject`, las ordena por `listing-order` y aplica su `class`.
 {% endcomment %}
-
 {% assign sections_sorted = "" | split: "" %}
 {% for pair in content %}
 {% assign section = pair[1] %}
@@ -159,25 +123,19 @@
 <main id="contents">
 
   {% for section in sections_sorted %}
-  {% comment %}
-    `section.class` viene del YAML: education | languages | skills | experience
-    Genera por ejemplo: <section class="subject skills">
-  {% endcomment %}
   <section class="subject {{ section.class }}">
 
     <h2 class="subject-name">
-      {% if section.icon %}
-        <img src="{{ section.icon }}" class="icon" alt="">
-      {% endif %}
+      {% if section.icon %}<img src="{{ section.icon }}" class="icon" alt="">{% endif %}
       {{ section.subject }}
     </h2>
 
     {% for item in section.contents %}
     {% comment %}
-      item.image es opcional (hoy solo en Portafolio): la miniatura va a la izquierda y enlaza a image_link.
-      Las fichas sin imagen generan el mismo HTML que antes, porque el envoltorio .item-body solo se abre con imagen.
+      Todos los campos extra (problem, metrics, stack, links, tools, level) son opcionales:
+      la versión en inglés, que aún no los usa, se sigue dibujando igual que antes.
     {% endcomment %}
-    <article class="item{% if item.image %} item--thumb{% endif %}">
+    <article class="item{% if item.image %} item--thumb{% endif %}{% if item.metrics %} item--case{% endif %}">
 
       {% if item.image %}
       <a class="item-thumb" href="{{ item.image_link }}" target="_blank" rel="noopener">
@@ -186,20 +144,58 @@
       <div class="item-body">
       {% endif %}
 
-      <h3>{{ item.title }}</h3>
+      <h3>{{ item.title }}{% if item.level %} <span class="level">{{ item.level }}</span>{% endif %}</h3>
 
-      {% if item.role %}
-        <p class="role">{{ item.role }}</p>
+      {% if item.role or item.date %}
+      <p class="meta">
+        {% if item.role %}<span class="role">{{ item.role }}</span>{% endif %}
+        {% if item.date %}<span class="date">{{ item.date }}</span>{% endif %}
+      </p>
       {% endif %}
 
-      {% if item.date %}
-        <span class="date">{{ item.date }}</span>
+      {% if item.problem %}
+      <dl class="case">
+        <dt>{{ t_problem }}</dt>
+        <dd>{{ item.problem }}</dd>
+        {% if item.approach %}
+        <dt>{{ t_approach }}</dt>
+        <dd>{{ item.approach }}</dd>
+        {% endif %}
+      </dl>
+      {% endif %}
+
+      {% if item.metrics %}
+      <ul class="metrics">
+        {% for m in item.metrics %}
+        <li><strong>{{ m.value }}</strong><span>{{ m.label }}</span></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+
+      {% if item.stack %}
+      <ul class="stack" aria-label="{{ t_stack }}">
+        {% for s in item.stack %}<li class="stack__tag stack__tag--key">{{ s }}</li>{% endfor %}
+        {% for s in item.stack_extra %}<li class="stack__tag">{{ s }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+
+      {% if item.tools %}
+      <ul class="tool-list">
+        {% for tool in item.tools %}
+        <li class="tool">
+          {% if tool.icon %}
+          <span class="tool__logo{% if tool.white %} tool__logo--white{% endif %}{% if tool.glyph %} tool__logo--glyph{% endif %}">
+            <img src="{{ tool.icon }}" alt="" loading="lazy">
+          </span>
+          {% endif %}
+          <span class="tool__name">{{ tool.name }}</span>
+        </li>
+        {% endfor %}
+      </ul>
       {% endif %}
 
       {% comment %}
-        description array  → <ul> con <li> por cada elemento
-        description string → <div> único
-        Detectado con .first: solo arrays responden a ese método.
+        description array → <ul>; string → <div>. Solo los arrays responden a .first.
       {% endcomment %}
       {% if item.description %}
         {% if item.description.first %}
@@ -211,6 +207,17 @@
         {% else %}
           <div class="description">{{ item.description | markdownify }}</div>
         {% endif %}
+      {% endif %}
+
+      {% if item.links %}
+      <p class="actions">
+        {% for l in item.links %}
+        <a class="btn{% if l.primary %} btn--primary{% else %} btn--ghost{% endif %}" href="{{ l.url }}" target="_blank" rel="noopener">
+          {{ l.label }}
+          <img src="/resources/svgs/solid/arrow-up-right-from-square.svg" class="icon" alt="">
+        </a>
+        {% endfor %}
+      </p>
       {% endif %}
 
       {% if item.image %}
@@ -226,18 +233,11 @@
 </main>
 
 
-<!-- ═══════════════════════════════════════════════════════════════
-     FOOTER
-     ═══════════════════════════════════════════════════════════════ -->
+<!-- Año calculado al construir el sitio: no vuelve a quedar desfasado. -->
 <footer id="footer">
-  © 2024 – {{ site.data.profile.name }}
+  © {{ site.time | date: "%Y" }} – {{ profile.name }}
 </footer>
 
-<!--
-  El script se carga al final del body para no bloquear el render.
-  `data-lang` le comunica a main.js cuál es el idioma activo
-  SIN necesitar variables globales de JS.
--->
 <script src="/assets/js/main.js" data-lang="{{ page.lang }}"></script>
 
 </body>

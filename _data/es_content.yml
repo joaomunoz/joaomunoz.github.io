@@ -1,13 +1,14 @@
-profile_job: "Licenciado en Ciencias de la Computación"
+profile_job: "Analista de Datos & BI | Licenciado en Ciencias de la Computación"
 
-comment_profile: "Entusiasta en el mundo de la computación y la tecnología, gran trabajador
-        en equipo y buena disposición. 
-        En especialidad en el área de las bases de datos, 
-        operador de procesos y monitoreos TI.  
-        En busca de ambientes donde pueda combinar
-        mis habilidades en un entorno cercano al negocio y los clientes."
+comment_profile: "Licenciado en Ciencias de la Computación (USACH) con experiencia en bases de datos,
+        procesos ETL y operaciones TI 24/7 para clientes de banca y AFP. Hoy me enfoco en el análisis
+        de datos y BI: cruzo fuentes con SQL y Python, valido cada cifra con controles automáticos
+        de calidad y la convierto en reportes y visualizaciones que respondan preguntas de negocio."
 
-#-----------------------------------------------------------------------------------------------------#  
+#-----------------------------------------------------------------------------------------------------#
+# Orden pensado para un reclutador de Datos/BI: proyectos (prueba de trabajo) → stack principal →
+# experiencia → formación → competencias complementarias → idiomas.
+#-----------------------------------------------------------------------------------------------------#
 
 Portafolio:
   subject: Portafolio
@@ -16,52 +17,189 @@ Portafolio:
   icon: "/resources/svgs/solid/map.svg"
   contents:
     - title: Radiografía de las carreras y sueldos en Chile
-      role: "Proyecto personal · PostgreSQL, SQL, Python, HTML, CSS y JavaScript"
+      role: Proyecto personal
       date: Nov. 2026
       image: "/assets/img/carreras-sueldos-chile.webp"
       image_width: 240
       image_height: 236
       image_alt: "Gráfico de cuadrantes: cada carrera según su sueldo al primer año y su crecimiento al quinto, frente a la carrera del medio de su grupo"
       image_link: "https://joaomunoz.github.io/carreras-sueldos-chile/"
+      problem: "¿Cuánto gana y qué tan empleable es quien estudia cada carrera, al primer y al quinto año de titulado? Comparé 252 carreras de universidades, IP y CFT con datos de MiFuturo (sueldos registrados en el SII) y las titulaciones del SIES (Mineduc)."
+      approach: "Cada carrera se compara solo con otras de su mismo nivel y tipo de institución, y la página avisa cuándo la cifra nacional engaña: en 19 carreras las instituciones difieren 15 puntos o más en empleabilidad (en Trabajo Social, de 52,5% a 74,2%, con una cifra nacional de 66,9%)."
+      metrics:
+        - value: "252"
+          label: carreras comparadas
+        - value: "3"
+          label: fuentes oficiales (MiFuturo y SIES)
+        - value: "81"
+          label: controles automáticos de calidad
+      stack: [PostgreSQL, SQL, Python]
+      stack_extra: [HTML, CSS, JavaScript]
       description:
-        - "Construí una web que compara, en 252 carreras de universidades, IP y CFT, el sueldo y la empleabilidad de quienes llevan uno y cinco años titulados, con datos de MiFuturo (sueldos registrados en el SII) y las titulaciones del SIES (Mineduc)."
-        - "Cada carrera se compara solo con otras de su mismo nivel y tipo de institución, y la página avisa cuándo la cifra nacional engaña: en 19 carreras las instituciones difieren 15 puntos o más en empleabilidad (en Trabajo Social, de 52,5% a 74,2%, con una cifra nacional de 66,9%)."
-        - "Uno de sus hallazgos: un crecimiento mayor en porcentaje puede ser menor en pesos. En Ingeniería en Alimentos, quienes llevan cinco años titulados ganan 66,5% más que quienes llevan uno, pero son +$592.205, frente a +$805.627 de la carrera del medio de su grupo."
-        - "Todo el cálculo vive en PostgreSQL; 81 controles detienen la generación si una cifra deja de respaldar lo que muestra la página. La web es un solo archivo que también funciona sin conexión."
-        - "**[Ver la web](https://joaomunoz.github.io/carreras-sueldos-chile/) · [Ver el código](https://github.com/joaomunoz/carreras-sueldos-chile)**"
+        - "**Hallazgo:** un crecimiento mayor en porcentaje puede ser menor en pesos. En Ingeniería en Alimentos, quienes llevan cinco años titulados ganan 66,5% más que quienes llevan uno, pero son +$592.205, frente a +$805.627 de la carrera del medio de su grupo."
+        - "**Calidad del dato:** todo el cálculo vive en PostgreSQL; los 81 controles detienen la generación si una cifra deja de respaldar lo que muestra la página. La web es un solo archivo que también funciona sin conexión."
+      links:
+        - label: Ver proyecto en vivo
+          url: "https://joaomunoz.github.io/carreras-sueldos-chile/"
+          primary: true
+        - label: Ver código y metodología
+          url: "https://github.com/joaomunoz/carreras-sueldos-chile"
 
     - title: Mapa Laboral de Chile
-      role: "Proyecto personal · Python, pandas, GeoPandas, HTML, CSS y JavaScript"
+      role: Proyecto personal
       date: Oct. - Nov. 2026
       image: "/assets/img/mapa-laboral-chile.webp"
       image_width: 240
       image_height: 1024
       image_alt: "Mapa de Chile coloreado según la actividad económica que distingue a cada región"
       image_link: "https://joaomunoz.github.io/mapa-laboral-chile/"
+      problem: "¿Cómo es la situación laboral y educacional de Chile por región y actividad económica? Mapa interactivo que cruza el Censo 2024, la Encuesta Nacional de Empleo (INE), la CASEN 2024 y datos del Mineduc (SIES y MiFuturo)."
+      approach: "El proyecto nació para calcular la probabilidad de empleo de cada carrera por región. Al medir los datos vi que no era posible (de 3.040 combinaciones de carrera y región, solo 62 eran fiables), así que cambié la pregunta en vez de inventar la cifra."
+      # 15,2 M = personas de 15 años o más en la capa principal (Censo 2024), según el README del repo.
+      metrics:
+        - value: "5"
+          label: fuentes oficiales cruzadas
+        - value: "15,2 M"
+          label: personas en la capa principal (Censo 2024)
+        - value: "106"
+          label: controles automáticos de calidad
+        - value: "0,08%"
+          label: desviación máxima frente a los boletines del INE
+      stack: [Python, pandas, GeoPandas]
+      stack_extra: [HTML, CSS, JavaScript]
       description:
-        - "Construí un mapa interactivo de la situación laboral y educacional de Chile por región y actividad económica, con el Censo 2024, la Encuesta Nacional de Empleo (INE), la CASEN 2024 y datos del Mineduc (SIES y MiFuturo)."
-        - "El proyecto nació para calcular la probabilidad de empleo de cada carrera por región. Al medir los datos vi que no era posible (de 3.040 combinaciones de carrera y región, solo 62 eran fiables), así que cambié la pregunta en vez de inventar la cifra."
-        - "Uno de sus hallazgos: el 24,2% de los adultos mayores de Aysén trabaja, la tasa más alta del país (17,5% en Chile)."
-        - "Validé el procesamiento contra los boletines oficiales del INE, con una desviación máxima de 0,08%; 106 controles detienen la generación si un dato deja de respaldar lo que muestra la página."
-        - "**[Ver el mapa](https://joaomunoz.github.io/mapa-laboral-chile/) · [Ver el código](https://github.com/joaomunoz/mapa-laboral-chile)**"
+        - "**Hallazgo:** el 24,2% de los adultos mayores de Aysén trabaja, la tasa más alta del país (17,5% en Chile)."
+        - "**Calidad del dato:** validé el procesamiento contra los boletines oficiales del INE; los 106 controles detienen la generación si un dato deja de respaldar lo que muestra la página."
+      links:
+        - label: Ver proyecto en vivo
+          url: "https://joaomunoz.github.io/mapa-laboral-chile/"
+          primary: true
+        - label: Ver código y metodología
+          url: "https://github.com/joaomunoz/mapa-laboral-chile"
+
+#-----------------------------------------------------------------------------------------------------#
+# Habilidades en dos niveles. Cada herramienta es un `tools` con nombre visible (ATS y lectura rápida):
+#   icon   → logo; white: true lo pone sobre fondo blanco; glyph: true lo trata como ícono monocromo local.
+#   Sin icon → se muestra solo el nombre.
+#-----------------------------------------------------------------------------------------------------#
+
+StackPrincipal:
+  subject: "Stack principal: Datos, BI y ETL"
+  listing-order: 1
+  class: skills skills--primary
+  icon: "/resources/svgs/solid/database.svg"
+  contents:
+    - title: Consulta y análisis
+      tools:
+        - name: SQL
+          icon: "/resources/svgs/solid/database.svg"
+          glyph: true
+        - name: "Python (Pandas, GeoPandas)"
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+    - title: Bases de datos
+      tools:
+        - name: PostgreSQL
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+          white: true
+        - name: "SQL Server (T-SQL)"
+          icon: "https://cdn.worldvectorlogo.com/logos/microsoft-sql-server-1.svg?fill=white"
+          white: true
+        - name: "Oracle (PL/SQL)"
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg"
+          white: true
+        - name: MySQL
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg"
+          white: true
+    - title: BI y visualización
+      tools:
+        - name: "Power BI (DAX, Power Query)"
+          icon: "https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
+          white: true
+        - name: Excel avanzado
+          icon: "https://mailmeteor.com/logos/assets/PNG/Microsoft_Office_Excel_Logo_256px.png"
+          white: true
+    - title: ETL y automatización
+      tools:
+        - name: SSIS
+          icon: "/assets/img/ssis.webp"
+          white: true
+        - name: Pentaho
+          icon: "https://iconape.com/wp-content/files/sc/352055/png/pentaho-logo.png"
+          white: true
+        - name: Power Automate
+          icon: "https://www.paitgroup.com/hs-fs/hubfs/Power-Automate-22.png?width=465&height=149&name=Power-Automate-22.png"
+          white: true
+
+#-----------------------------------------------------------------------------------------------------#
+
+Experiencia:
+  subject: Experiencia
+  listing-order: 2
+  class: experience
+  icon: "/assets/img/briefcase.svg"
+  contents:
+    - title: Especialización en Análisis de Datos y Proyectos Independientes
+      role: Formación y proyectos propios
+      date: Ago. 2024 - Actualidad
+      description:
+        - "Completé el Google Data Analytics Professional Certificate (Beca Talento Digital para Chile): limpieza, análisis y visualización de datos, de la pregunta de negocio a la presentación de resultados."
+        - "Desarrollé dos proyectos end-to-end con datos públicos chilenos (Censo, INE, CASEN, Mineduc), desde la ingesta hasta la publicación web, con PostgreSQL, SQL y Python (pandas, GeoPandas)."
+        - "Apliqué validación contra cifras oficiales y controles automáticos de calidad que detienen la generación si un dato deja de respaldar lo publicado (ver Portafolio)."
+
+    - title: IBM
+      role: Operador de Procesos y Command Center
+      date: Ago. 2023 - Jul. 2024
+      description:
+        - "Participé en el desarrollo del dashboard del Command Center en Power BI, integrado en Microsoft Teams con SharePoint y documentos Excel como fuente de datos, que reunió en un solo lugar la medición de eficacia operativa y el reporte de escalamientos por cliente."
+        - "Creé un flujo en Power Automate que extraía los sub-reportes desde correos de Outlook y los unificaba automáticamente en un único reporte consolidado por horario de salida, en lugar de armarlo a mano."
+        - "Mantuve reportes de incidentes segmentados por unidad operativa (BBDD, UNIX, WINTEL, WAS, Networking y SAP) con seguimiento en Jira, gestionando escalamientos internos y externos según la criticidad del servicio."
+        - "Monitoreé redes, plataformas y servicios con Nagios, Tivoli, Zabbix y VZOR para múltiples clientes simultáneos en banca (Itaú, Security, Santander), AFP (Hábitat, SURA), cajas de compensación (Los Héroes) e industria (AZA)."
+        - "Ejecuté procesos nocturnos y batch, y administré respaldos con EMC NetWorker y TSM en infraestructuras críticas."
+        - "Administré accesos y perfiles de usuario, ejecuté mantenimiento de plataformas y aseguré la continuidad de servicios críticos en operación 24/7."
+
+    - title: M y CH Inmobiliaria
+      role: Gestión Inmobiliaria, Control Operativo y Obras
+      date: Sep. 2020 - Ene. 2023
+      description:
+        - "Controlé la recaudación de arriendos y el seguimiento operativo de cada propiedad en una empresa familiar de compra, venta y construcción de propiedades."
+        - "Administré la mantención de los servicios básicos de las propiedades."
+        - "Apoyé directamente la ejecución de obras de construcción."
+
+    # Pendiente de confirmar: si fue contrato a plazo fijo o práctica, cambiar "proyecto de 3 meses".
+    - title: G-Talent
+      role: Analista Programador (proyecto de 3 meses)
+      date: Sep. - Nov. 2019
+      description:
+        - "Desarrollé reportes de gestión empresarial en SQL Server mediante procedimientos almacenados, estructurando consultas para la extracción y transformación de datos operativos."
+        - "Generé reportes de auditoría interna y control de gestión en Oracle, entregando información consolidada para la toma de decisiones."
+        - "Desarrollé un pipeline ETL completo en SSIS con SQL Server para el reporte de contabilidad de clientes de VTR, automatizando la extracción, transformación y carga de los datos de facturación."
+
+    - title: "Medicien: Proyecto Portal Paciente"
+      role: Analista Programador (proyecto de 3 meses)
+      date: Jun. - Ago. 2019
+      description:
+        - "Diseñé y desarrollé la base de datos PortalPaciente en SQL Server para el registro de citas médicas, la gestión de agenda de dentistas y el control del servicio de odontología."
+        - "Implementé la automatización ETL en Pentaho, con integración vía API y tokens de seguridad, para extraer datos del servicio de odontología hacia la base de datos."
+        - "Administré la interoperabilidad de datos entre los motores Oracle Horizon y SQL Server."
 
 #-----------------------------------------------------------------------------------------------------#
 
 Educacion:
   subject: Educación
-  listing-order: 1
+  listing-order: 3
   class: education
   icon: "/assets/img/graduation-cap.svg"
   contents:
-    - title: Universidad de Santiago de Chile
+    - title: Licenciatura en Ciencias de la Computación
       description:
-      - Licenciatura en Ciencias de la Computación
+        - Universidad de Santiago de Chile (USACH)
       date: Mar. 2013 - Sep. 2019
-#-----------------------------------------------------------------------------------------------------#    
+
+#-----------------------------------------------------------------------------------------------------#
 
 Certificaciones:
   subject: Certificaciones
-  listing-order: 2
+  listing-order: 4
   class: certifications
   icon: "/resources/svgs/solid/certificate.svg"
   contents:
@@ -73,163 +211,115 @@ Certificaciones:
       image_alt: "Insignia del Google Data Analytics Professional Certificate"
       image_link: "https://www.credly.com/badges/3deb66fa-89bb-4bdc-b191-b49c67fa8cb9/public_url"
       description:
-        - "Google, en Coursera: 9 cursos"
+        - "Google, en Coursera: 9 cursos · Beca Talento Digital para Chile"
         - "[Ver certificado](https://www.coursera.org/account/accomplishments/specialization/Q5H4LH9WMBWU) · [Ver insignia](https://www.credly.com/badges/3deb66fa-89bb-4bdc-b191-b49c67fa8cb9/public_url)"
 
 #-----------------------------------------------------------------------------------------------------#
 
+Complementarias:
+  subject: "Ingeniería, operaciones TI y competencias complementarias"
+  listing-order: 5
+  class: skills skills--secondary
+  icon: "/assets/img/screwdriver-wrench.svg"
+  contents:
+    - title: Backend y APIs
+      tools:
+        - name: FastAPI
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg"
+          white: true
+        - name: SQLAlchemy
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlalchemy/sqlalchemy-original.svg"
+          white: true
+        - name: Pydantic
+          icon: "https://cdn.simpleicons.org/pydantic"
+          white: true
+        - name: Django
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain-wordmark.svg"
+          white: true
+    - title: Scraping y automatización
+      description: "curl_cffi (TLS fingerprint impersonation), APIs BFF/GraphQL y scraping HTTP sin navegador headless"
+    - title: Agentes de IA / MCP
+      description: "Orquestación multiagente vía MCP (Model Context Protocol) y OpenCode"
+    - title: Lenguajes adicionales
+      tools:
+        - name: C
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"
+        - name: C++
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
+        - name: PHP
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
+    - title: Web
+      tools:
+        - name: HTML5
+          icon: "https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_960_720.png"
+        - name: CSS3
+          icon: "https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_1280.png"
+        - name: JavaScript
+          icon: "https://cdn.pixabay.com/photo/2015/04/23/17/41/javascript-736400_1280.png"
+    - title: Monitoreo TI
+      tools:
+        - name: Tivoli
+          icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/ibm.svg"
+          white: true
+        - name: VZOR
+          icon: "https://store-images.s-microsoft.com/image/apps.20416.c1e0f2ee-6a48-494c-8b96-f38d7243b0e4.7cacb8f9-4658-4cb5-b761-bf02496afdc0.d1407e59-b258-4389-a3be-cef2a5034019"
+          white: true
+        - name: Zabbix
+          icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3Hmxao3hJidJKBfbwGkRWUPbywbwFLoWlqg&s"
+        - name: Nagios
+          icon: "https://upload.wikimedia.org/wikipedia/commons/1/16/Nagios_logo.svg"
+          white: true
+    - title: Control de versiones y gestión
+      tools:
+        - name: Git
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
+          white: true
+        - name: GitHub
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+          white: true
+        - name: Jira
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg"
+          white: true
+        - name: SCRUM
+        - name: XP
+    - title: Sistemas y redes
+      tools:
+        - name: Linux
+          icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/960px-Tux.svg.png"
+          white: true
+        - name: Windows
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows11/windows11-original.svg"
+          white: true
+        - name: "Redes LAN, VPN y TCP/IP básico"
+    - title: Ofimática
+      tools:
+        - name: LaTeX
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/latex/latex-original.svg"
+          white: true
+        - name: Word
+          icon: "https://mailmeteor.com/logos/assets/PNG/Microsoft_Office_Word_Logo_256px.png"
+          white: true
+        - name: PowerPoint
+          icon: "https://upload.wikimedia.org/wikipedia/commons/2/25/Microsoft_Office_PowerPoint_%282019%E2%80%932025%29.svg"
+          white: true
+        - name: Teams
+          icon: "https://mailmeteor.com/logos/assets/PNG/Microsoft_Office_Teams_Logo_256px.png"
+          white: true
+        - name: LibreOffice
+          icon: "https://cdn.simpleicons.org/libreoffice"
+          white: true
+
+#-----------------------------------------------------------------------------------------------------#
+# Nivel en texto estándar en vez de bolitas. Pendiente de confirmar: nivel MCER exacto de inglés.
+#-----------------------------------------------------------------------------------------------------#
+
 Idiomas:
   subject: Idiomas
-  listing-order: 3
+  listing-order: 6
   class: languages
   icon: "/assets/img/globe.svg"
   contents:
-    - title: "Español (Nativo): <span style='color: #46C646; margin: auto 8px; font-family: cursive;'>●●●●●</span>"
-    - title: "Ingles(Avanzado): <span style='color: cornflowerblue; margin: auto 8px; font-family: cursive;'>●●●●◐</span>"
-
-#-----------------------------------------------------------------------------------------------------#    
-
-Habilidades:
-  subject: Habilidades
-  listing-order: 4
-  class: skills
-  icon: "/assets/img/screwdriver-wrench.svg"
-  contents:
-    - title: Lenguajes de Programación
-      description: "
-        <span class='devicon-box' data-tooltip='C'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg' alt='C'></span>
-        <span class='devicon-box' data-tooltip='C++'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg' alt='C++'></span>
-        <span class='devicon-box' data-tooltip='Python'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg' alt='Python'></span>
-        <span class='devicon-box' data-tooltip='PHP'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg' alt='PHP'></span>
-      "
-    - title: Frameworks
-      description: "
-        <span class='devicon-box white' data-tooltip='Django'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain-wordmark.svg' alt='Django'></span>
-      "
-
-    - title: Web & UI/UX
-      description: "
-        <span class='devicon-box' data-tooltip='HTML5'><img src='https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_960_720.png' alt='HTML5'></span>
-
-        <span class='devicon-box' data-tooltip='CSS3'><img src='https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_1280.png' alt='CSS3'></span>
-
-        <span class='devicon-box' data-tooltip='JavaScript'><img src='https://cdn.pixabay.com/photo/2015/04/23/17/41/javascript-736400_1280.png' alt='JavaScript'></span>
-      "
-
-
-    - title: Herramientas de Monitoreo
-      description: "
-        <span class='devicon-box white' data-tooltip='Tivoli'><img src='https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/ibm.svg' alt='Tivoli'></span>
-        
-        <span class='devicon-box white' data-tooltip='VZOR'><img src='https://store-images.s-microsoft.com/image/apps.20416.c1e0f2ee-6a48-494c-8b96-f38d7243b0e4.7cacb8f9-4658-4cb5-b761-bf02496afdc0.d1407e59-b258-4389-a3be-cef2a5034019' alt='VZOR'></span>
-        
-        <span class='devicon-box' data-tooltip='Zabbix'><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3Hmxao3hJidJKBfbwGkRWUPbywbwFLoWlqg&s' alt='Zabbix'></span>
-        
-        <span class='devicon-box white' data-tooltip='Nagios'><img src='https://upload.wikimedia.org/wikipedia/commons/1/16/Nagios_logo.svg' alt='Nagios'></span>
-      "
-    - title: Ofimatica
-      description: "
-        <span class='devicon-box white' data-tooltip='LaTeX'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/latex/latex-original.svg' alt='LaTeX'></span>
-        
-        <span class='devicon-box white' data-tooltip='Excel'><img src='https://mailmeteor.com/logos/assets/PNG/Microsoft_Office_Excel_Logo_256px.png' alt='Excel'></span>
-        
-        <span class='devicon-box white' data-tooltip='Word'><img src='https://mailmeteor.com/logos/assets/PNG/Microsoft_Office_Word_Logo_256px.png' alt='Word'></span>
-        
-        <span class='devicon-box white' data-tooltip='Power Automate'><img src='https://www.paitgroup.com/hs-fs/hubfs/Power-Automate-22.png?width=465&height=149&name=Power-Automate-22.png' alt='Power Automate'></span>
-        
-        <span class='devicon-box white' data-tooltip='PowerPoint'><img src='https://upload.wikimedia.org/wikipedia/commons/2/25/Microsoft_Office_PowerPoint_%282019%E2%80%932025%29.svg' alt='PowerPoint'></span>
-        
-        <span class='devicon-box white' data-tooltip='Teams'><img src='https://mailmeteor.com/logos/assets/PNG/Microsoft_Office_Teams_Logo_256px.png' alt='Teams'></span>
-        
-        <span class='devicon-box white' data-tooltip='LibreOffice'><img src='https://cdn.simpleicons.org/libreoffice' alt='LibreOffice'></span>
-      "
-    - title: Controlador de versiones
-      description: "
-        <span class='devicon-box white' data-tooltip='Git'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg' alt='Git'></span>
-        
-        <span class='devicon-box white' data-tooltip='GitHub'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg' alt='GitHub'></span>
-      "
-    - title: Sistemas Operativos
-      description: "
-        <span class='devicon-box white' data-tooltip='Windows'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows11/windows11-original.svg' alt='Windows'></span>
-
-        <span class='devicon-box white' data-tooltip='Linux'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/960px-Tux.svg.png' alt='Linux'></span>
-      "
-    - title: BI y Procesos ETL
-      description: "
-        <span class='devicon-box white' data-tooltip='Power BI'><img src='https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg' alt='Power BI'></span>
-        
-        <span class='devicon-box white' data-tooltip='Pentaho'><img src='https://iconape.com/wp-content/files/sc/352055/png/pentaho-logo.png' alt='Pentaho'></span>
-        
-        <span class='devicon-box white' data-tooltip='SSIS'><img src='/assets/img/ssis.webp' alt='SSIS'></span>
-      "
-    - title: Bases de Datos
-      description: "
-        <span class='devicon-box white' data-tooltip='Oracle'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg' alt='Oracle'></span>
-
-        <span class='devicon-box white' data-tooltip='MySQL'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg' alt='MySQL'></span>
-
-        <span class='devicon-box white' data-tooltip='SQL Server'><img src='https://cdn.worldvectorlogo.com/logos/microsoft-sql-server-1.svg?fill=white' alt='SQL Server'></span>
-      "
-    - title: Gestión de Incidentes
-      description: "
-        <span class='devicon-box white' data-tooltip='Jira'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg' alt='Jira'></span>
-      "
-    - title: Backend / APIs
-      description: "
-        <span class='devicon-box white' data-tooltip='FastAPI'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg' alt='FastAPI'></span>
-
-        <span class='devicon-box white' data-tooltip='SQLAlchemy'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlalchemy/sqlalchemy-original.svg' alt='SQLAlchemy'></span>
-
-        <span class='devicon-box white' data-tooltip='Pydantic'><img src='https://cdn.simpleicons.org/pydantic' alt='Pydantic'></span>
-      "
-    - title: Scraping / Anti-bot
-      description: "curl_cffi (TLS fingerprint impersonation), APIs BFF/GraphQL y scraping HTTP sin navegador headless"
-    - title: Agentes de IA / MCP
-      description: "Orquestación multi-agente vía MCP (Model Context Protocol) y OpenCode"
-    - title: Redes
-      description: "Instalación de redes locales (LAN), VPN y TCP/IP básico"
-
-#-----------------------------------------------------------------------------------------------------#
-
-Experiencia:
-  subject: Experiencia
-  listing-order: 5
-  class: experience
-  icon: "/assets/img/briefcase.svg"
-  contents:
-    - title: IBM
-      role: Operador de Procesos y Command Center
-      description:
-        - Monitoreé y supervisé redes, plataformas y servicios con Nagios, Tivoli, Zabbix y VZOR para múltiples clientes simultáneos en banca (Itaú, Security, Santander), AFP (Hábitat, SURA), cajas de compensación (Los Héroes) e industria (AZA).
-        - Mantuve reportes de incidentes segmentados por unidad operativa (BBDD, UNIX, WINTEL, WAS, Networking y SAP) con seguimiento en Jira, gestionando escalamientos internos y externos según criticidad del servicio.
-        - Participé en el desarrollo del dashboard del Command Center en Power BI, integrado en Microsoft Teams con SharePoint como fuente de datos mediante documentos Excel, para medición de eficacia operativa y reporte de escalamientos por cliente.
-        - Creé flujo en Power Automate que extraía sub-reportes desde correos Outlook y los unificaba automáticamente en un único reporte consolidado por horarios de salida.
-        - Ejecuté procesos nocturnos/batch y administré respaldos con EMC NetWorker y TSM en infraestructuras críticas.
-        - Administré accesos y perfiles de usuario, ejecuté mantenimiento de plataformas y aseguré la continuidad de servicios críticos en entorno 24/7.
-      date: Ago. 2023 - Jul. 2024
-
-    - title: M y CH Inmobiliaria
-      role: Gestión y Obras
-      description:
-        - Empresa familiar dedicada a la compra/venta y construcción de propiedades. 
-          Me desempeñé como obrero de la construcción y encargado de gestión inmobiliaria, 
-          con responsabilidades directas en la recaudación de arriendos y 
-          la mantención de servicios básicos de cada propiedad.
-      date: Sep. 2020 - Ene. 2023
-
-    - title: G-Talent
-      role: Analista Programador
-      description:
-        - Desarrollé reportes de gestión empresarial con SQL Server mediante Procedimientos Almacenados, estructurando consultas para extracción y transformación de datos operativos.
-        - Generé reportes de auditoría interna y control de gestión usando Oracle, entregando información consolidada para toma de decisiones.
-        - Desarrollé pipeline ETL completo en SSIS con SQL Server para el reporte de contabilidad de clientes de VTR, automatizando la extracción, transformación y carga de datos de facturación.
-      date: Sep. - Nov. 2019
-
-    - title: "Medicien: Proyecto Portal Paciente"
-      role: Analista Programador
-      description:
-        - Diseñé y desarrollé la base de datos PortalPaciente en SQL Server para registro de citas médicas, gestión de agenda de dentistas y control del servicio de odontología.
-        - Implementé automatización ETL en Pentaho con integración vía API y tokens de seguridad para extracción de datos desde el servicio de odontología hacia la base de datos.
-        - Administré interoperabilidad de datos entre motores Oracle Horizon y SQL Server.
-      date: Jun. - Ago. 2019
+    - title: Español
+      level: Nativo
+    - title: Inglés
+      level: "Avanzado (B2/C1)"

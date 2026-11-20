@@ -1,11 +1,11 @@
 /**
- * main.js — Lógica del CV multiidioma
+ * assets/js/main.js
+ * Lógica del CV multiidioma
  * ─────────────────────────────────────────────────────────────────────────────
  * RESPONSABILIDADES:
  *  1. Detectar preferencia de idioma guardada y redirigir si hace falta.
  *  2. Marcar la bandera del idioma activo.
  *  3. Guardar en localStorage el idioma cuando el usuario hace click.
- *  4. Revelar/ocultar datos de contacto al hacer click en cada ítem.
  *
  * FILOSOFÍA: en vez de tener UNA página que oculta/muestra bloques con JS
  * (lo que causa FOUC y duplica el contenido en el HTML), usamos DOS páginas
@@ -114,80 +114,5 @@ document.addEventListener("DOMContentLoaded", () => {
     // No llamamos a preventDefault(): dejamos que el <a href> funcione normal.
   });
 
-
-  /* ───────────────────────────────────────────────────────────────────────
-     4. TOGGLE DE DATOS DE CONTACTO
-     Cada .info-item muestra/oculta su .info-data al hacer click.
-     Solo puede estar abierto un ítem a la vez (cerramos los demás).
-     También manejamos "Enter" y "Space" para accesibilidad de teclado,
-     ya que el elemento es un <li> con role="button".
-  ─────────────────────────────────────────────────────────────────────── */
-
-const infoItems = document.querySelectorAll(".info-item:not(.info-item--download)");
-
-  infoItems.forEach(item => {
-
-    /**
-     * Alterna la visibilidad del ítem clicado, cierra los demás,
-     * y copia el contenido al portapapeles al abrir.
-     */
-    function toggleItem() {
-      const isAlreadyOpen = item.classList.contains("active");
-
-      // Cerramos TODOS los ítems primero (accordion: solo uno abierto a la vez).
-      infoItems.forEach(el => {
-        el.classList.remove("active", "copied");
-        el.setAttribute("aria-expanded", "false");
-      });
-
-      // Si el ítem estaba cerrado, lo abrimos y copiamos al portapapeles.
-      if (!isAlreadyOpen) {
-        item.classList.add("active");
-        item.setAttribute("aria-expanded", "true");
-
-        const infoData = item.querySelector(".info-data");
-        const text = infoData?.textContent?.trim();
-
-        if (text) {
-          const doCopy = () => {
-            item.classList.add("copied");
-            setTimeout(() => item.classList.remove("copied"), 1800);
-          };
-
-          if (navigator.clipboard?.writeText) {
-            navigator.clipboard.writeText(text).then(doCopy).catch(() => fallbackCopy(text, doCopy));
-          } else {
-            fallbackCopy(text, doCopy);
-          }
-        }
-      }
-    }
-
-    /**
-     * Fallback para navegadores sin Clipboard API.
-     */
-    function fallbackCopy(text, onSuccess) {
-      const ta = document.createElement("textarea");
-      ta.value = text;
-      ta.style.cssText = "position:fixed;opacity:0;pointer-events:none";
-      document.body.appendChild(ta);
-      ta.select();
-      try { document.execCommand("copy"); onSuccess(); } catch (_) {}
-      document.body.removeChild(ta);
-    }
-
-    // Click con el ratón o tap en móvil.
-    item.addEventListener("click", toggleItem);
-
-    // Soporte de teclado: Enter y Space activan el toggle
-    // (comportamiento esperado para elements con role="button").
-    item.addEventListener("keydown", e => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault(); // Evita el scroll al presionar Space.
-        toggleItem();
-      }
-    });
-
-  });
 
 }); // fin DOMContentLoaded 
