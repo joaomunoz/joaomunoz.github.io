@@ -15,6 +15,21 @@ Portafolio:
   class: portfolio
   icon: "/resources/svgs/solid/map.svg"
   contents:
+    - title: Radiografía de las carreras y sueldos en Chile
+      role: "Proyecto personal · PostgreSQL, SQL, Python, HTML, CSS y JavaScript"
+      date: Nov. 2026
+      image: "/assets/img/carreras-sueldos-chile.webp"
+      image_width: 240
+      image_height: 236
+      image_alt: "Gráfico de cuadrantes: cada carrera según su sueldo al primer año y su crecimiento al quinto, frente a la carrera del medio de su grupo"
+      image_link: "https://joaomunoz.github.io/carreras-sueldos-chile/"
+      description:
+        - "Construí una web que compara, en 252 carreras de universidades, IP y CFT, el sueldo y la empleabilidad de quienes llevan uno y cinco años titulados, con datos de MiFuturo (sueldos registrados en el SII) y las titulaciones del SIES (Mineduc)."
+        - "Cada carrera se compara solo con otras de su mismo nivel y tipo de institución, y la página avisa cuándo la cifra nacional engaña: en 19 carreras las instituciones difieren 15 puntos o más en empleabilidad (en Trabajo Social, de 52,5% a 74,2%, con una cifra nacional de 66,9%)."
+        - "Uno de sus hallazgos: un crecimiento mayor en porcentaje puede ser menor en pesos. En Ingeniería en Alimentos, quienes llevan cinco años titulados ganan 66,5% más que quienes llevan uno, pero son +$592.205, frente a +$805.627 de la carrera del medio de su grupo."
+        - "Todo el cálculo vive en PostgreSQL; 81 controles detienen la generación si una cifra deja de respaldar lo que muestra la página. La web es un solo archivo que también funciona sin conexión."
+        - "**[Ver la web](https://joaomunoz.github.io/carreras-sueldos-chile/) · [Ver el código](https://github.com/joaomunoz/carreras-sueldos-chile)**"
+
     - title: Mapa Laboral de Chile
       role: "Proyecto personal · Python, pandas, GeoPandas, HTML, CSS y JavaScript"
       date: Oct. - Nov. 2026
