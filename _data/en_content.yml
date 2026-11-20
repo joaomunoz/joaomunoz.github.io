@@ -1,13 +1,14 @@
-profile_job: "Bachelor of Computer Science"
+profile_job: "Data & BI Analyst | Bachelor of Computer Science"
 
-comment_profile: "Enthusiastic about the world of computing and technology, a great team
-        player with a positive attitude.
-        Specialized in the area of databases,
-        IT process operations and monitoring.
-        Looking for environments where I can combine
-        my skills in a setting close to the business and its clients."
+comment_profile: "Computer Science graduate (USACH) with hands-on experience in databases,
+        ETL processes and 24/7 IT operations for banking and pension fund clients. My focus today is
+        data analysis and BI: I join sources with SQL and Python, validate every figure with automated
+        quality checks and turn it into reports and visualizations that answer business questions."
 
-#-----------------------------------------------------------------------------------------------------#  
+#-----------------------------------------------------------------------------------------------------#
+# Same order and structure as es_content.yml: projects → core stack → experience → education →
+# complementary skills → languages.
+#-----------------------------------------------------------------------------------------------------#
 
 Portafolio:
   subject: Portfolio
@@ -16,53 +17,187 @@ Portafolio:
   icon: "/resources/svgs/solid/map.svg"
   contents:
     - title: Chile Degrees and Salaries Snapshot
-      role: "Personal project · PostgreSQL, SQL, Python, HTML, CSS and JavaScript"
+      role: Personal project
       date: Nov. 2026
       image: "/assets/img/carreras-sueldos-chile.webp"
       image_width: 240
       image_height: 236
       image_alt: "Quadrant chart: each degree by its first-year salary and its growth by year five, against the median degree of its group"
       image_link: "https://joaomunoz.github.io/carreras-sueldos-chile/"
+      problem: "How much do graduates of each degree earn, and how employable are they, one and five years after graduating? I compared 252 degrees from universities, professional institutes and technical training centers, using MiFuturo data (earnings recorded by the tax service, SII) and SIES graduation records (Ministry of Education)."
+      approach: "Each degree is compared only with others of the same level and institution type, and the page flags when the national figure is misleading: in 19 degrees, institutions differ by 15 points or more in employment rate (in Social Work, from 52.5% to 74.2%, against a national figure of 66.9%)."
+      metrics:
+        - value: "252"
+          label: degrees compared
+        - value: "3"
+          label: official sources (MiFuturo and SIES)
+        - value: "81"
+          label: automated quality checks
+      stack: [PostgreSQL, SQL, Python]
+      stack_extra: [HTML, CSS, JavaScript]
       description:
-        - "Built a website that compares, across 252 degrees from universities, professional institutes and technical training centers, the salary and employment rate of graduates one and five years after graduation, using MiFuturo data (earnings recorded by the tax service, SII) and SIES graduation records (Ministry of Education)."
-        - "Each degree is compared only with others of the same level and institution type, and the page flags when the national figure is misleading: in 19 degrees, institutions differ by 15 points or more in employment rate (in Social Work, from 52.5% to 74.2%, against a national figure of 66.9%)."
-        - "One finding: higher growth in percentage terms can be lower growth in pesos. In Food Engineering, graduates five years out earn 66.5% more than those one year out, but that is +CLP 592,205, against +CLP 805,627 for the median degree of its group."
-        - "All calculations live in PostgreSQL; 81 checks stop the build if any figure no longer supports what the page shows. The site is a single file that also works offline."
-        - "**[View the site](https://joaomunoz.github.io/carreras-sueldos-chile/) · [View the code](https://github.com/joaomunoz/carreras-sueldos-chile)** (the site is in Spanish)"
+        - "**Finding:** higher growth in percentage terms can be lower growth in pesos. In Food Engineering, graduates five years out earn 66.5% more than those one year out, but that is +CLP 592,205, against +CLP 805,627 for the median degree of its group."
+        - "**Data quality:** all calculations live in PostgreSQL; the 81 checks stop the build if any figure no longer supports what the page shows. The site is a single file that also works offline."
+      links:
+        - label: View live project (in Spanish)
+          url: "https://joaomunoz.github.io/carreras-sueldos-chile/"
+          primary: true
+        - label: View code and methodology
+          url: "https://github.com/joaomunoz/carreras-sueldos-chile"
 
     - title: Chile Labor Map
-      role: "Personal project · Python, pandas, GeoPandas, HTML, CSS and JavaScript"
+      role: Personal project
       date: Oct. - Nov. 2026
       image: "/assets/img/mapa-laboral-chile.webp"
       image_width: 240
       image_height: 1024
       image_alt: "Map of Chile colored by the economic activity that sets each region apart"
       image_link: "https://joaomunoz.github.io/mapa-laboral-chile/"
+      problem: "What does Chile's labor and education landscape look like by region and economic activity? An interactive map that joins the 2024 Census, the National Employment Survey (INE), the 2024 CASEN survey and Ministry of Education data (SIES and MiFuturo)."
+      approach: "The project started as an attempt to estimate each degree's employment probability by region. Measuring the data showed it was not possible (only 62 of 3,040 degree-by-region combinations were reliable), so I changed the question instead of inventing the number."
+      # 15.2 M = people aged 15+ in the main layer (2024 Census), per the repo README.
+      metrics:
+        - value: "5"
+          label: official sources joined
+        - value: "15.2 M"
+          label: people in the main layer (2024 Census)
+        - value: "106"
+          label: automated quality checks
+        - value: "0.08%"
+          label: maximum deviation from INE official bulletins
+      stack: [Python, pandas, GeoPandas]
+      stack_extra: [HTML, CSS, JavaScript]
       description:
-        - "Built an interactive map of Chile's labor and education landscape by region and economic activity, using the 2024 Census, the National Employment Survey (INE), the 2024 CASEN survey and Ministry of Education data (SIES and MiFuturo)."
-        - "The project started as an attempt to estimate each degree's employment probability by region. Measuring the data showed it was not possible (only 62 of 3,040 degree-by-region combinations were reliable), so I changed the question instead of inventing the number."
-        - "One finding: 24.2% of older adults in Aysén work, the highest rate in the country (17.5% nationwide)."
-        - "Validated the processing against INE's official bulletins, with a maximum deviation of 0.08%; 106 checks stop the build if any figure no longer supports what the page shows."
-        - "**[View the map](https://joaomunoz.github.io/mapa-laboral-chile/) · [View the code](https://github.com/joaomunoz/mapa-laboral-chile)** (the map is in Spanish)"
+        - "**Finding:** 24.2% of older adults in Aysén work, the highest rate in the country (17.5% nationwide)."
+        - "**Data quality:** validated the processing against INE's official bulletins; the 106 checks stop the build if any figure no longer supports what the page shows."
+      links:
+        - label: View live project (in Spanish)
+          url: "https://joaomunoz.github.io/mapa-laboral-chile/"
+          primary: true
+        - label: View code and methodology
+          url: "https://github.com/joaomunoz/mapa-laboral-chile"
+
+#-----------------------------------------------------------------------------------------------------#
+# Two-level skills, same fields as es_content.yml (tools: name, icon, white, glyph).
+#-----------------------------------------------------------------------------------------------------#
+
+StackPrincipal:
+  subject: "Core stack: Data, BI & ETL"
+  listing-order: 1
+  class: skills skills--primary
+  icon: "/resources/svgs/solid/database.svg"
+  contents:
+    - title: Querying & analysis
+      tools:
+        - name: SQL
+          icon: "/resources/svgs/solid/database.svg"
+          glyph: true
+        - name: "Python (Pandas, GeoPandas)"
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+    - title: Databases
+      tools:
+        - name: PostgreSQL
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+          white: true
+        - name: "SQL Server (T-SQL)"
+          icon: "https://cdn.worldvectorlogo.com/logos/microsoft-sql-server-1.svg?fill=white"
+          white: true
+        - name: "Oracle (PL/SQL)"
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg"
+          white: true
+        - name: MySQL
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg"
+          white: true
+    - title: BI & visualization
+      tools:
+        - name: "Power BI (DAX, Power Query)"
+          icon: "https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
+          white: true
+        - name: Advanced Excel
+          icon: "https://mailmeteor.com/logos/assets/PNG/Microsoft_Office_Excel_Logo_256px.png"
+          white: true
+    - title: ETL & automation
+      tools:
+        - name: SSIS
+          icon: "/assets/img/ssis.webp"
+          white: true
+        - name: Pentaho
+          icon: "https://iconape.com/wp-content/files/sc/352055/png/pentaho-logo.png"
+          white: true
+        - name: Power Automate
+          icon: "https://www.paitgroup.com/hs-fs/hubfs/Power-Automate-22.png?width=465&height=149&name=Power-Automate-22.png"
+          white: true
+
+#-----------------------------------------------------------------------------------------------------#
+
+Experiencia:
+  subject: Experience
+  listing-order: 2
+  class: experience
+  icon: "/assets/img/briefcase.svg"
+  contents:
+    - title: Data Analytics Specialization and Independent Projects
+      role: Training and personal projects
+      date: Aug. 2024 - Present
+      description:
+        - "Completed the Google Data Analytics Professional Certificate (Talento Digital para Chile scholarship): data cleaning, analysis and visualization, from the business question to presenting results."
+        - "Built two end-to-end projects with Chilean public data (Census, INE, CASEN, Ministry of Education), from ingestion to web publication, using PostgreSQL, SQL and Python (pandas, GeoPandas)."
+        - "Applied validation against official figures and automated quality checks that stop the build if any figure no longer supports what is published (see Portfolio)."
+
+    - title: IBM
+      role: IT Process and Command Center Operator
+      date: Aug. 2023 - Jul. 2024
+      description:
+        - "Contributed to the Command Center dashboard in Power BI, embedded in Microsoft Teams with SharePoint and Excel documents as the data source, bringing operational efficiency tracking and per-client escalation reporting into one place."
+        - "Built a Power Automate flow that extracted sub-reports from Outlook emails and automatically merged them into a single report consolidated by shift end time, instead of assembling it by hand."
+        - "Maintained incident reports segmented by operational unit (DB, UNIX, WINTEL, WAS, Networking and SAP) with Jira tracking, managing internal and external escalations based on service criticality."
+        - "Monitored networks, platforms and services with Nagios, Tivoli, Zabbix and VZOR for multiple simultaneous clients in banking (Itaú, Security, Santander), pension funds (Hábitat, SURA), compensation funds (Los Héroes) and industry (AZA)."
+        - "Ran nightly and batch processes and managed backups with EMC NetWorker and TSM on critical infrastructure."
+        - "Managed user access and profiles, performed platform maintenance and ensured continuity of critical services in 24/7 operations."
+
+    - title: M y CH Inmobiliaria
+      role: Real Estate Management, Operations Control and Construction
+      date: Sep. 2020 - Jan. 2023
+      description:
+        - "Oversaw rent collection and operational follow-up for each property at a family-owned company that buys, sells and builds properties."
+        - "Managed basic utilities maintenance for the properties."
+        - "Worked hands-on in carrying out construction works."
+
+    # Pending: confirm whether this was a fixed-term contract or an internship.
+    - title: G-Talent
+      role: Programmer Analyst (3-month project)
+      date: Sep. - Nov. 2019
+      description:
+        - "Developed business management reports in SQL Server using stored procedures, structuring queries to extract and transform operational data."
+        - "Produced internal audit and management control reports in Oracle, delivering consolidated information for decision-making."
+        - "Built a complete ETL pipeline in SSIS with SQL Server for the accounting report of VTR customers, automating the extraction, transformation and loading of billing data."
+
+    - title: "Medicien: Patient Portal Project"
+      role: Programmer Analyst (3-month project)
+      date: Jun. - Aug. 2019
+      description:
+        - "Designed and built the PortalPaciente database in SQL Server for medical appointment booking, dentist schedule management and dental service control."
+        - "Implemented ETL automation in Pentaho, with API integration and security tokens, to extract data from the dental service into the database."
+        - "Managed data interoperability between the Oracle Horizon and SQL Server engines."
 
 #-----------------------------------------------------------------------------------------------------#
 
 Educacion:
   subject: Education
-  listing-order: 1
+  listing-order: 3
   class: education
   icon: "/assets/img/graduation-cap.svg"
   contents:
-    - title: Universidad de Santiago de Chile
+    - title: Bachelor of Computer Science
       description:
-        - Bachelor of Computer Science
+        - University of Santiago, Chile (USACH)
       date: Mar. 2013 - Sep. 2019
 
-#-----------------------------------------------------------------------------------------------------#    
+#-----------------------------------------------------------------------------------------------------#
 
 Certificaciones:
   subject: Certifications
-  listing-order: 2
+  listing-order: 4
   class: certifications
   icon: "/resources/svgs/solid/certificate.svg"
   contents:
@@ -74,165 +209,115 @@ Certificaciones:
       image_alt: "Google Data Analytics Professional Certificate badge"
       image_link: "https://www.credly.com/badges/3deb66fa-89bb-4bdc-b191-b49c67fa8cb9/public_url"
       description:
-        - "Google, on Coursera: 9 courses"
+        - "Google, on Coursera: 9 courses · Talento Digital para Chile scholarship"
         - "[View certificate](https://www.coursera.org/account/accomplishments/specialization/Q5H4LH9WMBWU) · [View badge](https://www.credly.com/badges/3deb66fa-89bb-4bdc-b191-b49c67fa8cb9/public_url)"
 
 #-----------------------------------------------------------------------------------------------------#
 
-Idiomas:
-  subject: Languages
-  listing-order: 3
-  class: languages
-  icon: "/assets/img/globe.svg"
-  contents:
-    - title: "Spanish (Native): <span style='color: #46C646; margin: auto 8px; font-family: cursive;'>●●●●●</span>"
-    - title: "English (Advanced): <span style='color: cornflowerblue; margin: auto 8px; font-family: cursive;'>●●●●◐</span>"
-
-#-----------------------------------------------------------------------------------------------------#    
-
-Habilidades:
-  subject: Skills
-  listing-order: 4
-  class: skills
+Complementarias:
+  subject: "Engineering, IT operations & complementary skills"
+  listing-order: 5
+  class: skills skills--secondary
   icon: "/assets/img/screwdriver-wrench.svg"
   contents:
-    - title: Programming Languages
-      description: "
-        <span class='devicon-box' data-tooltip='C'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg' alt='C'></span>
-        <span class='devicon-box' data-tooltip='C++'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg' alt='C++'></span>
-        <span class='devicon-box' data-tooltip='Python'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg' alt='Python'></span>
-        <span class='devicon-box' data-tooltip='PHP'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg' alt='PHP'></span>
-      "
-    - title: Frameworks
-      description: "
-        <span class='devicon-box white' data-tooltip='Django'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain-wordmark.svg' alt='Django'></span>
-      "
-    - title: Web & UI/UX
-      description: "
-              <span class='devicon-box' data-tooltip='HTML5'><img src='https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_960_720.png' alt='HTML5'></span>
-
-              <span class='devicon-box' data-tooltip='CSS3'><img src='https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_1280.png' alt='CSS3'></span>
-
-              <span class='devicon-box' data-tooltip='JavaScript'><img src='https://cdn.pixabay.com/photo/2015/04/23/17/41/javascript-736400_1280.png' alt='JavaScript'></span>
-        "
-
-
-
-
-
-    - title: Monitoring Tools
-      description: "
-        <span class='devicon-box white' data-tooltip='Tivoli'><img src='https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/ibm.svg' alt='Tivoli'></span>
-        
-        <span class='devicon-box white' data-tooltip='VZOR'><img src='https://store-images.s-microsoft.com/image/apps.20416.c1e0f2ee-6a48-494c-8b96-f38d7243b0e4.7cacb8f9-4658-4cb5-b761-bf02496afdc0.d1407e59-b258-4389-a3be-cef2a5034019' alt='VZOR'></span>
-        
-        <span class='devicon-box' data-tooltip='Zabbix'><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3Hmxao3hJidJKBfbwGkRWUPbywbwFLoWlqg&s' alt='Zabbix'></span>
-        
-        <span class='devicon-box white' data-tooltip='Nagios'><img src='https://upload.wikimedia.org/wikipedia/commons/1/16/Nagios_logo.svg' alt='Nagios'></span>
-      "
-    - title: Office Suite
-      description: "
-        <span class='devicon-box white' data-tooltip='LaTeX'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/latex/latex-original.svg' alt='LaTeX'></span>
-        
-        <span class='devicon-box white' data-tooltip='Excel'><img src='https://mailmeteor.com/logos/assets/PNG/Microsoft_Office_Excel_Logo_256px.png' alt='Excel'></span>
-        
-        <span class='devicon-box white' data-tooltip='Word'><img src='https://mailmeteor.com/logos/assets/PNG/Microsoft_Office_Word_Logo_256px.png' alt='Word'></span>
-        
-        <span class='devicon-box white' data-tooltip='Power Automate'><img src='https://www.paitgroup.com/hs-fs/hubfs/Power-Automate-22.png?width=465&height=149&name=Power-Automate-22.png' alt='Power Automate'></span>
-        
-        <span class='devicon-box white' data-tooltip='PowerPoint'><img src='https://upload.wikimedia.org/wikipedia/commons/2/25/Microsoft_Office_PowerPoint_%282019%E2%80%932025%29.svg' alt='PowerPoint'></span>
-        
-        <span class='devicon-box white' data-tooltip='Teams'><img src='https://mailmeteor.com/logos/assets/PNG/Microsoft_Office_Teams_Logo_256px.png' alt='Teams'></span>
-        
-        <span class='devicon-box white' data-tooltip='LibreOffice'><img src='https://cdn.simpleicons.org/libreoffice' alt='LibreOffice'></span>
-      "
-    - title: Version Control
-      description: "
-        <span class='devicon-box white' data-tooltip='Git'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg' alt='Git'></span>
-        
-        <span class='devicon-box white' data-tooltip='GitHub'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg' alt='GitHub'></span>
-      "
-    - title: Operating Systems
-      description: "
-        <span class='devicon-box white' data-tooltip='Windows'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows11/windows11-original.svg' alt='Windows'></span>
-
-        <span class='devicon-box white' data-tooltip='Linux'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/960px-Tux.svg.png' alt='Linux'></span>
-      "
-    - title: BI & ETL Processes
-      description: "
-        <span class='devicon-box white' data-tooltip='Power BI'><img src='https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg' alt='Power BI'></span>
-        
-        <span class='devicon-box white' data-tooltip='Pentaho'><img src='https://iconape.com/wp-content/files/sc/352055/png/pentaho-logo.png' alt='Pentaho'></span>
-        
-        <span class='devicon-box white' data-tooltip='SSIS'><img src='/assets/img/ssis.webp' alt='SSIS'></span>
-      "
-    - title: Databases
-      description: "
-        <span class='devicon-box white' data-tooltip='Oracle'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg' alt='Oracle'></span>
-
-        <span class='devicon-box white' data-tooltip='MySQL'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg' alt='MySQL'></span>
-
-        <span class='devicon-box white' data-tooltip='SQL Server'><img src='https://cdn.worldvectorlogo.com/logos/microsoft-sql-server-1.svg?fill=white' alt='SQL Server'></span>
-      "
-    - title: Incident Management
-      description: "
-        <span class='devicon-box white' data-tooltip='Jira'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg' alt='Jira'></span>
-      "
-    - title: Backend / APIs
-      description: "
-        <span class='devicon-box white' data-tooltip='FastAPI'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg' alt='FastAPI'></span>
-
-        <span class='devicon-box white' data-tooltip='SQLAlchemy'><img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlalchemy/sqlalchemy-original.svg' alt='SQLAlchemy'></span>
-
-        <span class='devicon-box white' data-tooltip='Pydantic'><img src='https://cdn.simpleicons.org/pydantic' alt='Pydantic'></span>
-      "
-    - title: Scraping / Anti-bot
+    - title: Backend & APIs
+      tools:
+        - name: FastAPI
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg"
+          white: true
+        - name: SQLAlchemy
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlalchemy/sqlalchemy-original.svg"
+          white: true
+        - name: Pydantic
+          icon: "https://cdn.simpleicons.org/pydantic"
+          white: true
+        - name: Django
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain-wordmark.svg"
+          white: true
+    - title: Scraping & automation
       description: "curl_cffi (TLS fingerprint impersonation), BFF/GraphQL APIs and headless-browser-free HTTP scraping"
     - title: AI Agents / MCP
       description: "Multi-agent orchestration via MCP (Model Context Protocol) and OpenCode"
-    - title: Networking
-      description: "Local area network (LAN) installation, VPN and basic TCP/IP"
+    - title: Additional languages
+      tools:
+        - name: C
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"
+        - name: C++
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
+        - name: PHP
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
+    - title: Web
+      tools:
+        - name: HTML5
+          icon: "https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_960_720.png"
+        - name: CSS3
+          icon: "https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_1280.png"
+        - name: JavaScript
+          icon: "https://cdn.pixabay.com/photo/2015/04/23/17/41/javascript-736400_1280.png"
+    - title: IT monitoring
+      tools:
+        - name: Tivoli
+          icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/ibm.svg"
+          white: true
+        - name: VZOR
+          icon: "https://store-images.s-microsoft.com/image/apps.20416.c1e0f2ee-6a48-494c-8b96-f38d7243b0e4.7cacb8f9-4658-4cb5-b761-bf02496afdc0.d1407e59-b258-4389-a3be-cef2a5034019"
+          white: true
+        - name: Zabbix
+          icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3Hmxao3hJidJKBfbwGkRWUPbywbwFLoWlqg&s"
+        - name: Nagios
+          icon: "https://upload.wikimedia.org/wikipedia/commons/1/16/Nagios_logo.svg"
+          white: true
+    - title: Version control & project management
+      tools:
+        - name: Git
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
+          white: true
+        - name: GitHub
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+          white: true
+        - name: Jira
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg"
+          white: true
+        - name: SCRUM
+        - name: XP
+    - title: Systems & networking
+      tools:
+        - name: Linux
+          icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/960px-Tux.svg.png"
+          white: true
+        - name: Windows
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows11/windows11-original.svg"
+          white: true
+        - name: "LAN, VPN and basic TCP/IP networking"
+    - title: Office suite
+      tools:
+        - name: LaTeX
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/latex/latex-original.svg"
+          white: true
+        - name: Word
+          icon: "https://mailmeteor.com/logos/assets/PNG/Microsoft_Office_Word_Logo_256px.png"
+          white: true
+        - name: PowerPoint
+          icon: "https://upload.wikimedia.org/wikipedia/commons/2/25/Microsoft_Office_PowerPoint_%282019%E2%80%932025%29.svg"
+          white: true
+        - name: Teams
+          icon: "https://mailmeteor.com/logos/assets/PNG/Microsoft_Office_Teams_Logo_256px.png"
+          white: true
+        - name: LibreOffice
+          icon: "https://cdn.simpleicons.org/libreoffice"
+          white: true
 
 #-----------------------------------------------------------------------------------------------------#
+# Levels as standard text. Pending: confirm exact CEFR level for English.
+#-----------------------------------------------------------------------------------------------------#
 
-Experiencia:
-  subject: Experience
-  listing-order: 5
-  class: experience
-  icon: "/assets/img/briefcase.svg"
+Idiomas:
+  subject: Languages
+  listing-order: 6
+  class: languages
+  icon: "/assets/img/globe.svg"
   contents:
-    - title: IBM
-      role: IT Process and Command Center Operator
-      description:
-        - Monitored networks, platforms and services with Nagios, Tivoli, Zabbix and VZOR for multiple simultaneous clients in banking (Itaú, Security, Santander), pension funds (Hábitat, SURA), compensation funds (Los Héroes) and industry (AZA).
-        - Maintained incident reports segmented by operational unit (BBDD, UNIX, WINTEL, WAS, Networking and SAP) with Jira tracking, managing internal and external escalations based on service criticality.
-        - Participated in the development of the Command Center dashboard in Power BI, integrated into Microsoft Teams with SharePoint as data source via Excel documents, for operational efficiency measurement and client escalation reporting.
-        - Built a Power Automate flow that extracted sub-reports from Outlook emails and automatically consolidated them into a single report based on output schedules.
-        - Executed nightly/batch processes and managed backups with EMC NetWorker and TSM in critical infrastructures.
-        - Managed user access and profiles, performed platform maintenance and ensured continuity of critical services in a 24/7 environment.
-      date: Aug. 2023 - Jul. 2024
-
-    - title: M y CH Inmobiliaria
-      role: Real Estate Management and Construction
-      description:
-        - Family-owned real estate and construction company. 
-          Worked as a construction worker and real estate manager, 
-          with direct responsibilities in rent collection and basic utilities 
-          maintenance for each property.
-      date: Sep. 2020 - Jan. 2023
-
-    - title: G-Talent
-      role: Programmer Analyst
-      description:
-        - Developed business management reports with SQL Server using Stored Procedures, structuring queries for extraction and transformation of operational data.
-        - Generated internal audit and management control reports using Oracle, delivering consolidated information for decision-making.
-        - Developed a complete ETL pipeline in SSIS with SQL Server for the billing report of VTR customers, automating the extraction, transformation and loading of billing data.
-      date: Sep. - Nov. 2019
-
-    - title: "Medicien: Patient Portal Project"
-      role: Programmer Analyst
-      description:
-        - Designed and developed the PortalPaciente database in SQL Server for medical appointment registration, dentist schedule management and dental service control.
-        - Implemented ETL automation in Pentaho with API integration and security tokens for data extraction from the dental service to the database.
-        - Managed data interoperability between Oracle Horizon and SQL Server engines.
-      date: Jun. - Aug. 2019
+    - title: Spanish
+      level: Native
+    - title: English
+      level: "Advanced (B2/C1)"
