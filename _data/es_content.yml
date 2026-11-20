@@ -310,7 +310,7 @@ Complementarias:
           white: true
 
 #-----------------------------------------------------------------------------------------------------#
-# Nivel en texto estándar en vez de bolitas. Pendiente de confirmar: nivel MCER exacto de inglés.
+# Nivel por habilidad y sin etiqueta MCER: no hay certificación que la respalde.
 #-----------------------------------------------------------------------------------------------------#
 
 Idiomas:
@@ -322,4 +322,4 @@ Idiomas:
     - title: Español
       level: Nativo
     - title: Inglés
-      level: "Avanzado (B2/C1)"
+      level: "Lectura avanzada · Habla y escucha intermedias"

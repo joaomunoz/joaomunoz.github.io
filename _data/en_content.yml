@@ -308,7 +308,7 @@ Complementarias:
           white: true
 
 #-----------------------------------------------------------------------------------------------------#
-# Levels as standard text. Pending: confirm exact CEFR level for English.
+# Level per skill, no CEFR label: there is no certification to back it.
 #-----------------------------------------------------------------------------------------------------#
 
 Idiomas:
@@ -320,4 +320,4 @@ Idiomas:
     - title: Spanish
       level: Native
     - title: English
-      level: "Advanced (B2/C1)"
+      level: "Advanced reading · Intermediate speaking and listening"
