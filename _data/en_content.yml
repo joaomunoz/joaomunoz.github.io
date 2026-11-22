@@ -163,7 +163,7 @@ Experiencia:
       role: Real Estate Management, Operations Control and Construction
       date: Sep. 2020 - Jan. 2023
       description:
-        - "Oversaw rent collection and operational follow-up for each property at a family-owned company that buys, sells and builds properties."
+        - "Tracked rent collection in Excel and the operational follow-up for each property at a family-owned company that buys, sells and builds properties."
         - "Managed basic utilities maintenance for the properties."
         - "Directly supported construction projects."
 
@@ -181,7 +181,7 @@ Experiencia:
       date: Jun. - Aug. 2019
       description:
         - "Designed and built the PortalPaciente database in SQL Server for medical appointment booking, dentist schedule management and dental service control."
-        - "Implemented ETL automation in Pentaho, with API integration and security tokens, to extract data from the dental service into the database."
+        - "Implemented ETL automation in Pentaho, with REST API integration and security tokens, to extract data from the dental service into the database."
         - "Managed data interoperability between the Oracle Horizon and SQL Server engines."
 
 #-----------------------------------------------------------------------------------------------------#

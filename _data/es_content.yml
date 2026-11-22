@@ -2,8 +2,8 @@ profile_job: "Analista de Datos | Licenciado en Ciencias de la Computación"
 
 comment_profile: "Licenciado en Ciencias de la Computación (USACH) con experiencia en bases de datos,
         procesos ETL (SSIS, Pentaho) y reporting con SQL Server, Oracle, PostgreSQL y Power BI, además
-        de operaciones TI 24/7 para clientes de banca, AFP y cajas de compensación. Hoy me enfoco en el análisis de datos:
-        cruzo fuentes con SQL y Python, valido cada cifra con controles automáticos de calidad y
+        de operaciones TI 24/7 para clientes de banca, AFP y cajas de compensación. Hoy me enfoco en
+        el análisis de datos: cruzo fuentes con SQL y Python, valido cada cifra con controles automáticos de calidad y
         convierto los resultados en reportes y visualizaciones que respondan preguntas de negocio."
 
 #-----------------------------------------------------------------------------------------------------#
@@ -165,7 +165,7 @@ Experiencia:
       role: Gestión Inmobiliaria, Control Operativo y Obras
       date: Sep. 2020 - Ene. 2023
       description:
-        - "Controlé la recaudación de arriendos y el seguimiento operativo de cada propiedad en una empresa familiar de compra, venta y construcción de propiedades."
+        - "Controlé en Excel la recaudación de arriendos y el seguimiento operativo de cada propiedad en una empresa familiar de compra, venta y construcción de propiedades."
         - "Administré la mantención de los servicios básicos de las propiedades."
         - "Apoyé directamente la ejecución de obras de construcción."
 
@@ -183,7 +183,7 @@ Experiencia:
       date: Jun. - Ago. 2019
       description:
         - "Diseñé y desarrollé la base de datos PortalPaciente en SQL Server para el registro de citas médicas, la gestión de agenda de dentistas y el control del servicio de odontología."
-        - "Implementé la automatización ETL en Pentaho, con integración vía API y tokens de seguridad, para extraer datos del servicio de odontología hacia la base de datos."
+        - "Implementé la automatización ETL en Pentaho, con integración vía API REST y tokens de seguridad, para extraer datos del servicio de odontología hacia la base de datos."
         - "Administré la interoperabilidad de datos entre los motores Oracle Horizon y SQL Server."
 
 #-----------------------------------------------------------------------------------------------------#
