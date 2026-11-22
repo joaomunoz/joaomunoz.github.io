@@ -2,9 +2,9 @@ profile_job: "Data Analyst | Bachelor of Computer Science"
 
 comment_profile: "Computer Science graduate (USACH) with hands-on experience in databases,
         ETL processes (SSIS, Pentaho) and reporting with SQL Server, Oracle, PostgreSQL and Power BI,
-        as well as 24/7 IT operations for banking and pension fund clients. My focus today is data
+        as well as 24/7 IT operations for banking, pension fund and compensation fund clients. My focus today is data
         analysis: I join sources with SQL and Python, validate every figure with automated
-        quality checks and turn it into reports and visualizations that answer business questions."
+        quality checks and turn the results into reports and visualizations that answer business questions."
 
 #-----------------------------------------------------------------------------------------------------#
 # Same order and structure as es_content.yml: projects → core stack → experience → education →
@@ -93,7 +93,7 @@ StackPrincipal:
         - name: SQL
           icon: "/resources/svgs/solid/database.svg"
           glyph: true
-        - name: "Python (Pandas, GeoPandas)"
+        - name: "Python (pandas, GeoPandas)"
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
     - title: Databases
       tools:
@@ -165,7 +165,7 @@ Experiencia:
       description:
         - "Oversaw rent collection and operational follow-up for each property at a family-owned company that buys, sells and builds properties."
         - "Managed basic utilities maintenance for the properties."
-        - "Worked hands-on in carrying out construction works."
+        - "Directly supported construction projects."
 
     # Pending: confirm whether this was a fixed-term contract or an internship.
     - title: G-Talent
@@ -292,6 +292,9 @@ Complementarias:
         - name: Windows
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows11/windows11-original.svg"
           white: true
+        - name: Bash
+          icon: "/resources/svgs/solid/terminal.svg"
+          glyph: true
         - name: "LAN, VPN and basic TCP/IP networking"
     - title: Office suite
       tools:

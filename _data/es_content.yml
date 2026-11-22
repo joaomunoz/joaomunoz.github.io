@@ -2,7 +2,7 @@ profile_job: "Analista de Datos | Licenciado en Ciencias de la Computación"
 
 comment_profile: "Licenciado en Ciencias de la Computación (USACH) con experiencia en bases de datos,
         procesos ETL (SSIS, Pentaho) y reporting con SQL Server, Oracle, PostgreSQL y Power BI, además
-        de operaciones TI 24/7 para clientes de banca y AFP. Hoy me enfoco en el análisis de datos:
+        de operaciones TI 24/7 para clientes de banca, AFP y cajas de compensación. Hoy me enfoco en el análisis de datos:
         cruzo fuentes con SQL y Python, valido cada cifra con controles automáticos de calidad y
         convierto los resultados en reportes y visualizaciones que respondan preguntas de negocio."
 
@@ -95,7 +95,7 @@ StackPrincipal:
         - name: SQL
           icon: "/resources/svgs/solid/database.svg"
           glyph: true
-        - name: "Python (Pandas, GeoPandas)"
+        - name: "Python (pandas, GeoPandas)"
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
     - title: Bases de datos
       tools:
@@ -294,6 +294,9 @@ Complementarias:
         - name: Windows
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows11/windows11-original.svg"
           white: true
+        - name: Bash
+          icon: "/resources/svgs/solid/terminal.svg"
+          glyph: true
         - name: "Redes LAN, VPN y TCP/IP básico"
     - title: Ofimática
       tools:
