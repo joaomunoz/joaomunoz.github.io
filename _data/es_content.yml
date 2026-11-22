@@ -111,6 +111,9 @@ StackPrincipal:
         - name: MySQL
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg"
           white: true
+        - name: "GCP (BigQuery)"
+          icon: "/assets/img/bigquery.svg"
+          white: true
     - title: BI y visualización
       tools:
         - name: "Power BI (DAX, Power Query)"
@@ -239,6 +242,9 @@ Complementarias:
           white: true
         - name: Django
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain-wordmark.svg"
+          white: true
+        - name: Google Cloud APIs
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg"
           white: true
     - title: Scraping y automatización
       description: "curl_cffi (TLS fingerprint impersonation), APIs BFF/GraphQL y scraping HTTP sin navegador headless"
