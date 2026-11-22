@@ -3,8 +3,8 @@ profile_job: "Analista de Datos | Licenciado en Ciencias de la Computación"
 comment_profile: "Licenciado en Ciencias de la Computación (USACH) con experiencia en bases de datos,
         procesos ETL (SSIS, Pentaho) y reporting con SQL Server, Oracle, PostgreSQL y Power BI, además
         de operaciones TI 24/7 para clientes de banca y AFP. Hoy me enfoco en el análisis de datos:
-        cruzo fuentes con SQL y Python, valido cada cifra con controles automáticos de calidad y la
-        convierto en reportes y visualizaciones que respondan preguntas de negocio."
+        cruzo fuentes con SQL y Python, valido cada cifra con controles automáticos de calidad y
+        convierto los resultados en reportes y visualizaciones que respondan preguntas de negocio."
 
 #-----------------------------------------------------------------------------------------------------#
 # Orden pensado para un reclutador de Datos/BI: proyectos (prueba de trabajo) → stack principal →
