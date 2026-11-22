@@ -117,6 +117,9 @@ StackPrincipal:
         - name: Advanced Excel
           icon: "https://mailmeteor.com/logos/assets/PNG/Microsoft_Office_Excel_Logo_256px.png"
           white: true
+        - name: Tableau
+          icon: "/assets/img/tableau.png"
+          white: true
     - title: ETL & automation
       tools:
         - name: SSIS
@@ -137,11 +140,10 @@ Experiencia:
   class: experience
   icon: "/assets/img/briefcase.svg"
   contents:
-    - title: Data Analytics Specialization and Independent Projects
-      role: Training and personal projects
+    - title: Independent Projects
+      role: Data Analyst and Pipeline Developer
       date: Aug. 2024 - Present
       description:
-        - "Completed the Google Data Analytics Professional Certificate (Talento Digital para Chile scholarship): data cleaning, analysis and visualization, from the business question to presenting results."
         - "Built two end-to-end projects with Chilean public data (Census, INE, CASEN, Ministry of Education), from ingestion to web publication, using PostgreSQL, SQL and Python (pandas, GeoPandas)."
         - "Applied validation against official figures and automated quality checks that stop the build if any figure no longer supports what is published (see Portfolio)."
 
